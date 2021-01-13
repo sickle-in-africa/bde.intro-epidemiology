@@ -64,8 +64,7 @@
         </li>
 	{% endif %}
 
-        <a class="navbar-brand" href="{{ relative_root_path }}{% link exercises.md %}">Exercises</a>
-
+        <li><a href="{{ relative_root_path }}{% link exercises.md %}">Exercises</a></li>
 
 	{% comment %} Show extras for lessons or if this is the main workshop-template repo (where they contain documentation). {% endcomment %}
 	{% if site.kind == "lesson" %}
