@@ -10,135 +10,66 @@ objectives:
 - "Differentiate between the frequency, distrubution, determinants, and control of a disease"
 - "Discuss how epidemiology can be useful for Sickle Cell Disease"
 keypoints:
-- "Most commands take options (flags) which begin with a `-`."
-- "Identify the actual command, options, and filenames in a command-line call."
-- "Explain the steps in the shell's read-run-print cycle."
-- "Demonstrate the use of tab completion and explain its advantages."
-- "A shell is a program whose primary purpose is to read commands and run other programs."
-- "The shell's main advantages are its high action-to-keystroke ratio, its support for
-automating repetitive tasks, and its capacity to access networked machines."
-- "The shell's main disadvantages are its primarily textual nature and how
-cryptic its commands and operation can be."
+- "Epidemiology is one of several sources of knowledge for Public Health."
+- "A population is a group of people that share a common characteristic."
+- " A population can either be fixed, or dynamic."
+- "Disease frequency refers to how often a member of a population gets the disease."
+- "The geographical or temporal variation of disease frequency is call disease distribution."
+- "Disease control can be achieved through surveillance programs."
+- "Newborn screening and national disease registries are important epidemiologcal contributions to sickle cell disease management."
 ---
 
 ### What is Epidemiology?
 
+Epidemiology as a health science is not so well known as medicine but has a huge impact on our lives. For example, medical epidemiologists have been credited with adding 25 years to the average life expectancy of people living in the United States since 1947. Studies have made headline news on hormonal drugs and breats cancer, drivers using cell phones, the Coronavirus, fire retardants in consumer products and many more topics; we wear masks in public, sanitize regularly, and practice social distancing to "flatten the curve" during the coronavirus pandemic because of advice gleaned from epidemiology studies. 
+
+To better undrestand how epidemiology contributes to society we need to consider its role in **Public health**: a multidisciplinary field whose goal is to promote the health of the population through organized community efforts. In contrast to medicine, which focuses mainly on treating illness in separate individuals, public health focuses on preventing illness in the community. Key public health activities include assessing the health status of the population, diagnosing its problems, searching for the causes of those problems, and designing solutions for them. The solutions usually involve community-level interventions that control or prevent the cause of the problem. For example, public health interventions include establishing educational programs to discourage teenagers from smoking, implementing screening programs for the early detection of cancer, and passing laws that require automobile drivers and passengers to wear seat belts.
+
+> ## Epidemiology definition
+> **Epidemiology** is the study of the distribution and determinants of disease frequency in human populations and the application of this study to control health problems.
+{: .callout}
+
+We will define these new terms like populations, disease frequency and distribution in the next few paragraphs, but for now note that epidemiology is concerned with *populations and disease*.
+
+The scientific basis of public health activities mainly comes from:
+1. the basic sciences, such as pathology and toxicology; 
+2. the clinical or medical sciences, such as internal medicine and pediatrics; 
+3. the public health sciences, such as epidemiology, environmental health science, health
+education, and behavioral science. 
+
+Research in these three areas provides complementary pieces of a puzzle that, when properly assembled, provide the scientific foundation for public health action. Other fields such as engineering and economics also contribute to public health. The three main areas approach research questions from different yet complementary viewpoints, and each field has its own particular strengths and weaknesses. Thus Epidemiology is a science that provides one of several sources of knowledge for public health. 
+
 ### Populations
+Above we have seen that epidemiologists studies how disease can arise in populations. A **population** is a set of people that share one or more common characteristics, such as gender, place of residence, age, or use of certain medical services. For example, the set of all women under 50 living in Abuja is a population. The set of all people with the homozygous sickle cell mutation HbSS is another example of a population. A simple and useful measure of a population is its size: the number of people in the group. Estimates of a population size can often be obtained from census records or health registries.
+
+It can be sometimes difficult to exstimate the size of a population, especially if the the geographic spread is large, and it can also be a challenge to define the right population for a given study. Consider a study on the effects of exercise for heavy smokers on life expectancy. How we chose to define "heavy smoking" will affect who is considered for the study (i.e. the population) and who is not. 
+
+A unifying framework for thinking about a population is whether its membership is permanent or transient. A population whose membership is permanent is called a **fixed** population. Its membership is always defined by a life event. For example, the people in were in Hiroshima, Japan, when the atomic bomb exploded at the end of World War II are members of a fixed population. This population will never gain any new members because only people who were at this historical event can be members.
+
+In conducting an epidemiology study, it is rare that we will be able to examine or monitor every member of a population. In practice, we need to obtain a sample that faithfully represents the population. A **sample** of a population is a subset of the group where each member is chosen at random, so that the statistics of the sample are suitably close to the statistics of the population. The question of whether or not the sample is "suitably close" is an important issue that must be treated with care. 
 
 ### What are the goals of Epidemiology?
 
+Let us revisit our epidemiology definition. It mentions the frequency, distribution, determinants, and control of a disease. We will look at these terms in more detail now. 
+
+**Disease frequency** refers to quantifying how often a disease arises in a population. Counting, which is a key activity of epidemiologists, includes three steps: 
+1. developing a definition of disease,
+2. instituting a mechanism for counting cases of disease within a specified population, and 
+3. determining the size of that population.
+
+National disease registries, for example the Sickle Pan African Research Consortium (SPAN) Nigeria database, are a key resource for estimating the frequency of disease in a population. 
+
+**Disease distribution** refers to the analysis of disease patterns according to the characteristics of person, place, and time, in other words, who is getting the disease, where it is occurring, and how it is changing over time. Variations in disease frequency by these three characteristics provide useful information that helps epidemiologists understand the health status of a population; formulate hypotheses about the determinants of a disease; and plan, implement, and evaluate public health programs to control and prevent adverse health events. In the SPAN Nigeria database, the locations of each patient is recorded along with clinical information, thus allowing epidemiologists to analyse how the frequency of the disease varies with location. 
+
+**Disease determinants** are factors that bring about a change in a person’s health or make a difference in a person’s health. Thus, determinants
+consist of both causal and preventive factors. Determinants also include individual, environmental, and societal characteristics. Individual determinants consist of a person’s genetic makeup, gender, age, immunity level, diet, behaviors, and existing diseases. For example, the risk of breast cancer is increased among women who carry genetic alterations, such as BRCA1 and BRCA2; are elderly; give birth at a late age; have a history of certain benign breast conditions; or have a history of radiation exposure to the chest. Within the population of sickle cell patients, several other factors have been known to affect quality of life such as coinheritance of alpha-thalassemia. 
+
+Epidemiologists accomplish **disease control** through epidemiological research, as described previously, and through surveillance. The purpose of surveillance is to monitor aspects of disease occurrence that are pertinent to effective control. For example, the Centers for Disease Control and Prevention collects information on the occurrence of HIV infection across the United States. For every case of HIV infection, the surveillance system gathers data on the individual’s demographic characteristics, transmission category (such as injection drug use or male-to-male sexual contact), and diagnosis date. These surveillance data are essential for formulating and evaluating programs to reduce the spread of HIV.
+
+Epidemiologists therefore define count members of populations and asses the frequency of disease in these populations. They look at how this frequency can change from place to place, or time to time. Medical and biological studies can assist with working out what factors might be influencing the disease, and then control measures can be introduced that either address the areas where the frequency is highest, or in a way that the most important determinants can be be eliminated. 
+
 ### How does Epidemiology apply to Sickle Cell Disease? 
 
+The SPAN database in Nigeria has been instrumental in measuring the prevaence of Sickle Cell disease across the country, and could point to optimal ways to control comorbidities such as stoke or infection. Sickle Cell Disease Registries in other countries like Tanzania and Ghana record similar information and will reveal patterns in different parts of the continent. The haplotype background of the sickle mutation, as well as changes in enviroment and lifestyle, can influence quality of life, hence these registries will reveal different patterns that will in turn inform the best pubic health decisions locally. 
 
-
-### Background
-
-Humans and computers commonly interact in many different ways, such as through a keyboard and mouse, touch screen interfaces, or using speech recognition systems. The most widely used way to interact with personal computers is called a **graphical user interface** (GUI).
-With a GUI, we give instructions by clicking a mouse and using menu-driven interactions.
-
-While the visual aid of a GUI makes it intuitive to learn, this way of delivering instructions to a computer scales very poorly.
-Imagine the following task:
-for a literature search, you have to copy the third line of one thousand text files in one thousand different directories and paste it into a single file.
-Using a GUI, you would not only be clicking at your desk for several hours, but you could potentially also commit an error in the process of completing this repetitive task. This is where we take advantage of the Unix shell.
-The Unix shell is both a **command-line interface** (CLI) and a scripting language, allowing such repetitive tasks to be done automatically and fast.
-With the proper commands, the shell can repeat tasks with or without some modification as many times as we want.
-Using the shell, the task in the literature example can be accomplished in seconds.
-
-
-### The Shell
-
-
-The shell is a program where users can type commands.
-With the shell, it's possible to invoke complicated programs like climate modeling software or simple commands that create an empty directory with only one line of code.
-The most popular Unix shell is Bash (the Bourne Again SHell --- so-called because it's derived from a shell written by Stephen Bourne).
-Bash is the default shell on most modern implementations of Unix and in most packages that provide Unix-like tools for Windows.
-
-Using the shell will take some effort and some time to learn.
-While a GUI presents you with choices to select, CLI choices are not automatically presented to you, so you must learn a few commands like new vocabulary in a language you're studying.
-However, unlike a spoken language, a small number of "words" (i.e. commands) gets you a long way, and we'll cover those essential few today.
-
-The grammar of a shell allows you to combine existing tools into powerful
-pipelines and handle large volumes of data automatically. Sequences of
-commands can be written into a *script*, improving the reproducibility of
-workflows.
-
-In addition, the command line is often the easiest way to interact with remote machines and supercomputers.
-Familiarity with the shell is near essential to run a variety of specialized tools and resources
-including high-performance computing systems.
-As clusters and cloud computing systems become more popular for scientific data crunching,
-being able to interact with the shell is becoming a necessary skill.
-We can build on the command-line skills covered here
-to tackle a wide range of scientific questions and computational challenges.
-
-Let's get started.
-
-When the shell is first opened, you are presented with a **prompt**,
-indicating that the shell is waiting for input.
-
-~~~
-$
-~~~
-{: .language-bash}
-
-The shell typically uses `$ ` as the prompt, but may use a different symbol.
-In the examples for this lesson, we'll show the prompt as `$ `.
-Most importantly:
-when typing commands, either from these lessons or from other sources,
-*do not type the prompt*, only the commands that follow it.
-
-So let's try our first command, `ls` which is short for listing.
-This command will list the contents of the current directory:
-
-~~~
-$ ls
-~~~
-{: .language-bash}
-
-~~~
-Desktop     Downloads   Movies      Pictures
-Documents   Library     Music       Public
-~~~
-{: .output}
-
-> ## Command not found
-> If the shell can't find a program whose name is the command you typed, it
-> will print an error message such as:
->
-> ~~~
-> $ ks
-> ~~~
-> {: .language-bash}
-> ~~~
-> ks: command not found
-> ~~~
-> {: .output}
->
-> This might happen if the command was mis-typed or if the program corresponding to that command is not installed.
-{: .callout}
-
-
-## Nelle's Pipeline: A Typical Problem
-
-Nelle Nemo, a marine biologist,
-has just returned from a six-month survey of the
-[North Pacific Gyre](http://en.wikipedia.org/wiki/North_Pacific_Gyre),
-where she has been sampling gelatinous marine life in the
-[Great Pacific Garbage Patch](http://en.wikipedia.org/wiki/Great_Pacific_Garbage_Patch).
-She has 1520 samples that she's run through an assay machine to measure the relative abundance of 300 proteins.
-She needs to run these 1520 files through an imaginary program called `goostats` she inherited.
-On top of this huge task, she has to write up results by the end of the month so her paper can appear in a special issue of *Aquatic Goo Letters*.
-
-The bad news is that if she has to run `goostats` by hand using a GUI,
-she'll have to select and open a file 1520 times.
-If `goostats` takes 30 seconds to run each file, the whole process will take more than 12 hours of Nelle's attention.
-With the shell, Nelle can instead assign her computer this mundane task while she focuses her attention on writing her paper.
-
-The next few lessons will explore the ways Nelle can achieve this.
-More specifically,
-they explain how she can use a command shell to run the `goostats` program,
-using loops to automate the repetitive steps of entering file names,
-so that her computer can work while she writes her paper.
-
-As a bonus,
-once she has put a processing pipeline together,
-she will be able to use it again whenever she collects more data.
+Newborn sceening programs for sickle cell disease, such as the program in Ghana, is crucial for protecting HbSS newborns in the first months and years of life. Such programs have been informed by epidemiology studies, and will continue to be a source of information to future studies. Patient support groups and the dissemination efforts of important information about patient care are both comunity efforts informed by epidmiology studies. 
