@@ -1,5 +1,5 @@
 ---
-title: "Pipes and Filters"
+title: "Measures & Calculations"
 teaching: 25
 exercises: 10
 questions:

@@ -1,5 +1,5 @@
 ---
-title: "Working With Files and Directories"
+title: "Study Designs"
 teaching: 30
 exercises: 20
 questions:

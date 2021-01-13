@@ -1,5 +1,5 @@
 ---
-title: "Introducing the Shell"
+title: "Overview and key concepts"
 teaching: 5
 exercises: 0
 questions:

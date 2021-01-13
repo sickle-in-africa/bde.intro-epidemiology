@@ -1,5 +1,5 @@
 ---
-title: "Navigating Files and Directories"
+title: "Important Case Studies"
 teaching: 30
 exercises: 10
 questions:
