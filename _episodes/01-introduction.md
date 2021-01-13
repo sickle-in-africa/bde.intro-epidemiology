@@ -1,14 +1,15 @@
 ---
-title: "Overview and key concepts"
+title: "Basic concepts"
 teaching: 5
 exercises: 0
 questions:
-- "What is a command shell and why would I use one?"
+- "What is epidemiology and how does it contribute to global health?"
 objectives:
-- "Explain how the shell relates to the keyboard, the screen, the operating system, and users' programs."
-- "Explain when and why command-line interfaces should be used instead of graphical interfaces."
+- "Explain the main differences between epidemiology and public health"
+- "Define a population in epidemiological terms"
+- "Differentiate between the frequency, distrubution, determinants, and control of a disease"
+- "Discuss how epidemiology can be useful for Sickle Cell Disease"
 keypoints:
-- "Explain the steps in the shell's read-run-print cycle."
 - "Most commands take options (flags) which begin with a `-`."
 - "Identify the actual command, options, and filenames in a command-line call."
 - "Explain the steps in the shell's read-run-print cycle."
@@ -19,6 +20,17 @@ automating repetitive tasks, and its capacity to access networked machines."
 - "The shell's main disadvantages are its primarily textual nature and how
 cryptic its commands and operation can be."
 ---
+
+### What is Epidemiology?
+
+### Populations
+
+### What are the goals of Epidemiology?
+
+### How does Epidemiology apply to Sickle Cell Disease? 
+
+
+
 ### Background
 
 Humans and computers commonly interact in many different ways, such as through a keyboard and mouse, touch screen interfaces, or using speech recognition systems. The most widely used way to interact with personal computers is called a **graphical user interface** (GUI).
