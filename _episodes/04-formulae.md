@@ -1,728 +1,157 @@
 ---
-title: "Measures & Calculations"
+title: "Measures of disease frequency"
 teaching: 25
 exercises: 10
 questions:
-- "How can I combine existing commands to do new things?"
+- "How do epidemiologists measure and estimate disease frequency?"
 objectives:
-- "Redirect a command's output to a file."
-- "Process a file instead of keyboard input using redirection."
-- "Construct command pipelines with two or more stages."
-- "Explain what usually happens if a program or pipeline isn't given any input to process."
-- "Explain Unix's 'small pieces, loosely joined' philosophy."
+- "Describe how a disease occurance is determined."
+- "Calculate the cumulative incidence, incidence rate, or prevelance of a disease from a data set."
+- "Explain the difference between prevelence and incidence."
+- "List some examples of commonly used measures of disease frequency."
 keypoints:
-- "`cat` displays the contents of its inputs."
-- "`head` displays the first 10 lines of its input."
-- "`tail` displays the last 10 lines of its input."
-- "`sort` sorts its inputs."
-- "`wc` counts lines, words, and characters in its inputs."
-- "`command > file` redirects a command's output to a file (overwriting any existing content)."
-- "`command >> file` appends a command's output to a file."
-- "`first | second` is a pipeline: the output of the first command is used as the input to the second."
-- "The best way to use the shell is to use pipes to combine simple single-purpose programs (filters)."
+- "To estimate the frequency of a disease in a population, epidemiologists must: (1) develop a concrete definition of the disease, (2) count the number of people affected by the disease, (3) determine the size of the population from which the disease cases arose, (4) and account for the passage of time."
+- "Location of residence, such as a country, state, city, or neighborhood, is one of the most common ways to define a population."
+- "Incidence is defined as the occurrence of new cases of disease that develop in a candidate population over a specified time period."
+- "Cumulative incidence is defined as the proportion of a candidate population that becomes diseased over a specified period of time."
+- "Incidence rate is defined as the occurrence of new cases of disease that arise during person-time of observation."
+- "prevalence measures the frequency of existing disease."
+- "prevalence is defined either at a single point in time (point prevalence) or over a period of time (period prevalence)."
+- "Examples of common disease frequency measures are crude mortality (or death) rate, cause-specific mortality rate, morbidity rate, and survival rate."
 ---
 
-Now that we know a few basic commands,
-we can finally look at the shell's most powerful feature:
-the ease with which it lets us combine existing programs in new ways.
-We'll start with the directory called `data-shell/molecules`
-that contains six files describing some simple organic molecules.
-The `.pdb` extension indicates that these files are in Protein Data Bank format,
-a simple text format that specifies the type and position of each atom in the molecule.
+In episode 1 we defined the disease frequency of a population as some measure of how often a disease occurs in that population. There are many ways one can define this measure, which is a mathematical relation between a data set and a numerical value. In this section we will look at some of the ways in which such a measure could be defined, and how to calculate it from a data set. Estimating the disease frequency, using some chosen measure of this frequency, for a given population is one of the first steps in analysing the pattern of disease in the population, working out determinants, and in planning effective control strategies. 
 
-~~~
-$ ls molecules
-~~~
-{: .language-bash}
+To estimate the frequency of a disease in a population, epidemiologists must:
+1. develop a concrete definition of the disease,
+2. count the number of people affected by the disease,
+3. determine the size of the population from which the disease cases arose,
+4. and account for the passage of time. 
 
-~~~
-cubane.pdb    ethane.pdb    methane.pdb
-octane.pdb    pentane.pdb   propane.pdb
-~~~
-{: .output}
+We will now look at these steps together.
 
-Let's go into that directory with `cd` and run the command `wc cubane.pdb`:
+# How do we determine who has a disease?
+As the list of steps above suggests, we first need a definition of the disease in question, and of the population. These definitions need to be concrete enough that we can successfully count both the members of the population, and, those members whom are affected by the disease. 
 
-~~~
-$ cd molecules
-$ wc cubane.pdb 
-~~~
-{: .language-bash}
+Recall that, in episode 1, we defined a population as a group of people with one or more shared characteristics. By chosing a characteristic, for example age, we can define a specific population that we will then study. Note that we are taking about two definitions here, the definition of a *general* population which is a statement about what properties *any* population must have, and the definition of a *specific* population, which is gives concrete exmple of a general population, for example the set of all citizens of Kenya. 
 
-~~~
-20  156 1158 cubane.pdb
-~~~
-{: .output}
+Location of residence, such as a country, state, city, or neighborhood, is one of the most common ways to define a population. For example, the
+people who reside in: the Woodstock suburb of Cape Town, South Africa; the city of Kumasi, Ghana; the state of Lagos, Nigeria; and the country of Tanzania are members of distinct populations defined by geopolitical entities ranging in size from a neighborhood to an entire country. Residence near natural geographic features, such as rivers, mountains, lakes, or islands, can also be used to define a population. For example, people who live along the 2,574km length of the Zambezi River, around Kilimanjaro in Tanzania, and on the island of Madegascar are members of populations defined by geographic formations. 
 
-`wc` is the 'word count' command:
-it counts the number of lines, words, and characters in files (from left to right, in that order).
+Because epidemiology focuses on disease occurrence, populations are commonly defined in relation to a medical facility, such as a medical
+professional’s office, clinic, or hospital. The service population of a medical facility (also called catchment population) consists of the people who use the facility’s services. This population is often difficult to define because an individual’s decision to use a facility may depend on how far it is from home, the person’s particular medical condition, and so forth.
 
-If we run the command `wc *.pdb`, the `*` in `*.pdb` matches zero or more characters,
-so the shell turns `*.pdb` into a list of all `.pdb` files in the current directory:
+The population is the set of all people of interest *who could potentially contract the disease*. For example, in a study of cervical cancer it would not be sensible to include men in the study population because we already know precisely the factor that protects men from cervical cancer, namely they do not have a cervix. It is helpful to focus on what is *not known before the study begins*, in this case, why some women in a population may contract the disease and others do not. The defintion of the population in each case is therefore closely related to the initial scientific question: why do some women contract cervical cancer and others do not?. We may also restrict our attention to a specific population for means of study convienience. It may only be practical to consider the population of women living on the banks of the Zambezi river because the study was initiated in repsonse to a particular health crisis there. The study question would in this case be "why do some women living next to the Zambezi river contract cervical cancer and others do not?". 
 
-~~~
-$ wc *.pdb
-~~~
-{: .language-bash}
+The definition of a disease is usually based on a combination of physical and pathological examinations, diagnostic test results, and signs
+and symptoms. Which and how many criteria are used to define a “case” (a person who meets the disease definition) has important implications
+for accurately determining who has the disease. Consider the various criteria that can be used to define a heart attack case. One could use the symptoms of chest pain; the results of diagnostic tests, such as electrocardiograms; or blood enzyme tests for cardiac damage. What are the implications of using only chest pain to define heartattack  cases? Using only this nonspecific symptom will capture most but not all people who have heart attacks because it will miss people who have “silent” heart attacks, which occur without chest pain. In addition, it will erroneously include many people who have other conditions that produce chest pain, such as indigestion.
 
-~~~
-  20  156  1158  cubane.pdb
-  12  84   622   ethane.pdb
-   9  57   422   methane.pdb
-  30  246  1828  octane.pdb
-  21  165  1226  pentane.pdb
-  15  111  825   propane.pdb
- 107  819  6081  total
-~~~
-{: .output}
+A definition that includes more specific criteria, such as the results of diagnostic tests, will be more accurate. For example, if positive blood enzyme tests are included, silent heart attacks are likely to be picked up and the other conditions that cause chest pain omitted. In practice, epidemiologists use all available information from physical and pathological examinations and laboratory and other tests to define a case of a disease as accurately as possible.
 
-Note that `wc *.pdb` also shows the total number of all lines in the last line of the output.
+> ## Callenge
+> Why is it good practice to include the definition of the disease in the study report?
+> > ## Solution
+> > publically accepted definitions of diseases are likely to change over time, as new information is found or public perceptions change. It is important that investigators are clear on the precise definition used in the study, so that readers of the report in the future may understand exactly what was shown.
+> {: .solution}
+{: .challenge}
 
-If we run `wc -l` instead of just `wc`,
-the output shows only the number of lines per file:
+# Incidence
+**Incidence** is defined as the occurrence of new cases of disease that develop in a candidate population over a specified time period. There are two important measures of incidence: cumulative incidence and indicence rate. Both measures are closely related but in a given context one can be more useful than the other. 
 
-~~~
-$ wc -l *.pdb
-~~~
-{: .language-bash}
-
-~~~
-  20  cubane.pdb
-  12  ethane.pdb
-   9  methane.pdb
-  30  octane.pdb
-  21  pentane.pdb
-  15  propane.pdb
- 107  total
-~~~
-{: .output}
-
-The `-m` and `-w` options can also be used with the `wc` command, to show 
-only the number of characters or the number of words in the files.
-
-> ## Why Isn't It Doing Anything?
+**Cumulative incidence** is defined as the proportion of a candidate population that becomes diseased over a specified period of time. Mathematically, it is expressed as follows.
+> ## Cumulative incidence
+>Let $$P$$ be a population with $$n$$ members. Consider a fixed time period, $$t$$ and let $$m$$ be the number of new cases (members of $$P$$ who contract the disease) over the time period $$t$$. The **cumulative incidence** of the diease for the population $$P$$ over the time period $$t$$ is:
 >
-> What happens if a command is supposed to process a file, but we
-> don't give it a filename? For example, what if we type:
->
-> ~~~
-> $ wc -l
-> ~~~
-> {: .language-bash}
->
-> but don't type `*.pdb` (or anything else) after the command?
-> Since it doesn't have any filenames, `wc` assumes it is supposed to
-> process input given at the command prompt, so it just sits there and waits for us to give
-> it some data interactively. From the outside, though, all we see is it
-> sitting there: the command doesn't appear to do anything.
->
-> If you make this kind of mistake, you can escape out of this state by holding down
-> the control key (<kbd>Ctrl</kbd>) and typing the letter <kbd>C</kbd> once and letting go of the <kbd>Ctrl</kbd> key.
-> <kbd>Ctrl</kbd>+<kbd>C</kbd>
+>$$c := \frac{m}{n}$${: font-size: 120%; text-align: center;"}
 {: .callout}
 
-Which of these files contains the fewest lines?
-It's an easy question to answer when there are only six files,
-but what if there were 6000?
-Our first step toward a solution is to run the command:
+By convention, if a member of $$P$$ contracts the disease more than once over the specified time period, then only the first case is counted, and therefore $$c$$ may only take values between 0 and 1. for this reason it is often quoted as a percentage, namely taking values between 0% and 1%. It is clear from the definition that $$c$$ is always a dimensionless vlaue. 
 
-~~~
-$ wc -l *.pdb > lengths.txt
-~~~
-{: .language-bash}
+As an example, consider the population of a small imaginary town with 10,000 residents. Imagine that a study follows this town for a year, from June 1st 2021 till June 1st 2022. Over this time period, say that a flu outbreak occurs just after June 1st 2021, and continues to spread. Let us say that, by June 1st, 2,123 residents of the town have contracted the flu once, and no resident was affected twice in the time period. Then, using the above definition, we may deduce for our example that $$P$$ is the set of residents of the town and so $$n=10,000$$, $$t$$ is June 1st 2021 till June 1st 2022, and the number of cases $$m=2,123$$. Therefore the cumulative incidence $$C$$ for our example is: $$c = 2,123 / 10,000 = 0.2123$$.
 
-The greater than symbol, `>`, tells the shell to **redirect** the command's output
-to a file instead of printing it to the screen. (This is why there is no screen output:
-everything that `wc` would have printed has gone into the
-file `lengths.txt` instead.)  The shell will create
-the file if it doesn't exist. If the file exists, it will be
-silently overwritten, which may lead to data loss and thus requires
-some caution.
-`ls lengths.txt` confirms that the file exists:
+Note that this definition of $$c$$ depends on the time period as well as the population and the disease definition used. For example, we may define a case as a person showing flu-like symptoms, or we may be more accurate and test each person for the presence of a specific antibody. Changes in any of these factors will result in changes to the final value of $$c$$.
 
-~~~
-$ ls lengths.txt
-~~~
-{: .language-bash}
-
-~~~
-lengths.txt
-~~~
-{: .output}
-
-We can now send the content of `lengths.txt` to the screen using `cat lengths.txt`.
-The `cat` command gets its name from 'concatenate' i.e. join together,
-and it prints the contents of files one after another.
-There's only one file in this case,
-so `cat` just shows us what it contains:
-
-~~~
-$ cat lengths.txt
-~~~
-{: .language-bash}
-
-~~~
-  20  cubane.pdb
-  12  ethane.pdb
-   9  methane.pdb
-  30  octane.pdb
-  21  pentane.pdb
-  15  propane.pdb
- 107  total
-~~~
-{: .output}
-
-> ## Output Page by Page
+**Incidence rate** is defined as the occurrence of new cases of disease that arise during person-time of observation. Before we can define the incidence rate mathematically, we need to clarify what we mean by person time, which can be a confusing concept. 
+> ## Person time
+>Let $$P$$ be a population, with $$x$$ any member of $$P$$. Consider a study whereby person $$x$$ is followed for a fixed time period $$t$$ that has a duration $$|t|$$. Then, the **person-time** that has been accrued in this study by following $$x$$ over the time period $$t$$ is:
 >
-> We'll continue to use `cat` in this lesson, for convenience and consistency,
-> but it has the disadvantage that it always dumps the whole file onto your screen.
-> More useful in practice is the command `less`,
-> which you use with `less lengths.txt`.
-> This displays a screenful of the file, and then stops.
-> You can go forward one screenful by pressing the spacebar,
-> or back one by pressing `b`.  Press `q` to quit.
+>$$p := |t|$${: font-size: 120%; text-align: center;"}
 {: .callout}
 
-Now let's use the `sort` command to sort its contents.
+Person-time is *additive*, in the sense that the person-time of two individuals in a study is the sum of the two individual person-times. In addition, we may stop following an individual in a study for one of three reasons:
+1. the person contracts the diseaes (becomes a case),
+2. the person dies,
+3. or the person is lost to follow-up.
 
-> ## What Does `sort -n` Do?
->
-> If we run `sort` on a file containing the following lines:
->
-> ~~~
-> 10
-> 2
-> 19
-> 22
-> 6
-> ~~~
-> {: .source}
->
-> the output is:
->
-> ~~~
-> 10
-> 19
-> 2
-> 22
-> 6
-> ~~~
-> {: .output}
->
-> If we run `sort -n` on the same input, we get this instead:
->
-> ~~~
-> 2
-> 6
-> 10
-> 19
-> 22
-> ~~~
-> {: .output}
->
-> Explain why `-n` has this effect.
->
-> > ## Solution
-> > The `-n` option specifies a numerical rather than an alphanumerical sort.
-> {: .solution}
-{: .challenge}
+In either of these cases, the time period $$t$$ ends and the person time is computed as the duration between the begining of the study and tis endpoint. 
 
-We will also use the `-n` option to specify that the sort is
-numerical instead of alphanumerical.
-This does *not* change the file;
-instead, it sends the sorted result to the screen:
+Consider this example. A small study follows a group of 4 people, A, B, C and D, for a period of 5 years. The disease under investigation is Malaria. The study begins on 3rd December 2020 and ends 3rd December 2025. During this time, person A contracts malaria on the 2nd January 2022; person B survives the time period without contracting malaria; person C dies on 24th March 2024 and person D moves away from the study catchement area, and is no longer contactable, on 14th of February 2023. The person-time of A, $$p_A$$, is $$395 days$$; the person-time of B, $$p_B$$, is $$1826 days$$; the person-time of C, $$p_C$$, is $$1207 days$$; and the person time of D, $$p_D$$, is $$803 days$$. Since person-time is additive, the total person-time of the study is $$p_A + p_B + p_C + p_D = (395 + 1826 + 1207 + 803) days = 4231 days$$.
 
-~~~
-$ sort -n lengths.txt
-~~~
-{: .language-bash}
+Note that the units of person-time is time. In the above example we chose days but this could be weeks, months, years e.t.c.
 
-~~~
-  9  methane.pdb
- 12  ethane.pdb
- 15  propane.pdb
- 20  cubane.pdb
- 21  pentane.pdb
- 30  octane.pdb
-107  total
-~~~
-{: .output}
+This idea of person-time is illustrated below for a related (but different!) example.
+![person-time example](../fig/person-time.png)
 
-We can put the sorted list of lines in another temporary file called `sorted-lengths.txt`
-by putting `> sorted-lengths.txt` after the command,
-just as we used `> lengths.txt` to put the output of `wc` into `lengths.txt`.
-Once we've done that,
-we can run another command called `head` to get the first few lines in `sorted-lengths.txt`:
-
-~~~
-$ sort -n lengths.txt > sorted-lengths.txt
-$ head -n 1 sorted-lengths.txt
-~~~
-{: .language-bash}
-
-~~~
-  9  methane.pdb
-~~~
-{: .output}
-
-Using `-n 1` with `head` tells it that
-we only want the first line of the file;
-`-n 20` would get the first 20,
-and so on.
-Since `sorted-lengths.txt` contains the lengths of our files ordered from least to greatest,
-the output of `head` must be the file with the fewest lines.
-
-> ## Redirecting to the same file
+We may now define the incidence rate. Mathematically, the incidence rate is expressed as follows.
+> ## Incidence rate
+> Let $$P$$ be a study population. Let $$p$$ be the person-time of the study, and let $$m$$ be the number of new cases of the disease recorded in the population (repeated cases are not counted). Then the incidence rate of the study is:
 >
-> It's a very bad idea to try redirecting
-> the output of a command that operates on a file
-> to the same file. For example:
->
-> ~~~
-> $ sort -n lengths.txt > lengths.txt
-> ~~~
-> {: .language-bash}
->
-> Doing something like this may give you
-> incorrect results and/or delete
-> the contents of `lengths.txt`.
+>$$i := \frac{m}{p}$${: font-size: 120%; text-align: center;"}
 {: .callout}
 
-> ## What Does `>>` Mean?
->
-> We have seen the use of `>`, but there is a similar operator `>>` which works slightly differently.
-> We'll learn about the differences between these two operators by printing some strings.
-> We can use the `echo` command to print strings e.g.
->
-> ~~~
-> $ echo The echo command prints text
-> ~~~
-> {: .language-bash}
-> ~~~
-> The echo command prints text
-> ~~~
-> {: .output}
->
-> Now test the commands below to reveal the difference between the two operators:
->
-> ~~~
-> $ echo hello > testfile01.txt
-> ~~~
-> {: .language-bash}
->
-> and:
->
-> ~~~
-> $ echo hello >> testfile02.txt
-> ~~~
-> {: .language-bash}
->
-> Hint: Try executing each command twice in a row and then examining the output files.
->
+To continue the above malaria example, we see that only person A actually contracted malaria. Therefore, we have that $$m=1$$ and as we previously calculated, $$p = p_A + p_B + p_C + p_D = 4231 days$$, which means the incidence rate $$i$$ is $$\frac{1}{4231 days}$$.
+
+From this example we see that the units of incidence rate is 1/time. 
+
+> ## Challenge
+> What assumption is being made by the cumulative frequency measure about the study population that is not made by the incidence rate measure?
 > > ## Solution
-> > In the first example with `>`, the string 'hello' is written to `testfile01.txt`,
-> > but the file gets overwritten each time we run the command.
-> >
-> > We see from the second example that the `>>` operator also writes 'hello' to a file
-> > (in this case`testfile02.txt`),
-> > but appends the string to the file if it already exists (i.e. when we run it for the second time).
+> > The incidence rate is clearly a more accurate measure of the disease frequency than the cumulative incidence, since the cumulative incidence is based on the assumption that *all study participants are followed for the entire study duration*, which is usually not the case in practice.
 > {: .solution}
 {: .challenge}
 
-> ## Appending Data
+# Prevalence
+Whereas incidence measures the frequency with which new disease develops, **prevalence** measures the frequency of existing disease. It is simply defined as the proportion of the total population that is diseased. There are two types of prevalence measures—point prevalence and period prevalence—that relate prevalence to different amounts of time. **Point prevalence** refers to the proportion of the population that is diseased at a single point in time and can be thought of as a single snapshot of the population. The point can be either a particular calendar date such as July 1, 2017, or a point in someone’s life, such as college graduation. **Period prevalence** refers to the proportion of the population that is diseased during a specified duration of time, such as during the year 2017. The period prevalence includes the number of cases that were present at any time over the course of the year.
+
+Mathematically, these two measures of prevalence are defined as follows.
+> ## point prevalence
+> Let $$P$$ be a population, with number of members $$n$$. Let $$t$$ be a single point in time, and let the total number of disease cases in $$P$$ at $$t$$ be $$m$$. Then, the point prevalence of the disease in the population $$P$$ at the time $$t$$ is given by:
 >
-> We have already met the `head` command, which prints lines from the start of a file.
-> `tail` is similar, but prints lines from the end of a file instead.
+> $$\frac{m}{n}$${: font-size: 120%; text-align: center;"}
+{: .callout}
+
+> ## point prevalence
+> Let $$P$$ be a population, with number of members $$n$$. Let $$t$$ be a period of time, and let the total number of disease cases in $$P$$ during $$t$$ be $$m$$. Then, the point prevalence of the disease in the population $$P$$ at the time $$t$$ is given by:
 >
-> Consider the file `data-shell/data/animals.txt`.
-> After these commands, select the answer that
-> corresponds to the file `animals-subset.txt`:
->
-> ~~~
-> $ head -n 3 animals.txt > animals-subset.txt
-> $ tail -n 2 animals.txt >> animals-subset.txt
-> ~~~
-> {: .language-bash}
->
-> 1. The first three lines of `animals.txt`
-> 2. The last two lines of `animals.txt`
-> 3. The first three lines and the last two lines of `animals.txt`
-> 4. The second and third lines of `animals.txt`
->
-> > ## Solution
-> > Option 3 is correct.
-> > For option 1 to be correct we would only run the `head` command.
-> > For option 2 to be correct we would only run the `tail` command.
-> > For option 4 to be correct we would have to pipe the output of `head` into `tail -n 2` by doing `head -n 3 animals.txt | tail -n 2 > animals-subset.txt`
-> {: .solution}
-{: .challenge}
+> $$\frac{m}{n}$${: font-size: 120%; text-align: center;"}
+{: .callout}
 
-If you think this is confusing,
-you're in good company:
-even once you understand what `wc`, `sort`, and `head` do,
-all those intermediate files make it hard to follow what's going on.
-We can make it easier to understand by running `sort` and `head` together:
+Let’s use these formulas to calculate the point and period prevalence of pneumonia in a nursing home population. The point and period of interest are July 1, 2017, and January 1 through December 31, 2017, respectively. On July 1, 2017, there were $$m=5$$ cases of pneumonia among the $$n=500$$ nursing home residents. Thus, the point prevalence of pneumonia was 5/500, or 1%, on that date. During the period January 1 through December 31, 2017, there were 45 cases of pneumonia among the 500 nursing home residents; therefore, the period prevalence was 45/500, or 9%, during the year. Note that, in this example, the size of the nursing home population remained stable over the year, but if it had gained or lost members, the average size of the nursing home population during 2017 would have been the appropriate denominator for the period prevalence measure.
 
-~~~
-$ sort -n lengths.txt | head -n 1
-~~~
-{: .language-bash}
+Epidemiologists and other public health professionals use each measure of disease frequency for specific purposes (see Table 2-5). Incidence is
+most useful for evaluating the effectiveness of programs that try to prevent disease from occurring in the first place. In addition, researchers
+who study the causes of disease prefer to study new cases (incidence) over existing ones (prevalence) because they are usually interested in exposures that lead to developing the disease. Prevalence obscures causal relationships because it combines incidence and survival. In addition,
+many researchers prefer to use incidence because the timing of exposures in relation to disease occurrence can be determined more accurately.
 
-~~~
-  9  methane.pdb
-~~~
-{: .output}
+On the other hand, prevalence is useful for estimating the needs of medical facilities and allocating resources for treating people who already have a disease. In addition, researchers who study diseases such as birth defects (wherein it is difficult to gather information on defects present in miscarried and aborted fetuses) and chronic conditions such as arthritis (whose beginnings are difficult to pinpoint) have no choice but to use prevalence. Unfortunately, results of such studies are difficult to interpret because it is unclear how much the association is influenced by using a group of survivors.
 
-The vertical bar, `|`, between the two commands is called a **pipe**.
-It tells the shell that we want to use
-the output of the command on the left
-as the input to the command on the right.
+# Common measures of disease frequency
+There are many measures of disease frequency that are commonly used in the public health disciplines. Some are incidence measures, some are prevalence measures, some are ratios. Descriptions and examples of the major measures follow. Note that the word rate is often used incorrectly
+to describe a proportion or ratio. 
 
-Nothing prevents us from chaining pipes consecutively.
-That is, we can for example send the output of `wc` directly to `sort`,
-and then the resulting output to `head`.
-Thus we first use a pipe to send the output of `wc` to `sort`:
-
-~~~
-$ wc -l *.pdb | sort -n
-~~~
-{: .language-bash}
-
-~~~
-   9 methane.pdb
-  12 ethane.pdb
-  15 propane.pdb
-  20 cubane.pdb
-  21 pentane.pdb
-  30 octane.pdb
- 107 total
-~~~
-{: .output}
-
-And now we send the output of this pipe, through another pipe, to `head`, so that the full pipeline becomes:
-
-~~~
-$ wc -l *.pdb | sort -n | head -n 1
-~~~
-{: .language-bash}
-
-~~~
-   9  methane.pdb
-~~~
-{: .output}
-
-This is exactly like a mathematician nesting functions like *log(3x)*
-and saying 'the log of three times *x*'.
-In our case,
-the calculation is 'head of sort of line count of `*.pdb`'.
-
-
-The redirection and pipes used in the last few commands are illustrated below:
-
-![Redirects and Pipes](../fig/redirects-and-pipes.svg)
-
-> ## Piping Commands Together
->
-> In our current directory, we want to find the 3 files which have the least number of
-> lines. Which command listed below would work?
->
-> 1. `wc -l * > sort -n > head -n 3`
-> 2. `wc -l * | sort -n | head -n 1-3`
-> 3. `wc -l * | head -n 3 | sort -n`
-> 4. `wc -l * | sort -n | head -n 3`
->
-> > ## Solution
-> > Option 4 is the solution.
-> > The pipe character `|` is used to connect the output from one command to
-> > the input of another.
-> > `>` is used to redirect standard output to a file.
-> > Try it in the `data-shell/molecules` directory!
-> {: .solution}
-{: .challenge}
-
-
-This idea of linking programs together is why Unix has been so successful.
-Instead of creating enormous programs that try to do many different things,
-Unix programmers focus on creating lots of simple tools that each do one job well,
-and that work well with each other.
-This programming model is called 'pipes and filters'.
-We've already seen pipes;
-a **filter** is a program like `wc` or `sort`
-that transforms a stream of input into a stream of output.
-Almost all of the standard Unix tools can work this way:
-unless told to do otherwise,
-they read from standard input,
-do something with what they've read,
-and write to standard output.
-
-The key is that any program that reads lines of text from standard input
-and writes lines of text to standard output
-can be combined with every other program that behaves this way as well.
-You can *and should* write your programs this way
-so that you and other people can put those programs into pipes to multiply their power.
-
-
-> ## Pipe Reading Comprehension
->
-> A file called `animals.txt` (in the `data-shell/data` folder) contains the following data:
->
-> ~~~
-> 2012-11-05,deer
-> 2012-11-05,rabbit
-> 2012-11-05,raccoon
-> 2012-11-06,rabbit
-> 2012-11-06,deer
-> 2012-11-06,fox
-> 2012-11-07,rabbit
-> 2012-11-07,bear
-> ~~~
-> {: .source}
->
-> What text passes through each of the pipes and the final redirect in the pipeline below?
->
-> ~~~
-> $ cat animals.txt | head -n 5 | tail -n 3 | sort -r > final.txt
-> ~~~
-> {: .language-bash}
-> Hint: build the pipeline up one command at a time to test your understanding
-> > ## Solution
-> > The `head` command extracts the first 5 lines from `animals.txt`.
-> > Then, the last 3 lines are extracted from the previous 5 by using the `tail` command.
-> > With the `sort -r` command those 3 lines are sorted in reverse order and finally,
-> > the output is redirected to a file `final.txt`.
-> > The content of this file can be checked by executing `cat final.txt`.
-> > The file should contain the following lines:
-> > ```
-> > 2012-11-06,rabbit
-> > 2012-11-06,deer
-> > 2012-11-05,raccoon
-> > ```
-> > {: .source}
-> {: .solution}
-{: .challenge}
-
-> ## Pipe Construction
->
-> For the file `animals.txt` from the previous exercise, consider the following command:
->
-> ~~~
-> $ cut -d , -f 2 animals.txt
-> ~~~
-> {: .language-bash}
->
-> The `cut` command is used to remove or 'cut out' certain sections of each line in the file,
-> and `cut` expects the lines to be separated into columns by a <kbd>Tab</kbd> character.
-> A character used in this way is a called a **delimiter**.
-> In the example above we use the `-d` option to specify the comma as our delimiter character.
-> We have also used the `-f` option to specify that we want to extract the second field (column).
-> This gives the following output:
->
-> ~~~
-> deer
-> rabbit
-> raccoon
-> rabbit
-> deer
-> fox
-> rabbit
-> bear
-> ~~~
-> {: .output}
->
-> The `uniq` command filters out adjacent matching lines in a file.
-> How could you extend this pipeline (using `uniq` and another command) to find
-> out what animals the file contains (without any duplicates in their
-> names)?
->
-> > ## Solution
-> > ```
-> > $ cut -d , -f 2 animals.txt | sort | uniq
-> > ```
-> > {: .language-bash}
-> {: .solution}
-{: .challenge}
-
-> ## Which Pipe?
->
-> The file `animals.txt` contains 8 lines of data formatted as follows:
->
-> ~~~
-> 2012-11-05,deer
-> 2012-11-05,rabbit
-> 2012-11-05,raccoon
-> 2012-11-06,rabbit
-> ...
-> ~~~
-> {: .output}
->
-> The `uniq` command has a `-c` option which gives a count of the
-> number of times a line occurs in its input.  Assuming your current
-> directory is `data-shell/data/`, what command would you use to produce
-> a table that shows the total count of each type of animal in the file?
->
-> 1.  `sort animals.txt | uniq -c`
-> 2.  `sort -t, -k2,2 animals.txt | uniq -c`
-> 3.  `cut -d, -f 2 animals.txt | uniq -c`
-> 4.  `cut -d, -f 2 animals.txt | sort | uniq -c`
-> 5.  `cut -d, -f 2 animals.txt | sort | uniq -c | wc -l`
->
-> > ## Solution
-> > Option 4. is the correct answer.
-> > If you have difficulty understanding why, try running the commands, or sub-sections of
-> > the pipelines (make sure you are in the `data-shell/data` directory).
-> {: .solution}
-{: .challenge}
-
-## Nelle's Pipeline: Checking Files
-
-Nelle has run her samples through the assay machines
-and created 17 files in the `north-pacific-gyre/2012-07-03` directory described earlier.
-As a quick check, starting from her home directory, Nelle types:
-
-~~~
-$ cd north-pacific-gyre/2012-07-03
-$ wc -l *.txt
-~~~
-{: .language-bash}
-
-The output is 18 lines that look like this:
-
-~~~
-300 NENE01729A.txt
-300 NENE01729B.txt
-300 NENE01736A.txt
-300 NENE01751A.txt
-300 NENE01751B.txt
-300 NENE01812A.txt
-... ...
-~~~
-{: .output}
-
-Now she types this:
-
-~~~
-$ wc -l *.txt | sort -n | head -n 5
-~~~
-{: .language-bash}
-
-~~~
- 240 NENE02018B.txt
- 300 NENE01729A.txt
- 300 NENE01729B.txt
- 300 NENE01736A.txt
- 300 NENE01751A.txt
-~~~
-{: .output}
-
-Whoops: one of the files is 60 lines shorter than the others.
-When she goes back and checks it,
-she sees that she did that assay at 8:00 on a Monday morning --- someone
-was probably in using the machine on the weekend,
-and she forgot to reset it.
-Before re-running that sample,
-she checks to see if any files have too much data:
-
-~~~
-$ wc -l *.txt | sort -n | tail -n 5
-~~~
-{: .language-bash}
-
-~~~
- 300 NENE02040B.txt
- 300 NENE02040Z.txt
- 300 NENE02043A.txt
- 300 NENE02043B.txt
-5040 total
-~~~
-{: .output}
-
-Those numbers look good --- but what's that 'Z' doing there in the third-to-last line?
-All of her samples should be marked 'A' or 'B';
-by convention,
-her lab uses 'Z' to indicate samples with missing information.
-To find others like it, she does this:
-
-~~~
-$ ls *Z.txt
-~~~
-{: .language-bash}
-
-~~~
-NENE01971Z.txt    NENE02040Z.txt
-~~~
-{: .output}
-
-Sure enough,
-when she checks the log on her laptop,
-there's no depth recorded for either of those samples.
-Since it's too late to get the information any other way,
-she must exclude those two files from her analysis.
-She could delete them using `rm`,
-but there are actually some analyses she might do later where depth doesn't matter,
-so instead, she'll have to be careful later on to select files using the wildcard expression `*[AB].txt`.
-As always,
-the `*` matches any number of characters;
-the expression `[AB]` matches either an 'A' or a 'B',
-so this matches all the valid data files she has.
-
-> ## Wildcard Expressions
->
-> Wildcard expressions can be very complex, but you can sometimes write
-> them in ways that only use simple syntax, at the expense of being a bit
-> more verbose.
-> Consider the directory `data-shell/north-pacific-gyre/2012-07-03` :
-> the wildcard expression `*[AB].txt`
-> matches all files ending in `A.txt` or `B.txt`. Imagine you forgot about
-> this.
->
-> 1.  Can you match the same set of files with basic wildcard expressions
->     that do not use the `[]` syntax? *Hint*: You may need more than one
->     command, or two arguments to the `ls` command.
->
-> 2.  If you used two commands, the files in your output will match the
->     same set of files in this example. What is the small difference between the
->     outputs?
->
-> 3.  If you used two commands, under what circumstances would your new
->     expression produce an error message where the original one would not?
->
-> > ## Solution
-> > 1. A solution using two wildcard commands:
-> >     ~~~
-> >     $ ls *A.txt
-> >     $ ls *B.txt
-> >     ~~~
-> >     A solution using one command but with two arguments:
-> >     ~~~
-> >     $ ls *A.txt *B.txt
-> >     ~~~
-> >     {: .language-bash}
-> > 2. The output from the two new commands is separated because there are two commands.
-> > 3. When there are no files ending in `A.txt`, or there are no files ending in
-> > `B.txt`, then one of the two commands will fail.
-> {: .solution}
-{: .challenge}
-
-> ## Removing Unneeded Files
->
-> Suppose you want to delete your processed data files, and only keep
-> your raw files and processing script to save storage.
-> The raw files end in `.dat` and the processed files end in `.txt`.
-> Which of the following would remove all the processed data files,
-> and *only* the processed data files?
->
-> 1. `rm ?.txt`
-> 2. `rm *.txt`
-> 3. `rm * .txt`
-> 4. `rm *.*`
->
-> > ## Solution
-> > 1. This would remove `.txt` files with one-character names
-> > 2. This is correct answer
-> > 3. The shell would expand `*` to match everything in the current directory,
-> > so the command would try to remove all matched files and an additional
-> > file called `.txt`
-> > 4. The shell would expand `*.*` to match all files with any extension,
-> > so this command would delete all files
-> {: .solution}
-{: .challenge}
+- **Crude mortality (or death) rate**: Total number of deaths from all causes per 100,000 population per year. The term crude means that the
+rate is based on raw data. In 2015 the crude mortality rate in the United States was 844.0/100,000 population/year.
+- **Cause-specific mortality rate**: Number of deaths from a specific cause per 100,000 population per year. In 2015, the cause-specific mortality rate from heart disease in the United States was 197.2/100,000/year.
+- **Age-specific mortality rate**: Total number of deaths from all causes among individuals in a specific age category per 100,000 population
+per year in the age category. In 2015, the age-specific death rate was 589.6/100,000/year among U.S. children under the age of 1 year.
+- **Years of potential life lost**: The number of years that an individual was expected to live beyond his or her death. In 2015, a total of 957 years were lost from heart disease, 1,283 years were lost from cancer, and 1,172 were lost from unintentional injuries before age 75 per 100,000 population younger than 75 years of age in the United States. 18 The number of years of potential life lost reflects both the number of individuals who died of a particular cause and the age at which the death occurred. For example, a cause of death that is more common among children and young adults (such as unintentional injuries) will result in more years of life lost per individual than a cause of death that is common among the elderly (such as heart disease).
+- **Livebirth rate**: Total number of livebirths per 1,000 population per year. A livebirth is a pregnancy that results in a child who, after separation, breathes or shows any other evidence of life. Sometimes, the denominator includes only women of childbearing age. In 2015, the crude livebirth rate among women who were residents of the United States was 12.4/1,000/year.
+- **Infant mortality rate**: Number of deaths of infants less than 1 year of age per 1,000 livebirths per year. This statistic is often divided into neonatal deaths (those occurring during the first 27 days following birth) and postneonatal deaths (those occurring from 28 days through 12 months). In 2014, the infant mortality rate in the United States was 5.8/1,000 livebirths/year, the neonatal mortality rate was 3.9/1,000 livebirths/year, and the postneonatal death rate was 1.9/1,000 livebirths/year.
+- **Birth defect rate (also called congenital anomaly or malformation rate)**: Number of children born with defects, usually per 10,000 births. The numerator and denominator often include both livebirths and stillbirths. In 2016–2017, the prevalence of brain malformations, including microcephaly, was 5% among women with evidence of recent possible Zika virus infection.
+- **Morbidity rate**: Number of existing or new cases of a particular disease or condition per 100 population. The time period that is covered
+and the population size in the denominator vary. Morbidity is a general word that can apply to a disease, condition, or event. For example, from
+2011 to 2014, the prevalence of physician-diagnosed diabetes among U.S. adults aged 65 years and over was 20.6%.
+- **Attack rate**: Number of new cases of disease that develop (usually during a defined and short time period) per the number in a healthy population at risk at the start of the period. This cumulative incidence measure is usually reserved for infectious disease outbreaks. For example, the 24-hour attack rate for food poisoning was 50% among people who ate chicken salad at the banquet.
+- **Case fatality rate**: Number of deaths per number of cases of disease. Note that this measure is a type of cumulative incidence and therefore it is necessary to specify the length of time to which it applies. For example, in 2014 in the Democratic Republic of Congo, the 5-month case fatality rate among individuals with Ebola virus disease was 74.2%. 
+- **Survival rate**: Number of living cases per number of cases of disease. This rate is the complement of the case fatality rate and is also a cumulative incidence measure. Five-year relative survival rates for cancer compare people with a particular cancer to similar people in the general population. For example, from 2007 to 2013, 5-year relative survival rates for prostate cancer were 100% among men diagnosed while the tumor was still confined to the prostate or had spread only to the regional lymph nodes and 29.8% among men whose tumor had metastasized to distant sites.

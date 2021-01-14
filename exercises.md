@@ -4,25 +4,24 @@ root: .
 title: Exercises
 ---
 
-The Unix shell has been around longer than most of its users have been alive.
-It has survived so long because it's a power tool
-that allows people to do complex things with just a few keystrokes.
-More importantly,
-it helps them combine existing programs in new ways
-and automate repetitive tasks
-so they aren't typing the same things over and over again.
-Use of the shell is fundamental to using a wide range of other powerful tools
-and computing resources (including "high-performance computing" supercomputers).
-These lessons will start you on a path towards using these resources effectively.
+This is the questions sheet for the in-class exercises. In your groups please answer the following questions. Discussion between your class group members and the instructor(s) is strongly encouraged.
 
-> ## Prerequisites
->
-> This lesson guides you through the basics of file systems and the
-> shell.  If you have stored files on a computer at all and recognize
-> the word "file" and either "directory" or "folder" (two common words
-> for the same thing), you're ready for this lesson.
->
-> If you're already comfortable manipulating files and directories,
-> searching for files with `grep` and `find`, and writing simple loops
-> and scripts, you probably want to explore the next lesson: [shell-extras](https://carpentries-incubator.github.io/shell-extras/).
-{: .prereq}
+***
+
+Q1. The malaria hypothesis states that the sickle mutation, when carried in the heterozygous state, affords protetion to the carrier against malaria and it is for this reason that the sickle mutation was not removed from the African pangenome over time due to selection. Your group has decided to design a study that tests this hypothesis. Your grant for this project lasts for two years and has a budget of 200,000 US dollars. 
+1. What population would be ideal for your study? Think carefully about the inclusion criteria members should satisfy: will your population be able to confirm the hypothesis if it is true? Will it be feasible to sample your population suitably, given your budget?
+2. How will you define a malaria case for your study? Consider how your definition of the disease will depend on the location of your chosen population, and how your budget will accomodate your decisions.
+3. Using a disease frequency measure we have discussed, describe a data analysis plan for how you as a group intend to test the malaria hypothesis, given the data you will collect. Which measure might be best suited for this study?
+
+***
+  
+Q2. A national sickle cell disease registry is to be compiled in Uganda. The registry will recruit sickle cell disease patients (HbSS only) through clinics around the country, along with age, gender, and several hematological indices. Specifically, the government has decided that better management of the disease nationwide is needed, but is unsure on the best standards to follow. Your group has been tasked with assessing what the government of Uganda can implement to improve quality of life for sickle cell patients living in the country. 
+1. What data elements could the registry include to determine most at-risk sickle cell populations in Uganda?
+2. Which measure, cumulative incidence, incidence rate, or prevalence (point or period), would be most suitable to estimate the frequency of stroke due to sickle complications using this registry?
+
+***
+  
+Q3. Recall our previous example: a small study follows a group of 4 people, A, B, C and D, for a period of 5 years. The disease under investigation is Malaria. The study begins on 3rd December 2020 and ends 3rd December 2025. During this time, person A contracts malaria on the 2nd January 2022; person B survives the time period without contracting malaria; person C dies on 24th March 2024 and person D moves away from the study catchement area, and is no longer contactable, on 14th of February 2023.
+1. compute the *cumulative incidence* of the study across the whole study period.
+2. compute the *point prevelance* of the disease at the study endpoint
+3. compute the *period prevelance* for the first half of the study duration. 
