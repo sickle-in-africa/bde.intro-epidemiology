@@ -7,8 +7,7 @@ questions:
 - "What is a difference between experimental and observational studies?"
 objectives: 
 - "Distinguish between experimental and observational studies."
-- "Describe the key characteristics of experimental, cohort, case–control, cross-sectional, and ecological studies regarding subject selection, data collection, and analysis."
-footnotes:
+- "Describe the key characteristics of experimental, cohort, case–control, cross-sectional, and ecological studies."
 keypoints:
 - "In experimental studies, an ***investigator actively manipulates a therapeutic agent***."
 - "***Informed consent*** is critical for experimental studies."
@@ -16,7 +15,7 @@ keypoints:
 - "In case-control studies, the starting point is ***outcome*** and endpoint is ***exposure***."
 - "***Case definition*** is an important aspect of case-control studies."
 - "***Cross-sectional studies*** take a snapshot of disease prevalence in relation to exposure prevalence at a particular time."
-- "In ***ecological studies***, the unit of analysis are populations rather than individuals."
+- "In ***ecological studies***, the units of analysis are populations rather than individuals."
 ---
 
 ## Introduction
@@ -49,10 +48,10 @@ Also known as trials
 
    > ## Question: Select the correct option.
    > In a trial, the investigator manipulates a therapeutic agent in the
-   > >	(A) agent group
-   > >	(B) comparison group
-   > >	(C) population group
-   > >	(D) treament group
+   > > - (A) agent group
+   > > - (B) comparison group
+   > > - (C) population group
+   > > - (D) treament group
    > {: .challenge}
    > > ## Answer
    > > - [ ] agent group
@@ -95,21 +94,21 @@ Considered "natural" because the investigator lets nature take its course. There
 
    > ## Questions: Choose the correct option.
    > **Q1**. In a retrospective cohort study
-   > > 	(A) past and current exposures, as well as outcome are not known
-   > > 	(B) only outcome and future exposure are known
-   > > 	(C) exposure and outcome are known
-   > > 	(D) exposures are known but not outcome
+   > > - (A) past and current exposures, as well as outcome are not known
+   > > - (B) only outcome and future exposure are known
+   > > - (C) exposure and outcome are known
+   > > - (D) exposures are known but not outcome
    > {: .challenge}
    > **Q2**. In a case-control study, a highly protective locus is said to have
-   > >	(A) OR << 1
-   > >	(B) OR = 1
-   > >	(C) OR < 1
-   > >	(D) OR > 1
+   > > - (A) OR << 1
+   > > - (B) OR = 1
+   > > - (C) OR < 1
+   > > - (D) OR > 1
    > {: .challenge}
    > > ## Answers
-   > >	Q1. C
-   > >	
-   > >	Q2. A
+   > > - Q1. C
+   > >
+   > > - Q2. A
    > {: .solution}
    {: .challenge}
 ---
@@ -136,27 +135,27 @@ Considered "natural" because the investigator lets nature take its course. There
 
 
 > ## Quiz
->	1. What is the hallmark that distinguishes experimental from observational studies?
->	
->	2. Name one example of a trial on SCD in Africa.
->	
->	3. What is the treatment in this trial?
->	
->	4. In a cross-sectional study, it is possible to tell whether exposure came before disease when exposure is not a changeable characteristic.
->	(A) True
->	(B) False
+> > 1. What is the hallmark that distinguishes experimental from observational studies?
+> > 
+> > 2. Name one example of a trial on SCD in Africa.
+> >
+> > 3. What is the treatment in this trial?
+> >
+> > 4. In a cross-sectional study, it is possible to tell whether exposure came before disease when exposure is not a changeable characteristic.
+> - (A) True
+> - (B) False
 > {: .challenge}
 > > ## Answers
-> >	1. Active manipulation of a therapeutic agent (treatment) by an investigator in experimental studies but not observational studies.
-> >	2. REACH/NOHARM trial
-> >	3. Hydroxyurea (HU)
-> >	4. (A) True
-> > {: .challenge}
+> > > 1. Active manipulation of a therapeutic agent (treatment) by an investigator in experimental studies but not observational studies.
+> > > 2. REACH/NOHARM trial
+> > > 3. Hydroxyurea (HU)
+> > > 4. (A) True
+> >{: .challenge}
 > > > ## Take home
-> > >	Experimental study: active manipulation of a therapeutic agent by an investigator.
-> > >	Observational study: nature takes its course.
-> > >	Cross-sectional studies: most governmental public health surveys.
-> > >	Ecological studies: think of meta-analyses where comparison is made among populations rather than individuals.
+> > > - Experimental study: active manipulation of a therapeutic agent by an investigator.
+> > > - Observational study: nature takes its course.
+> > > - Cross-sectional studies: most governmental public health surveys.
+> > > - Ecological studies: think of meta-analyses where comparison is made among populations rather than individuals.
 > > {: .solution}
 > {: .solution}
 {: .challenge}
@@ -173,4 +172,3 @@ Considered "natural" because the investigator lets nature take its course. There
 [^4]: Wang, W. C., Ware, R. E., Miller, S. T., Iyer, R. V., Casella, J. F., Minniti, C. P., Rana, S., Thornburg, C. D., Rogers, Z. R., Kalpatthi, R. V., Barredo, J. C., Brown, R. C., Sarnaik, S. A., Howard, T. H., Wynn, L. W., Kutlar, A., Armstrong, F. D., Files, B. A., Goldsmith, J. C., Waclawiw, M. A., … BABY HUG investigators (2011). Hydroxycarbamide in very young children with sickle-cell anaemia: a multicentre, randomised, controlled trial (BABY HUG). *Lancet (London, England)*, **377**(9778), 1663–1672. [https://doi.org/10.1016/S0140-6736(11)60355-3](https://doi.org/10.1016/S0140-6736(11)60355-3)
 
 [^5]: Hankins, J. S., Ware, R. E., Rogers, Z. R., Wynn, L. W., Lane, P. A., Scott, J. P., & Wang, W. C. (2005). Long-term hydroxyurea therapy for infants with sickle cell anemia: the HUSOFT extension study. *Blood*, **106**(7), 2269–2275. [https://doi.org/10.1182/Blood-2004-12-4973](https://doi.org/10.1182/Blood-2004-12-4973)
-
