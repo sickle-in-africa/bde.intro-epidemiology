@@ -84,3 +84,7 @@ Epidemiologists therefore define count members of populations and asses the freq
 The SPAN database in Nigeria has been instrumental in measuring the prevalence of sickle cell disease across the country, and could highlight optimal ways to control commodities such as stoke or infection. The database holds around 13,000 records, making it an example of big data in epidemiology. Sickle cell disease registries in other countries like Tanzania and Ghana record similar information and will reveal comorbidity patterns in different parts of the continent. The haplotype background of the sickle mutation, as well as changes in environment and lifestyle, can influence quality of life, hence these registries will reveal different patterns of comorbidity frequency and distribution that will in turn inform the best pubic health decisions for sickle cell patients locally. 
 
 Newborn screening programs for sickle cell disease, such as the program in Ghana, is crucial for protecting HbSS newborns in the first months and years of life. Such programs have been informed by epidemiology studies, and will continue to be a source of information to future studies. Patient support groups and the dissemination of important information about patient care are both community efforts that rely on information gleaned from epidemiology studies. 
+
+## References
+
+[^1]: Ann Aschengrau and George R. Seage III, Essentials of epidemiology in public health, Fourth edition (2020, Jones & Bartlett Learning)

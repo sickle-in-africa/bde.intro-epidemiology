@@ -19,3 +19,6 @@ This is an introductory core module for the course **Big Data Epidemiology** and
 > 2. [Sickle Cell Disease: a new era](https://www.thelancet.com/journals/lanhae/article/PIIS2352-3026(19)30111-5/fulltext)
 > 3. [Reconceptualising precision public health](https://bmjopen.bmj.com/content/9/9/e030279)
 {: .prereq}
+
+## Credits
+We extend our gratitude to the Software Carpentry team who designed the website template that these pages use. 
