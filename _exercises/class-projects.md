@@ -1,7 +1,7 @@
 ---
 layout: page
 root: .
-title: Exercises
+title: Class projects
 ---
 
 This is the questions sheet for the in-class exercises. In your groups please discuss the following questions. Interaction between your class group members and the instructor(s) is strongly encouraged.
