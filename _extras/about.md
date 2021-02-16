@@ -1,5 +1,5 @@
 ---
 layout: page
-title: About
+title: About Sickle In Africa
 ---
-{% include carpentries.html %}
+{% include sickleinafrica.html %}

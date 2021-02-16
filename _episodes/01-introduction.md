@@ -44,8 +44,6 @@ But what is epidemiology? And how is it different from pubic health? In the foll
 
 We will clarify what we mean by these new terms, like "populations", "disease frequency" and "distribution" in the next few paragraphs, but for now note that epidemiology is concerned with *populations and disease*.
 
-it is not important...
-
 ### Populations
 Above we have seen that epidemiologists study how disease can arise in populations. A **population** is a set of people that share one or more common characteristics, such as gender, place of residence, age, or use of certain medical services. For example, the set of all women under 50 living in Abuja is a population. The set of all people with the homozygous sickle cell mutation HbSS is another example of a population. A simple and useful measure of a population is its size: the number of people in the group. Estimates of a population size can often be obtained from census records or health registries.
 
@@ -86,3 +84,7 @@ Epidemiologists therefore define count members of populations and asses the freq
 The SPAN database in Nigeria has been instrumental in measuring the prevalence of sickle cell disease across the country, and could highlight optimal ways to control commodities such as stoke or infection. The database holds around 13,000 records, making it an example of big data in epidemiology. Sickle cell disease registries in other countries like Tanzania and Ghana record similar information and will reveal comorbidity patterns in different parts of the continent. The haplotype background of the sickle mutation, as well as changes in environment and lifestyle, can influence quality of life, hence these registries will reveal different patterns of comorbidity frequency and distribution that will in turn inform the best pubic health decisions for sickle cell patients locally. 
 
 Newborn screening programs for sickle cell disease, such as the program in Ghana, is crucial for protecting HbSS newborns in the first months and years of life. Such programs have been informed by epidemiology studies, and will continue to be a source of information to future studies. Patient support groups and the dissemination of important information about patient care are both community efforts that rely on information gleaned from epidemiology studies. 
+
+## References
+
+[^1]: Ann Aschengrau and George R. Seage III, Essentials of epidemiology in public health, Fourth edition (2020, Jones & Bartlett Learning)

@@ -1,17 +1,15 @@
-[![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://swc-slack-invite.herokuapp.com/) 
-[![Slack Status](https://img.shields.io/badge/Slack_Channel-swc--shell-E01563.svg)](https://swcarpentry.slack.com/messages/C9X3XTHJ8) 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3266823.svg)](https://doi.org/10.5281/zenodo.3266823)
+Introduction to epidemiology
+=====================================
 
-shell-novice
-============
+An introduction to epidemiology. A module that covers introductory concepts in Epidemiology such as disease frequency, incidence rates, and populations. 
 
-An introduction to the Unix shell for people who have never used the command line before.
-Please see <https://sickle-in-africa.github.io/bde.shell-novice/> for a rendered version of this material,
-[the lesson template documentation][lesson-example]
-for instructions on formatting, building, and submitting material,
-or run `make` in this directory for a list of helpful commands.
+This module forms part of the course: **Big Data Epidemiology** designed and operated by the SADaCC team for Sickle in Africa.
 
-Maintainers:
+Please see <https://sickle-in-africa.github.io/bde.shell-novice/> for a rendered version of this material. 
+
+Maintained by the SADaCC team.
+
+Original Maintainers of the website template:
 
 * [Gabriel A. Devenyi][devenyi_gabriel]
 * [Colin Morris][colin_morris]
