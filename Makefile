@@ -71,6 +71,7 @@ MARKDOWN_SRC = \
   CODE_OF_CONDUCT.md \
   setup.md \
   $(sort $(wildcard _episodes/*.md)) \
+   $(sort $(wildcard _exercises/*.md)) \
   reference.md \
   $(sort $(wildcard _extras/*.md)) \
   LICENSE.md
@@ -81,6 +82,7 @@ HTML_DST = \
   ${DST}/conduct/index.html \
   ${DST}/setup/index.html \
   $(patsubst _episodes/%.md,${DST}/%/index.html,$(sort $(wildcard _episodes/*.md))) \
+  $(patsubst _exercises/%.md,${DST}/%/index.html,$(sort $(wildcard _exercises/*.md))) \
   ${DST}/reference/index.html \
   $(patsubst _extras/%.md,${DST}/%/index.html,$(sort $(wildcard _extras/*.md))) \
   ${DST}/license/index.html

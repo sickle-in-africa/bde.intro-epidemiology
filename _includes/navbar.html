@@ -59,9 +59,27 @@
             <li><a href="{{ relative_root_path }}{% link aio.md %}">All in one page (Beta)</a></li>
           </ul>
         </li>
+
+        {% comment %} Show exercises. {% endcomment %}
+        <li class="dropdown">
+          <a href="{{ relative_root_path }}/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Exercises <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            {% for lesson_exercise in lesson_exercises %}
+            {% if site.exercise_order %}
+              {% assign exercise = site.exercise | where: "slug", lesson_exercise | first %}
+            {% else %}
+              {% assign exercise = lesson_exercise %}
+            {% endif %}
+            <li><a href="{{ relative_root_path }}{{ exercise.url }}">{{ exercise.title }}</a></li>
+            {% endfor %}
+	    <li role="separator" class="divider"></li>
+            <li><a href="{{ relative_root_path }}{% link aio.md %}">All in one page (Beta)</a></li>
+          </ul>
+        </li>
+
 	{% endif %}
 
-        <li><a href="{{ relative_root_path }}{% link exercises.md %}">Exercises</a></li>
+  {% comment %} <li><a href="{{ relative_root_path }}{% link exercises.md %}">Exercises</a></li> {% endcomment %}
 
 	{% comment %} Show extras for lessons or if this is the main workshop-template repo (where they contain documentation). {% endcomment %}
 	{% if site.kind == "lesson" %}
