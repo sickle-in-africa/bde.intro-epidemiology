@@ -3,6 +3,7 @@ layout: lesson
 root: .
 ---
 
+Arthemon testisting
 Epidemiology is the science that informs pulic health for people all over the world. It is key for designing evidence-based legislation in goverment to protect their populations against disease, natural disaster, or lifestyle choices. In this module we will cover the basic concepts and definitions used in epidemiology today. We will look at how epidemiologists can help patients with Sickle Cell Disease in African countries through real world case studies, and we will see some basic mathematical methods used in the field. Along the way we will point to the areas in which big data skills might be necessary. 
 
 By the end of this module you should be able to:
