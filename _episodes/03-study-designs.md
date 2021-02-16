@@ -3,902 +3,250 @@ title: "Study Designs"
 teaching: 30
 exercises: 20
 questions:
-- "How can I create, copy, and delete files and directories?"
-- "How can I edit files?"
-objectives:
-- "Create a directory hierarchy that matches a given diagram."
-- "Create files in that hierarchy using an editor or by copying and renaming existing files."
-- "Delete, copy and move specified files and/or directories."
+- "How many epidemiological study designs are you familiar with?"
+- "What is a difference between experimental and observational studies?"
+objectives: 
+- "Distinguish between experimental and observational studies."
+- "Describe the key characteristics of experimental, cohort, case–control, cross-sectional, and ecological studies."
 keypoints:
-- "`cp old new` copies a file."
-- "`mkdir path` creates a new directory."
-- "`mv old new` moves (renames) a file or directory."
-- "`rm path` removes (deletes) a file."
-- "`*` matches zero or more characters in a filename, so `*.txt` matches all files ending in `.txt`."
-- "`?` matches any single character in a filename, so `?.txt` matches `a.txt` but not `any.txt`."
-- "Use of the Control key may be described in many ways, including `Ctrl-X`, `Control-X`, and `^X`."
-- "The shell does not have a trash bin: once something is deleted, it's really gone."
-- "Most files' names are `something.extension`. The extension isn't required, and doesn't guarantee anything, but is normally used to indicate the type of data in the file."
-- "Depending on the type of work you do, you may need a more powerful text editor than Nano."
+- "In experimental studies, an ***investigator actively manipulates a therapeutic agent***."
+- "***Informed consent*** is critical for experimental studies."
+- "In cohort studies, the starting point is ***exposure*** and the endpoint is ***outcome***."
+- "In case-control studies, the starting point is ***outcome*** and endpoint is ***exposure***."
+- "***Case definition*** is an important aspect of case-control studies."
+- "***Cross-sectional studies*** take a snapshot of disease prevalence in relation to exposure prevalence at a particular time."
+- "In ***ecological studies***, the units of analysis are populations rather than individuals."
 ---
-## Creating directories
-We now know how to explore files and directories,
-but how do we create them in the first place?
 
-### Step one: see where we are and what we already have
-Let's go back to our `data-shell` directory on the Desktop
-and use `ls -F` to see what it contains:
+## Introduction
+The term **study** in epidemiology includes both­ **surveillance**, whose purpose is to monitor aspects of disease occurrence and spread that are pertinent to effective control, and **epidemiological research**. The goal of epidemiological research is to harvest valid and precise information about the causes, preventions, and treatments for disease. There are several types of study designs in emidemiological research, including experimental studies and observational studies such as cohort and case-control studies. Each study design represents a different way of harvesting information. The selection of one design over another depends on the particular research question, concerns about validity and efficiency, and practical and ethical considerations. For example, experimental studies, also known as trials, investigate the role of some factor or agent in the prevention or treatment of a disease. In this type of study, the investigator assigns individuals to two or more groups that either receive or do not receive the preventive or therapeutic agent. Because experimental studies closely resemble controlled laboratory investigations, they are thought to produce the most scientifically rigorous data
+of all the designs.
 
-~~~
-$ pwd
-~~~
-{: .language-bash}
+However, experimental studies are often infeasible because of difficulties enrolling participants, high costs, and ethical issues. Most epidemiological research is conducted using an observational study, which is considered a “natural” experiment because the investigator lets nature take its course. Observational studies take advantage of the fact that people are exposed to noxious and/or healthy substances through their personal habits, occupation, place of residence, and so on. The studies provide information on exposures that occur in natural settings, and they are not limited to preventions and treatments. Furthermore, they do not suffer from the ethical and feasibility issues of experimental studies. For example, although it is unethical to conduct an experimental study of the effect of drinking alcohol on the developing fetus by assigning newly pregnant women to either a drinking or nondrinking group, it is perfectly ethical to conduct an observational study by comparing women who choose to drink during pregnancy with those who decide not.
 
-~~~
-/Users/nelle/Desktop/data-shell
-~~~
-{: .output}
+The two principal types of observational studies are cohort and case–control studies. Additional observational study designs include cross-sectional studies and ecological studies. In this module, we shall look at experimental studies, as well as the observational cohort, case-control, and cross-sectional studies.
 
-~~~
-$ ls -F
-~~~
-{: .language-bash}
+### Study types
 
-~~~
-creatures/  data/  molecules/  north-pacific-gyre/  notes.txt  pizza.cfg  solar.pdf  writing/
-~~~
-{: .output}
+---
+Figure 1: Summary of epidemiological study types
 
-### Create a directory
+<div style="width:70%; margin: auto;"><img alt="Epidemiology study types" src="../fig/bde.study.types.png"></div> *Adapted from* [^1]
 
-Let's create a new directory called `thesis` using the command `mkdir thesis`
-(which has no output):
+---
 
-~~~
-$ mkdir thesis
-~~~
-{: .language-bash}
+#### A) Experimental studies (trials)
+An experimental study, also known as a **trial**, investigates the role of some agent in the prevention or treatment of a disease. In this type of study, the **investigator assigns individuals to two or more groups** that either receive or do not receive the preventive or therapeutic agent. The group that is allocated the agent under study is generally called the **treatment group**, and the group that is not allocated the agent under study is called the
+**comparison group**. Depending on the purpose of the trial, the comparison group may receive no treatment at all, an inactive treatment such as a placebo, or another active treatment.
 
-As you might guess from its name,
-`mkdir` means 'make directory'.
-Since `thesis` is a relative path
-(i.e., does not have a leading slash, like `/what/ever/thesis`),
-the new directory is created in the current working directory:
+The active manipulation of the agent by the investigator is the hallmark that distinguishes experimental from observational studies. 
 
-~~~
-$ ls -F
-~~~
-{: .language-bash}
-
-~~~
-creatures/  data/  molecules/  north-pacific-gyre/  notes.txt  pizza.cfg  solar.pdf  thesis/  writing/
-~~~
-{: .output}
-
-Note that `mkdir` is not limited to creating single directories one at a time. The `-p` option allows `mkdir` to create a directory with any number of nested subdirectories in a single operation: 
-
-~~~
-$ mkdir -p thesis/chapter_1/section_1/subsection_1
-~~~
-{: .language-bash}
-
-The `-R` option to the `ls` command will list all nested subdirectories wtihin a directory.  Let's use `ls -FR` to recursively list the new directory hierarchy we just created beneath the `thesis` directory:
-
-~~~
-$ ls -FR thesis
-chapter_1/
-
-thesis/chapter_1:
-section_1/
-
-thesis/chapter_1/section_1:
-subsection_1/
-
-thesis/chapter_1/section_1/subsection_1:
-~~~
-{: .language-bash}
-
-> ## Two ways of doing the same thing
-> Using the shell to create a directory is no different than using a file explorer.
-> If you open the current directory using your operating system's graphical file explorer,
-> the `thesis` directory will appear there too.
-> While the shell and the file explorer are two different ways of interacting with the files,
-> the files and directories themselves are the same.
+---
+> ## Note
+> - In experimental studies, the investigator assigns individuals to two or more groups. **Treatment group** receives a preventive or therapeutic agent. **Comparison group** does not receives the agent, or receive a placebo or another active treatment.
+> - In observational studies, the investigator acts as a passive observer, merely **letting nature take its course**.
 {: .callout}
+---
 
-> ## Good names for files and directories
->
-> Complicated names of files and directories can make your life painful
-> when working on the command line. Here we provide a few useful
-> tips for the names of your files.
->
-> 1. Don't use spaces.
->
->    Spaces can make a name more meaningful,
->    but since spaces are used to separate arguments on the command line
->    it is better to avoid them in names of files and directories.
->    You can use `-` or `_` instead (e.g. `north-pacific-gyre/` rather than `north pacific gyre/`).
->
-> 2. Don't begin the name with `-` (dash).
->
->    Commands treat names starting with `-` as options.
->
-> 3. Stick with letters, numbers, `.` (period or 'full stop'), `-` (dash) and `_` (underscore).
->
->    Many other characters have special meanings on the command line.
->    We will learn about some of these during this lesson.
->    There are special characters that can cause your command to not work as
->    expected and can even result in data loss.
->
-> If you need to refer to names of files or directories that have spaces
-> or other special characters, you should surround the name in quotes (`""`).
+Experimental studies are commonly classified by their objective, that is, by whether they investigate a measure that prevents disease occurrence (preventive or prophylactic trial) or a measure that treats an existing condition (therapeutic or clinical trial).
+
+---
+> > ## Question
+> > A clinical trial is an experimental study that investigates a measure that prevents diease occurrence. True or false?
+> {: .challenge}
+> > ## Answer
+> > False - a clinical trial is an experimental study that investigates a measure that **treats an existing condition**.
+> {: .solution}
+{: .challenge}
+---
+> ## Hydroxyurea in Sickle Cell Disease: Clinical trials
+> Hydroxyurea (HU) is a medicine that is used to treat some cancers. But it can also help children and adults who have sickle cell disease. The evidence that HU could be helpful in SCD came from clinical trials that were conducted in the USA in the 1980s [^2]. Multiple clinical trials have since proven the efficacy and safety of HU in treating SCD patients including the REACH [^3] and NOHARM [^4] trials in Africa, and the BABY-HUG [^5] and HUSOFT [^6] trials in the USA.
 {: .callout}
+---
 
-Since we've just created the `thesis` directory, there's nothing in it yet:
+##### Selection of Study Population
 
-~~~
-$ ls -F thesis
-~~~
-{: .language-bash}
+During the recruitment phase of an experimental study, the study population, which is also called the experimental population, is enrolled on the basis of eligibility criteria that reflect the purpose of the trial as well as scientific, safety, and practical considerations. For example, healthy or high-risk individuals are enrolled in prevention trials, whereas individ
+uals with specific diseases are enrolled in therapeutic trials. Additional inclusion and exclusion criteria may be used to restrict the study population by factors such as gender and age (See Standadization of rates under the episode <a href="{{ relative_root_path }}{% link _episodes/02-comparing-disease-frequencies.md %}">"Comparing disease frequencies"</a>). The study population must include an adequate number of individuals to determine whether there is a true difference between the treatment and comparison groups. An investigator determines how many subjects to include by using formulas that take into account the anticipated difference between the groups, the background rate of the outcome, and the probability of making certain statistical errors (See episode on <a href="{{ relative_root_path }}{% link _episodes/04-formulae.md %}">Measures of disease frequency</a>). In general, smaller anticipated differences between the treatment and comparison groups require larger sample sizes.
 
-### Create a text file
-Let's change our working directory to `thesis` using `cd`,
-then run a text editor called Nano to create a file called `draft.txt`:
+##### Consent process and treatment assignment
+All eligible and willing individuals must give consent to participate in an experimental study. The process of gaining their agreement is known as informed consent. The investigator must describe the nature and objectives of the study, the tasks required of the participants, and the benefits and risks of participating. Individuals are then assigned to receive one of the two or more treatments being compared. Randomization, “an act of assigning or ordering that is the result of a random process
 
-~~~
-$ cd thesis
-$ nano draft.txt
-~~~
-{: .language-bash}
+---
+> ## Question: Select the correct option.
+> In a trial, the investigator manipulates a therapeutic agent in the
+> > ## Options
+> > - (A) agent group
+> > - (B) comparison group
+> > - (C) experimental group
+> > - (D) treament group
+> {: .challenge}
+> > ## Answer
+> > - [ ] agent group
+> > - [ ] comparison group
+> > - [ ] experimental group
+> > - [x] treament group **(D)**
+> {: .solution}
+{: .challenge}
+---
 
-> ## Which Editor?
->
-> When we say, '`nano` is a text editor' we really do mean 'text': it can
-> only work with plain character data, not tables, images, or any other
-> human-friendly media. We use it in examples because it is one of the
-> least complex text editors. However, because of this trait, it may
-> not be powerful enough or flexible enough for the work you need to do
-> after this workshop. On Unix systems (such as Linux and macOS),
-> many programmers use [Emacs](http://www.gnu.org/software/emacs/) or
-> [Vim](http://www.vim.org/) (both of which require more time to learn),
-> or a graphical editor such as
-> [Gedit](http://projects.gnome.org/gedit/). On Windows, you may wish to
-> use [Notepad++](http://notepad-plus-plus.org/).  Windows also has a built-in
-> editor called `notepad` that can be run from the command line in the same
-> way as `nano` for the purposes of this lesson.
->
-> No matter what editor you use, you will need to know where it searches
-> for and saves files. If you start it from the shell, it will (probably)
-> use your current working directory as its default location. If you use
-> your computer's start menu, it may want to save files in your desktop or
-> documents directory instead. You can change this by navigating to
-> another directory the first time you 'Save As...'
-{: .callout}
+##### Treatment Administration
+In the next phase of a trial, the treatments are administered according to a specific protocol. For example, in a therapeutic trial, participants may be asked to take either an active drug or an inactive drug known as a placebo. The purpose of placebos is to match as closely as possible the experience of the comparison group with that of the treatment group. Also, the use of placebos means that study participants and investigators may be prevented from knowing whom receives an active agent or not (masking), which helps to prevent biases.
 
-Let's type in a few lines of text.
-Once we're happy with our text, we can press <kbd>Ctrl</kbd>+<kbd>O</kbd>
-(press the <kbd>Ctrl</kbd> or <kbd>Control</kbd> key and, while
-holding it down, press the <kbd>O</kbd> key) to write our data to disk
-(we'll be asked what file we want to save this to:
-press <kbd>Return</kbd> to accept the suggested default of `draft.txt`).
+##### Maintenance and Assessment of Compliance
+All experimental studies require the active involvement and cooperation of participants. Although participants are apprised of the study requirements when they enroll, many fail to follow the protocol exactly as required as the trial proceeds. The failure to observe the requirements of the protocol is known as **noncompliance**, and this may occur in the treatment group, the comparison group, or both. Reasons for not complying include toxic reactions to the treatment, waning interest, and desire to seek other therapies. Noncompliance is problematic because it results in a smaller difference between the treatment and comparison groups than truly exists, thereby diluting the real effect of a treatment. A **run-in** period is usually used before enrollment and randomization to ascertain which potential participants are able to comply with the study regimen. During this period, participants are placed on the test or comparison treatment to assess their tolerance and acceptance and to obtain information on compliance.
 
-<div style="width:80%; margin: auto;"><img alt="Nano in Action" src="../fig/nano-screenshot.png"></div>
+##### Ascertaining the Outcomes
+During the follow-up stage of an experimental study, the treatment and comparison groups are monitored for the outcomes under study. If the study’s goal is to prevent the occurrence of disease, the outcomes may include the precursors of disease or the first occurrence of disease (i.e., incidence). If the study is investigating a new treatment among individuals who already have a disease, the outcomes may include disease recurrence, symptom improvement, length of survival, or side effects The length of follow-up depends on the particular outcome under study.
+It can range from a few months to a few decades.
 
-Once our file is saved, we can use <kbd>Ctrl</kbd>+<kbd>X</kbd> to quit the editor and
-return to the shell.
+##### Analysis
+The classic analytic approach for an experimental study is known as an **intent-to-treat** or **treatment assignment analysis**. In this analysis, all individuals who were randomly allocated to a treatment are analyzed regardless of whether they completed the regimen or received the treatment. An intent-to-treat analysis gives information on the effectiveness of a treatment under everyday practice conditions. The alternative to an intent-to-treat analysis is known as an efficacy analysis, which determines the treatment effects under ideal conditions, such as when participants take the full treatment exactly as directed.
 
-> ## Control, Ctrl, or ^ Key
->
-> The Control key is also called the 'Ctrl' key. There are various ways
-> in which using the Control key may be described. For example, you may
-> see an instruction to press the <kbd>Control</kbd> key and, while holding it down,
-> press the <kbd>X</kbd> key, described as any of:
->
-> * `Control-X`
-> * `Control+X`
-> * `Ctrl-X`
-> * `Ctrl+X`
-> * `^X`
-> * `C-x`
->
-> In nano, along the bottom of the screen you'll see `^G Get Help ^O WriteOut`.
-> This means that you can use `Control-G` to get help and `Control-O` to save your
-> file.
-{: .callout}
+---
+> ## Question
+> What is **masking** in clinical trials, and how is it useful?
+> > ## Qnswer
+> > Masking is the act of concealing the true identity of an active agent from the participants and investigators in a clinical trial. It helps prevent biases in the ascertainment of outcomes.
+> {: .solution}
+{: .challenge}
 
-`nano` doesn't leave any output on the screen after it exits,
-but `ls` now shows that we have created a file called `draft.txt`:
+---
 
-~~~
-$ ls
-~~~
-{: .language-bash}
+#### B. Cohort Studies
+A **cohort** is defined as a group of people with a common characteristic or experience. In a cohort study, healthy subjects are defined according to their exposure status and followed over time to determine the incidence of symptoms, disease, or death. The common characteristic for grouping subjects is their exposure level. Usually, two groups are compared: an **exposed** and an **unexposed** group. The unexposed group is called the reference, referent, or comparison group. Cohort study is the term that is typically used to describe an epidemiological investigation that follows groups with common characteristics. Other expressions that are used include follow-up, incidence, or longitudinal study. The **term fixed** cohort is used when the cohort is formed on the basis of an irrevocable event, such as undergoing a medical procedure. Thus, an individual’s exposure in a fixed cohort does not change over time. A **closed cohort**
+is used to describe a fixed cohort with no losses to follow-up. In contrast, a cohort study conducted in an **open population**, also known as a **dynamic population**, is defined by exposures that can change over time, such as cigarette smoking.
 
-~~~
-draft.txt
-~~~
-{: .output}
+##### Timing of cohort studies
+Three terms are used to describe the timing of events in a cohort study in relation to the initiation of the study: prospective, retrospective, and ambidirectional. At the initiation of a **prospective cohort** study, participants are grouped on the basis of past or current exposure and are followed into the future to observe the outcomes of interest. When the study commences, the outcomes have not yet developed, and the investigator must wait for them to occur. At the initiation of a **retrospective cohort** study, both the exposures and outcomes have already occurred when the study begins. Thus, this type of investigation studies only prior and not  future outcomes. An **ambidirectional cohort** study has both prospective and retrospective components.
 
-> ## Creating Files a Different Way
->
-> We have seen how to create text files using the `nano` editor.
-> Now, try the following command:
->
-> ~~~
-> $ touch my_file.txt
-> ~~~
-> {: .language-bash}
->
-> 1.  What did the `touch` command do?
->     When you look at your current directory using the GUI file explorer,
->     does the file show up?
->
-> 2.  Use `ls -l` to inspect the files.  How large is `my_file.txt`?
->
-> 3.  When might you want to create a file this way?
->
-> > ## Solution
-> > 1.  The `touch` command generates a new file called `my_file.txt` in
-> >     your current directory.  You
-> >     can observe this newly generated file by typing `ls` at the
-> >     command line prompt.  `my_file.txt` can also be viewed in your
-> >     GUI file explorer.
+---
+> ## Questions Choose the correct option.
+> In a retrospective cohort study
+> > - (A) past and current exposures, as well as outcome are not known
+> > - (B) only outcome and future exposure are known
+> > - (C) exposure and outcome are known
+> > - (D) exposures are known but not outcome
+> {: .challenge}
+> > ## Answer
+> > C: exposure and outcome are known
+> {: .solution}
+{: .challenge}
+---
+
+##### Selection of the exposed population
+The choice of the exposed group in a cohort study depends on the hypothesis being tested; the exposure frequency; and feasibility considerations, such as the availability of records and ease of follow-up. **Special cohorts** are used to study the health effects of rare exposures, such as uncommon workplace chemicals, unusual diets, and uncommon lifestyles. General cohorts are typically assembled for common exposures, such as cigarette smoking and alcohol consumption. These cohorts are often selected from professional groups, such as nurses, or from well-defined geographic areas to facilitate follow-up.
+
+##### Selection of comparison group
+There are three sources for the comparison group in a cohort study: an internal comparison group, the general population, and a comparison cohort. An **internal comparison group** consists of unexposed members of the same cohort. An internal comparison group should be used whenever possible because its characteristics will be the most similar to the exposed group. The **general population** is used for comparison when it is not possible to find a comparable internal comparison group. The general population comparison is based on preexisting population data on disease incidence and mortality. A **comparison cohort** consists of members of another cohort. It is the least desirable option because the comparison cohort, although not exposed to the exposure under study, is often exposed to other potentially harmful substances and therefore the results can be difficult to interpret.
+
+##### Sources of information in cohort studies
+Cohort study investigators typically rely on many sources for information on exposures, outcomes, and other key variables. They include medical and employment records, interviews, direct physical examinations, laboratory tests, biological specimens, and environmental monitoring. Some of these sources are preexisting, and others are designed specifically for
+the study. Because each type of source has advantages and disadvantages, investigators often use several sources to piece together all the necessary information.
+
+##### Approaches to follow-up
+**Loss to follow-up** occurs either when the participant no longer wishes to take part in the study or he or she cannot be located. Because high rates of follow-up are critical to the success of a cohort study, investigators have developed many methods to maximize retention and trace study participants. For prospective cohort studies, strategies include collection
+of information (such as full name, Social Security number, and date of birth) that helps locate participants as the study progresses. In addition, regular contact is recommended for participants in prospective studies.
+
+When participants are truly lost to follow-up, investigators employ a number of strategies. They include sending letters to the last known address with “Address Correction requested”; checking telephone directories; directory assistance; Internet resources, such as whitepages.com; vital statistics records; driver’s license rosters; and voter registration records and contacting relatives, friends, and physicians identified at baseline.
+
+##### Analysis
+The primary objective of analyzing cohort study data is to compare the occurrence of symptoms, disease, and death in the exposed and unexposed groups. If it is not possible to find a completely unexposed group to serve as the comparison, then the least exposed group is used
+
+#### C. Case-Control Studies
+The case–control study has traditionally been viewed as an inferior alternative to the cohort study. In the traditional view, subjects are selected on the basis of whether they have or do not have the disease. An individual who has the disease is termed a **case**, and someone who does not have the disease is termed a **control**. The exposure histories of cases and controls are then obtained and compared. Thus, the central feature of the traditional view is the comparison of the exposure histories of the cases and controls. This differs from the logic of experimental and cohort study designs in which the key comparison is disease incidence between the exposed and unexposed (or least exposed) groups. More specifically, a case–­control study is a method of sampling a population in which researchers identify and enroll cases of disease and a sample of the source population that gave rise to the cases.
+
+##### Selection of Cases and controls
+The first step in the selection of cases for a case–control study is the formulation of a disease or case definition. A case definition is usually based on a combination of signs and symptoms, physical and pathological examinations, and results of diagnostic tests. Once investigators have created a case definition, they can begin case identification and enrollment. Typical sources for identifying cases are hospital or clinic patient rosters; death certificates; special surveys; and reporting systems, such as cancer or birth defects registries.
+Another important issue in selecting cases is whether they should be incident or prevalent. Researchers who study the causes of disease prefer incident cases because they are usually interested in the factors that lead to developing a disease rather than factors that affect its duration.
+
+Controls are a sample of the population that produced the cases. The guiding principle for the valid selection of controls is that they come from the same base population as the cases. If this condition is met, then a member of the control group who gets the disease under study would
+end up as a case in the study. This concept is known as **“the would criterion,”** and its fulfillment is crucial to the validity of a case–control study. Another important principle is that controls must be sampled independently of exposure status. In other words, exposed and unexposed controls should have the same probability of selection. Epidemiologists use several sources for identifying controls in case–control studies. They may sample (1) individuals from the general population, (2) individuals attending a hospital or clinic, (3) friends or relatives
+identified by the cases, or (4) individuals who have died.
+
+##### Analysis
+Recall that controls are a sample of the population that produced the cases. However, in most instances, the sampling fraction is not known; therefore, the investigator cannot fill in the total population in the margin of a two-by-two table or obtain the rates and risks of disease. Instead, the researcher obtains a number called an odds, which functions as a rate or risk. In a
+case–control study, epidemiologists typically calculate the odds of being
+a case among the exposed ($$\frac{a}{b}$$) compared to the odds of being a case among the nonexposed ($$\frac{c}{d}$$). The ratio of these two odds is expressed as follows: $$\frac{\frac{a}{b}}{\frac{c}{d}}$$ OR $$\frac{ad}{bc}$$
+
+
+This ratio, known as the disease **odds ratio**, provides an estimate of the relative risk just as the incidence rate ratio and cumulative incidence ratio do. Refer to <a href="{{ relative_root_path }}{% link _episodes/04-formulae.md %}">measures of disease frequency</a> for more on this.
+
+---
+> ## Question: 
+> In a case-control study, a highly protective locus is said to have
+> > - (A) OR << 1
+> > - (B) OR = 1
+> > - (C) OR < 1
+> > - (D) OR > 1
+> {: .challenge}
+> > ## Answer
+> > A: OR << 1
+> {: .solution}
+{: .challenge}
+---
+
+#### Cross-sectional studies
+A cross-sectional study “examines the relationship between diseases (or other health-related characteristics) and other variables of interest as they exist in a defined population at one particular time. Unlike populations studied in cohort and case–control studies, cross-sectional study populations are commonly selected without regard to exposure or disease status. Cross-sectional studies typically take a snapshot of a population at a single point in time and therefore usually measure the disease prevalence in relation to the exposure prevalence. In other words, current disease status is usually examined in relation to current exposure level.
+
+
+When is it desirable to use a particular study design?
+---
+The goal of every epidemiological study is to gather correct and sharply defined data on the relationship between an exposure and a health-­related state or an event in a population. The three main study designs represent different ways of gathering this information.
+
+- **Experimetal studies**: Investigators conduct an experimental study when they wish to learn
+about a prevention or treatment for a disease. In addition, they conduct this type of study when they need data with a high degree of validity that is simply not possible in an observational study. When the difference between groups is small, even a small degree of bias or confounding can create or mask an effect
+
+- **Observational studies**: Observational studies can be used to study the effects of a wider range of exposures than experimental studies, including preventions, treatments, and possible causes of disease. The main limitation of observational studies is investigators’ inability to have complete control over disturbing influences or extraneous factors. Once an investigator has decided to conduct an observational study, the next decision is usually whether to select a cohort or case–control design.
+
+   * **Case-control studies** are preferable when little is known about the etiology of a disease because they can provide information on a large number of possible risk factors. Case–control studies take less time and cost less money than do cohort studies primarily because the control group is a sample of the source population. Case–control studies are also more efficient than cohort studies for studying rare diseases because fewer subjects are needed and for studying diseases with long induction and latent periods because long-term prospective follow-up is avoided. Case–control studies have a few important disadvantages. First, because of the retrospective nature of the data collection, there is a greater chance of bias. Second, because data collection is retrospective, it may be difficult to establish the correct temporal relationship between the exposure and disease.
+
+   * **Cohort studies**: If an investigator has decided to conduct a cohort study, he or she must make one more choice: Should it be a retrospective or prospective cohort study? This decision depends on the particular research question, the practical constraints of time and money, and the availability of suitable study populations and records. For example, a retrospective design must be used to study historical exposures. In making this decision, the investigator must also take into account the complementary advantages and disadvantages of retrospective and prospective cohort studies. For example, retrospective cohort studies are more efficient than prospective studies for studying diseases with long induction and latent periods. However, minimal information is usually available on the exposure, outcome, confounders, and contacts for follow-up because retrospective cohort studies typically rely on existing records that were not designed for research purposes. In addition, the use of retrospective data makes it more difficult to establish the correct temporal relationship between the exposure and disease. In prospective cohort studies, investigators can usually obtain more detailed information on exposures and confounders because they have more control of the data collection process and can gather information directly from the participant.
+
+- **Cross-sectional studies**: Cross-sectional studies are carried out for public health planning and etiologic research. Most governmental surveys conducted by the National Center for Health Statistics are cross-sectional in nature.
+
+Figure 2. Decision tree for choosing among study designs
+
+<div style="width:50%; margin: auto;"><img alt="Epidemiology study types" src="../fig/decision_tree.png"></div> *Adapted from* [^1]
+
+---
+> ## Quiz
+> > 1. What is the hallmark that distinguishes experimental from observational studies?
+> > 
+> > 2. Name one example of a trial on SCD in Africa.
 > >
-> > 2.  When you inspect the file with `ls -l`, note that the size of
-> >     `my_file.txt` is 0 bytes.  In other words, it contains no data.
-> >     If you open `my_file.txt` using your text editor it is blank.
+> > 3. What is the treatment in this trial?
 > >
-> > 3.  Some programs do not generate output files themselves, but
-> >     instead require that empty files have already been generated.
-> >     When the program is run, it searches for an existing file to
-> >     populate with its output.  The touch command allows you to
-> >     efficiently generate a blank text file to be used by such
-> >     programs.
+> > 4. In a cross-sectional study, it is possible to tell whether exposure came before disease when exposure is not a changeable characteristic.
+> - (A) True
+> - (B) False
+> {: .challenge}
+> > ## Answers
+> > > 1. Active manipulation of a therapeutic agent (treatment) by an investigator in experimental studies but not observational studies.
+> > > 2. REACH/NOHARM trial
+> > > 3. Hydroxyurea (HU)
+> > > 4. (A) True
+> >{: .challenge}
+> > > ## Take home
+> > > - Experimental study: active manipulation of a therapeutic agent by an investigator.
+> > > - Observational study: nature takes its course.
+> > > - Cross-sectional studies: most governmental public health surveys.
+> > > - Ecological studies: think of meta-analyses where comparison is made among populations rather than individuals.
+> > {: .solution}
 > {: .solution}
 {: .challenge}
+---
 
-> ## What's In A Name?
->
-> You may have noticed that all of Nelle's files are named 'something dot
-> something', and in this part of the lesson, we always used the extension
-> `.txt`.  This is just a convention: we can call a file `mythesis` or
-> almost anything else we want. However, most people use two-part names
-> most of the time to help them (and their programs) tell different kinds
-> of files apart. The second part of such a name is called the
-> **filename extension**, and indicates
-> what type of data the file holds: `.txt` signals a plain text file, `.pdf`
-> indicates a PDF document, `.cfg` is a configuration file full of parameters
-> for some program or other, `.png` is a PNG image, and so on.
->
-> This is just a convention, albeit an important one. Files contain
-> bytes: it's up to us and our programs to interpret those bytes
-> according to the rules for plain text files, PDF documents, configuration
-> files, images, and so on.
->
-> Naming a PNG image of a whale as `whale.mp3` doesn't somehow
-> magically turn it into a recording of whalesong, though it *might*
-> cause the operating system to try to open it with a music player
-> when someone double-clicks it.
-{: .callout}
+**References**
+---
+[^1]: Ann Aschengrau and George R. Seage III, Essentials of epidemiology in public health, Fourth edition (2020, Jones & Bartlett Learning)
 
-## Moving files and directories
-Returning to the `data-shell` directory,
+[^2]: Agrawal, R. K., Patel, R. K., Shah, V., Nainiwal, L., & Trivedi, B. (2014). Hydroxyurea in sickle cell disease: drug review. Indian journal of hematology & blood transfusion : an official journal of Indian Society of Hematology and Blood Transfusion, 30(2), 91–96. [https://doi.org/10.1007/s12288-013-0261-4](https://doi.org/10.1007/s12288-013-0261-4)
 
-```
-cd ~/Desktop/data-shell/
-```
-{: .language-bash}
+[^3]: McGann, P. T., Williams, T. N., Olupot-Olupot, P., Tomlinson, G. A., Lane, A., Luís Reis da Fonseca, J., Kitenge, R., Mochamah, G., Wabwire, H., Stuber, S., Howard, T. A., McElhinney, K., Aygun, B., Latham, T., Santos, B., Tshilolo, L., Ware, R. E., & REACH Investigators (2018). Realizing effectiveness across continents with hydroxyurea: Enrollment and baseline characteristics of the multicenter REACH study in Sub-Saharan Africa. *American journal of hematology*, **93**(4), 537–545. <a href="https://doi.org/10.1002/ajh.25034">https://doi.org/10.1002/ajh.25034</a>
 
-In our `thesis` directory we have a file `draft.txt`
-which isn't a particularly informative name,
-so let's change the file's name using `mv`,
-which is short for 'move':
+[^4]: Opoka, R. O., Ndugwa, C. M., Latham, T. S., Lane, A., Hume, H. A., Kasirye, P., Hodges, J. S., Ware, R. E., & John, C. C. (2017). Novel use Of Hydroxyurea in an African Region with Malaria (NOHARM): a trial for children with sickle cell anemia. *Blood*, **130**(24), 2585–2593. [https://doi.org/10.1182/blood-2017-06-788935](https://doi.org/10.1182/blood-2017-06-788935)
 
-~~~
-$ mv thesis/draft.txt thesis/quotes.txt
-~~~
-{: .language-bash}
+[^5]: Wang, W. C., Ware, R. E., Miller, S. T., Iyer, R. V., Casella, J. F., Minniti, C. P., Rana, S., Thornburg, C. D., Rogers, Z. R., Kalpatthi, R. V., Barredo, J. C., Brown, R. C., Sarnaik, S. A., Howard, T. H., Wynn, L. W., Kutlar, A., Armstrong, F. D., Files, B. A., Goldsmith, J. C., Waclawiw, M. A., … BABY HUG investigators (2011). Hydroxycarbamide in very young children with sickle-cell anaemia: a multicentre, randomised, controlled trial (BABY HUG). *Lancet (London, England)*, **377**(9778), 1663–1672. [https://doi.org/10.1016/S0140-6736(11)60355-3](https://doi.org/10.1016/S0140-6736(11)60355-3)
 
-The first argument tells `mv` what we're 'moving',
-while the second is where it's to go.
-In this case,
-we're moving `thesis/draft.txt` to `thesis/quotes.txt`,
-which has the same effect as renaming the file.
-Sure enough,
-`ls` shows us that `thesis` now contains one file called `quotes.txt`:
-
-~~~
-$ ls thesis
-~~~
-{: .language-bash}
-
-~~~
-quotes.txt
-~~~
-{: .output}
-
-One has to be careful when specifying the target file name, since `mv` will
-silently overwrite any existing file with the same name, which could
-lead to data loss. An additional option, `mv -i` (or `mv --interactive`),
-can be used to make `mv` ask you for confirmation before overwriting.
-
-Note that `mv` also works on directories.
-
-Let's move `quotes.txt` into the current working directory.
-We use `mv` once again,
-but this time we'll use just the name of a directory as the second argument
-to tell `mv` that we want to keep the filename,
-but put the file somewhere new.
-(This is why the command is called 'move'.)
-In this case,
-the directory name we use is the special directory name `.` that we mentioned earlier.
-
-~~~
-$ mv thesis/quotes.txt .
-~~~
-{: .language-bash}
-
-The effect is to move the file from the directory it was in to the current working directory.
-`ls` now shows us that `thesis` is empty:
-
-~~~
-$ ls thesis
-~~~
-{: .language-bash}
-
-Further,
-`ls` with a filename or directory name as an argument only lists that file or directory.
-We can use this to see that `quotes.txt` is still in our current directory:
-
-~~~
-$ ls quotes.txt
-~~~
-{: .language-bash}
-
-~~~
-quotes.txt
-~~~
-{: .output}
-
-> ## Moving Files to a new folder
->
-> After running the following commands,
-> Jamie realizes that she put the files `sucrose.dat` and `maltose.dat` into the wrong folder. 
-> The files should have been placed in the `raw` folder.
->
-> ~~~
-> $ ls -F
->  analyzed/ raw/
-> $ ls -F analyzed
-> fructose.dat glucose.dat maltose.dat sucrose.dat
-> $ cd analyzed
-> ~~~
-> {: .language-bash}
->
-> Fill in the blanks to move these files to the `raw/` folder
-> (i.e. the one she forgot to put them in) 
->
-> ~~~
-> $ mv sucrose.dat maltose.dat ____/____
-> ~~~
-> {: .language-bash}
-> > ## Solution
-> > ```
-> > $ mv sucrose.dat maltose.dat ../raw
-> > ```
-> > {: .language-bash}
-> > Recall that `..` refers to the parent directory (i.e. one above the current directory)
-> > and that `.` refers to the current directory.
-> {: .solution}
-{: .challenge}
-
-## Copying files and directories
-
-The `cp` command works very much like `mv`,
-except it copies a file instead of moving it.
-We can check that it did the right thing using `ls`
-with two paths as arguments --- like most Unix commands,
-`ls` can be given multiple paths at once:
-
-~~~
-$ cp quotes.txt thesis/quotations.txt
-$ ls quotes.txt thesis/quotations.txt
-~~~
-{: .language-bash}
-
-~~~
-quotes.txt   thesis/quotations.txt
-~~~
-{: .output}
-
-We can also copy a directory and all its contents by using the
-[recursive](https://en.wikipedia.org/wiki/Recursion) option `-r`,
-e.g. to back up a directory:
-
-```
-$ cp -r thesis thesis_backup
-```
-{: .language-bash}
-
-We can check the result by listing the contents of both the `thesis` and `thesis_backup` directory:
-
-```
-$ ls thesis thesis_backup
-```
-{: .language-bash}
-
-```
-thesis:
-quotations.txt
-
-thesis_backup:
-quotations.txt
-```
-{: .output}
-
-
-> ## Renaming Files
->
-> Suppose that you created a plain-text file in your current directory to contain a list of the
-> statistical tests you will need to do to analyze your data, and named it: `statstics.txt`
->
-> After creating and saving this file you realize you misspelled the filename! You want to
-> correct the mistake, which of the following commands could you use to do so?
->
-> 1. `cp statstics.txt statistics.txt`
-> 2. `mv statstics.txt statistics.txt`
-> 3. `mv statstics.txt .`
-> 4. `cp statstics.txt .`
->
-> > ## Solution
-> > 1. No.  While this would create a file with the correct name, the incorrectly named file still exists in the directory
-> > and would need to be deleted.
-> > 2. Yes, this would work to rename the file.
-> > 3. No, the period(.) indicates where to move the file, but does not provide a new file name; identical file names
-> > cannot be created.
-> > 4. No, the period(.) indicates where to copy the file, but does not provide a new file name; identical file names
-> > cannot be created.
-> {: .solution}
-{: .challenge}
-
-> ## Moving and Copying
->
-> What is the output of the closing `ls` command in the sequence shown below?
->
-> ~~~
-> $ pwd
-> ~~~
-> {: .language-bash}
-> ~~~
-> /Users/jamie/data
-> ~~~
-> {: .output}
-> ~~~
-> $ ls
-> ~~~
-> {: .language-bash}
-> ~~~
-> proteins.dat
-> ~~~
-> {: .output}
-> ~~~
-> $ mkdir recombined
-> $ mv proteins.dat recombined/
-> $ cp recombined/proteins.dat ../proteins-saved.dat
-> $ ls
-> ~~~
-> {: .language-bash}
->
->
-> 1.   `proteins-saved.dat recombined`
-> 2.   `recombined`
-> 3.   `proteins.dat recombined`
-> 4.   `proteins-saved.dat`
->
-> > ## Solution
-> > We start in the `/Users/jamie/data` directory, and create a new folder called `recombined`.
-> > The second line moves (`mv`) the file `proteins.dat` to the new folder (`recombined`).
-> > The third line makes a copy of the file we just moved.  The tricky part here is where the file was
-> > copied to.  Recall that `..` means 'go up a level', so the copied file is now in `/Users/jamie`.
-> > Notice that `..` is interpreted with respect to the current working
-> > directory, **not** with respect to the location of the file being copied.
-> > So, the only thing that will show using ls (in `/Users/jamie/data`) is the recombined folder.
-> >
-> > 1. No, see explanation above.  `proteins-saved.dat` is located at `/Users/jamie`
-> > 2. Yes
-> > 3. No, see explanation above.  `proteins.dat` is located at `/Users/jamie/data/recombined`
-> > 4. No, see explanation above.  `proteins-saved.dat` is located at `/Users/jamie`
-> {: .solution}
-{: .challenge}
-
-## Removing files and directories
-
-Returning to the `data-shell` directory,
-let's tidy up this directory by removing the `quotes.txt` file we created.
-The Unix command we'll use for this is `rm` (short for 'remove'):
-
-~~~
-$ rm quotes.txt
-~~~
-{: .language-bash}
-
-We can confirm the file has gone using `ls`:
-
-~~~
-$ ls quotes.txt
-~~~
-{: .language-bash}
-
-```
-ls: cannot access 'quotes.txt': No such file or directory
-```
-{: .output}
-
-> ## Deleting Is Forever
->
-> The Unix shell doesn't have a trash bin that we can recover deleted
-> files from (though most graphical interfaces to Unix do).  Instead,
-> when we delete files, they are unlinked from the file system so that
-> their storage space on disk can be recycled. Tools for finding and
-> recovering deleted files do exist, but there's no guarantee they'll
-> work in any particular situation, since the computer may recycle the
-> file's disk space right away.
-{: .callout}
-
-
-> ## Using `rm` Safely
->
-> What happens when we execute `rm -i thesis_backup/quotations.txt`?
-> Why would we want this protection when using `rm`?
->
-> > ## Solution
-> > ```
-> > $ rm: remove regular file 'thesis_backup/quotations.txt'? y
-> > ```
-> > {: .language-bash}
-> > The `-i` option will prompt before (every) removal (use <kbd>Y</kbd> to confirm deletion or <kbd>N</kbd> to keep the file).
-> > The Unix shell doesn't have a trash bin, so all the files removed will disappear forever.
-> > By using the `-i` option, we have the chance to check that we are deleting only the files that we want to remove.
-> {: .solution}
-{: .challenge}
-
-
-If we try to remove the `thesis` directory using `rm thesis`,
-we get an error message:
-
-~~~
-$ rm thesis
-~~~
-{: .language-bash}
-
-~~~
-rm: cannot remove `thesis': Is a directory
-~~~
-{: .error}
-
-This happens because `rm` by default only works on files, not directories.
-
-`rm` can remove a directory *and all its contents* if we use the
-recursive option `-r`, and it will do so *without any confirmation prompts*:
-
-~~~
-$ rm -r thesis
-~~~
-{: .language-bash}
-
-Given that there is no way to retrieve files deleted using the shell,
-`rm -r` *should be used with great caution* (you might consider adding the interactive option `rm -r -i`).
-
-## Operations with multiple files and directories
-
-Oftentimes one needs to copy or move several files at once. This can be done by providing a list of individual filenames, or specifying a naming pattern using wildcards.
-
-> ## Copy with Multiple Filenames
->
-> For this exercise, you can test the commands in the `data-shell/data` directory.
->
-> In the example below, what does `cp` do when given several filenames and a directory name?
->
-> ~~~
-> $ mkdir backup
-> $ cp amino-acids.txt animals.txt backup/
-> ~~~
-> {: .language-bash}
->
-> In the example below, what does `cp` do when given three or more file names?
->
-> ~~~
-> $ ls -F
-> ~~~
-> {: .language-bash}
-> ~~~
-> amino-acids.txt  animals.txt  backup/  elements/  morse.txt  pdb/  planets.txt  salmon.txt  sunspot.txt
-> ~~~
-> {: .output}
-> ~~~
-> $ cp amino-acids.txt animals.txt morse.txt
-> ~~~
-> {: .language-bash}
->
-> > ## Solution
-> > If given more than one file name followed by a directory name (i.e. the destination directory must
-> > be the last argument), `cp` copies the files to the named directory.
-> >
-> > If given three file names, `cp` throws an error such as the one below, because it is expecting a directory
-> > name as the last argument.
-> >
-> > ```
-> > cp: target ‘morse.txt’ is not a directory
-> > ```
-> > {: .output}
-> {: .solution}
-{: .challenge}
-
-### Using wildcards for accessing multiple files at once
-
-> ## Wildcards
->
-> `*` is a **wildcard**, which matches zero or more  characters.
-> Let's consider the `data-shell/molecules` directory:
-> `*.pdb` matches `ethane.pdb`, `propane.pdb`, and every
-> file that ends with '.pdb'. On the other hand, `p*.pdb` only matches
-> `pentane.pdb` and `propane.pdb`, because the 'p' at the front only
-> matches filenames that begin with the letter 'p'.
->
-> `?` is also a wildcard, but it matches exactly one character.
-> So `?ethane.pdb` would match `methane.pdb` whereas
-> `*ethane.pdb` matches both `ethane.pdb`, and `methane.pdb`.
->
-> Wildcards can be used in combination with each other
-> e.g. `???ane.pdb` matches three characters followed by `ane.pdb`,
-> giving `cubane.pdb  ethane.pdb  octane.pdb`.
->
-> When the shell sees a wildcard, it expands the wildcard to create a
-> list of matching filenames *before* running the command that was
-> asked for. As an exception, if a wildcard expression does not match
-> any file, Bash will pass the expression as an argument to the command
-> as it is. For example typing `ls *.pdf` in the `molecules` directory
-> (which contains only files with names ending with `.pdb`) results in
-> an error message that there is no file called `*.pdf`.
-> However, generally commands like `wc` and `ls` see the lists of
-> file names matching these expressions, but not the wildcards
-> themselves. It is the shell, not the other programs, that deals with
-> expanding wildcards, and this is another example of orthogonal design.
-{: .callout}
-
-> ## List filenames matching a pattern
->
-> When run in the `molecules` directory, which `ls` command(s) will
-> produce this output?
->
-> `ethane.pdb   methane.pdb`
->
-> 1. `ls *t*ane.pdb`
-> 2. `ls *t?ne.*`
-> 3. `ls *t??ne.pdb`
-> 4. `ls ethane.*`
->
-> > ## Solution
->>  The solution is `3.`
->>
->> `1.` shows all files whose names contain zero or more characters (`*`) followed by the letter `t`, then zero or more characters (`*`) followed by `ane.pdb`. This gives `ethane.pdb  methane.pdb  octane.pdb  pentane.pdb`.
->>
->> `2.` shows all files whose names start with zero or more characters (`*`) followed by the letter `t`, then a single character (`?`), then `ne.` followed by zero or more characters (`*`). This will give us `octane.pdb` and `pentane.pdb` but doesn't match anything which ends in `thane.pdb`.
->>
->> `3.` fixes the problems of option 2 by matching two characters (`??`) between `t` and `ne`. This is the solution.
->>
->> `4.` only shows files starting with `ethane.`.
-> {: .solution}
-{: .challenge}
-
-> ## More on Wildcards
->
-> Sam has a directory containing calibration data, datasets, and descriptions of
-> the datasets:
->
-> ~~~
-> .
-> ├── 2015-10-23-calibration.txt
-> ├── 2015-10-23-dataset1.txt
-> ├── 2015-10-23-dataset2.txt
-> ├── 2015-10-23-dataset_overview.txt
-> ├── 2015-10-26-calibration.txt
-> ├── 2015-10-26-dataset1.txt
-> ├── 2015-10-26-dataset2.txt
-> ├── 2015-10-26-dataset_overview.txt
-> ├── 2015-11-23-calibration.txt
-> ├── 2015-11-23-dataset1.txt
-> ├── 2015-11-23-dataset2.txt
-> ├── 2015-11-23-dataset_overview.txt
-> ├── backup
-> │   ├── calibration
-> │   └── datasets
-> └── send_to_bob
->     ├── all_datasets_created_on_a_23rd
->     └── all_november_files
-> ~~~
-> {: .language-bash}
->
-> Before heading off to another field trip, she wants to back up her data and
-> send some datasets to her colleague Bob. Sam uses the following commands
-> to get the job done:
->
-> ~~~
-> $ cp *dataset* backup/datasets
-> $ cp ____calibration____ backup/calibration
-> $ cp 2015-____-____ send_to_bob/all_november_files/
-> $ cp ____ send_to_bob/all_datasets_created_on_a_23rd/
-> ~~~
-> {: .language-bash}
->
-> Help Sam by filling in the blanks.
->
-> The resulting directory structure should look like this
-> ```
-> .
-> ├── 2015-10-23-calibration.txt
-> ├── 2015-10-23-dataset1.txt
-> ├── 2015-10-23-dataset2.txt
-> ├── 2015-10-23-dataset_overview.txt
-> ├── 2015-10-26-calibration.txt
-> ├── 2015-10-26-dataset1.txt
-> ├── 2015-10-26-dataset2.txt
-> ├── 2015-10-26-dataset_overview.txt
-> ├── 2015-11-23-calibration.txt
-> ├── 2015-11-23-dataset1.txt
-> ├── 2015-11-23-dataset2.txt
-> ├── 2015-11-23-dataset_overview.txt
-> ├── backup
-> │   ├── calibration
-> │   │   ├── 2015-10-23-calibration.txt
-> │   │   ├── 2015-10-26-calibration.txt
-> │   │   └── 2015-11-23-calibration.txt
-> │   └── datasets
-> │       ├── 2015-10-23-dataset1.txt
-> │       ├── 2015-10-23-dataset2.txt
-> │       ├── 2015-10-23-dataset_overview.txt
-> │       ├── 2015-10-26-dataset1.txt
-> │       ├── 2015-10-26-dataset2.txt
-> │       ├── 2015-10-26-dataset_overview.txt
-> │       ├── 2015-11-23-dataset1.txt
-> │       ├── 2015-11-23-dataset2.txt
-> │       └── 2015-11-23-dataset_overview.txt
-> └── send_to_bob
->     ├── all_datasets_created_on_a_23rd
->     │   ├── 2015-10-23-dataset1.txt
->     │   ├── 2015-10-23-dataset2.txt
->     │   ├── 2015-10-23-dataset_overview.txt
->     │   ├── 2015-11-23-dataset1.txt
->     │   ├── 2015-11-23-dataset2.txt
->     │   └── 2015-11-23-dataset_overview.txt
->     └── all_november_files
->         ├── 2015-11-23-calibration.txt
->         ├── 2015-11-23-dataset1.txt
->         ├── 2015-11-23-dataset2.txt
->         └── 2015-11-23-dataset_overview.txt
-> ```
-> {: .language-bash}
->
-> > ## Solution
-> > ```
-> > $ cp *calibration.txt backup/calibration
-> > $ cp 2015-11-* send_to_bob/all_november_files/
-> > $ cp *-23-dataset* send_to_bob/all_datasets_created_on_a_23rd/
-> > ```
-> > {: .language-bash}
-> {: .solution}
-{: .challenge}
-
-> ## Organizing Directories and Files
->
-> Jamie is working on a project and she sees that her files aren't very well
-> organized:
->
-> ~~~
-> $ ls -F
-> ~~~
-> {: .language-bash}
-> ~~~
-> analyzed/  fructose.dat    raw/   sucrose.dat
-> ~~~
-> {: .output}
->
-> The `fructose.dat` and `sucrose.dat` files contain output from her data
-> analysis. What command(s) covered in this lesson does she need to run so that the commands below will
-> produce the output shown?
->
-> ~~~
-> $ ls -F
-> ~~~
-> {: .language-bash}
-> ~~~
-> analyzed/   raw/
-> ~~~
-> {: .output}
-> ~~~
-> $ ls analyzed
-> ~~~
-> {: .language-bash}
-> ~~~
-> fructose.dat    sucrose.dat
-> ~~~
-> {: .output}
->
-> > ## Solution
-> > ```
-> > mv *.dat analyzed
-> > ```
-> > {: .language-bash}
-> > Jamie needs to move her files `fructose.dat` and `sucrose.dat` to the `analyzed` directory.
-> > The shell will expand *.dat to match all .dat files in the current directory.
-> > The `mv` command then moves the list of .dat files to the 'analyzed' directory.
-> {: .solution}
-{: .challenge}
-
-> ## Reproduce a folder structure
->
-> You're starting a new experiment, and would like to duplicate the directory
-> structure from your previous experiment so you can add new data.
->
-> Assume that the previous experiment is in a folder called '2016-05-18',
-> which contains a `data` folder that in turn contains folders named `raw` and
-> `processed` that contain data files.  The goal is to copy the folder structure
-> of the `2016-05-18-data` folder into a folder called `2016-05-20`
-> so that your final directory structure looks like this:
->
->	2016-05-20/
->	└── data
->	    ├── processed
->	    └── raw
->
-> Which of the following set of commands would achieve this objective?
-> What would the other commands do?
->
-> ~~~
-> $ mkdir 2016-05-20
-> $ mkdir 2016-05-20/data
-> $ mkdir 2016-05-20/data/processed
-> $ mkdir 2016-05-20/data/raw
-> ~~~
-> {: .language-bash}
-> ~~~
-> $ mkdir 2016-05-20
-> $ cd 2016-05-20
-> $ mkdir data
-> $ cd data
-> $ mkdir raw processed
-> ~~~
-> {: .language-bash}
-> ~~~
-> $ mkdir 2016-05-20/data/raw
-> $ mkdir 2016-05-20/data/processed
-> ~~~
-> {: .language-bash}
-> ~~~
-> $ mkdir -p 2016-05-20/data/raw
-> $ mkdir -p 2016-05-20/data/processed
-> ~~~
-> {: .language-bash}
-> ~~~
-> $ mkdir 2016-05-20
-> $ cd 2016-05-20
-> $ mkdir data
-> $ mkdir raw processed
-> ~~~
-> {: .language-bash}
-> >
-> > ## Solution
-> > The first two sets of commands achieve this objective.
-> > The first set uses relative paths to create the top level directory before
-> > the subdirectories.
-> >
-> > The third set of commands will give an error because the default behavior of `mkdir` won't create a subdirectory
-> > of a non-existant directory: the intermediate level folders must be created first.
-> >
-> > The fourth set of commands achieve this objective. Remember, the `-p` option, followed by a path of one or more 
-> > directories, will cause `mkdir` to create any intermediate subdirectories as required.
-> >
-> > The final set of commands generates the 'raw' and 'processed' directories at the same level
-> > as the 'data' directory.
-> {: .solution}
-{: .challenge}
+[^6]: Hankins, J. S., Ware, R. E., Rogers, Z. R., Wynn, L. W., Lane, P. A., Scott, J. P., & Wang, W. C. (2005). Long-term hydroxyurea therapy for infants with sickle cell anemia: the HUSOFT extension study. *Blood*, **106**(7), 2269–2275. [https://doi.org/10.1182/Blood-2004-12-4973](https://doi.org/10.1182/Blood-2004-12-4973)
