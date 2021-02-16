@@ -1,5 +1,5 @@
 ---
-title: "Study Designs"
+title: "Study designs"
 teaching: 30
 exercises: 20
 questions:
