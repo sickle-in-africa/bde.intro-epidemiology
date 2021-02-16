@@ -1,5 +1,5 @@
 ---
-title: "Comparing Disease Frequencies"
+title: "Comparing disease frequencies"
 teaching: 30
 exercises: 10
 questions:
