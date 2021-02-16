@@ -28,10 +28,10 @@ Comparisons of measures of disease frequency allows for meaningful groupings tha
 Usually, people who have a particular characteristic such as high foetal haemoglobin (HbF) level are compared with those who do not share the charateristic. This characteristic is often called the **exposure** and those who have the characteristic form the **exposed** or the **index group** while those without the characteristic form the **unexposed** or **referent group**. In instances in which no group is clearly unexposed, for instance a group of SCD patients who have higher than normal HbF level, the group with the lowest exposure e.g. lowest HbF level is typically used as the unexposed group.
 
 > ## Example
-> To test the hypothesis that HbF is associated with increased survival of SCD patients, one could compared the level of HbF among adult SCD patients (exposed group) to that of adults without SCD (unexposed group).
+> To test the hypothesis that HbF is associated with increased survival of SCD patients, one could compare the level of HbF among adult SCD patients (exposed group) to that of adults without SCD (unexposed group).
 {: .callout}
 
-# Data Organizatons
+# Data Organizations
 ---
 To compare disease frequencies, epidemiologists first organize the data in a “two-by-two” or “fourfold” table, so called because data are cross tabulated by two categories of exposure (yes or no) and two categories of disease (yes or no) (Table 1). These tables can be used in a study comparing proportions, such as prevalence or cumulative incidence.
 
@@ -51,7 +51,7 @@ A general term for this comparison is the **risk difference** or **rate differen
 $$RD=R_e - R_u$$
 
 
-where $$RD$$ is the rate or risk difference, $$R_e$$ is the rate or risk in the exposed group (for instance the mortality rate in individuals with SCD), and $$R_u$$ is the rate or risk in the unexposed group (for instance the mortality rate in normal individuals).
+where $$RD$$ is the rate or risk difference, $$R_e$$ is the rate or risk in the exposed group (for instance the mortality rate in individuals with SCD), and $$R_u$$ is the rate or risk in the unexposed group (for instance the mortality rate in normal individuals). Refer to <a href="{{ relative_root_path }}{% link _episodes/04-formulae.md %}">measures of disease frequency</a> for more on rates.
  
 The $$RD$$ describes the **disease burden associated with exposure among exposed people**. Or simply put, it is the **excess risk or rate of disease or outcome associated with the exposure**.
 
@@ -87,7 +87,7 @@ $$IRD = \frac{16.24}{1,000}(person-years) - \frac{10.73}{1,000}(person-years)$$
 $$IRD = \frac{5.51}{1,000}(person-years)$$
 
 
-Interpreted narrowly, there are 5.51 excess deaths per 1,000 person-years among Steubenville residents. Or, more broadly, if pollution caused the deaths, then 5.51 deaths among Steubenville residents for every 1,000 person-years of observation would be eliminated if the pollution level were reduced to that of Portage. To obtain the actual number of excess cases, simple multiply the excess risk or rate by the number of exposed people. Given that a population usually consists of both exposed and unexposed people, it is therefore useful to know the impact of the exposure not only on the exposed, but also on the unexposed group, hence the total population. **Population risk difference** is the term used to describe this comparison, and is calculated as follows:
+Interpreted narrowly, there are 5.51 excess deaths per 1,000 person-years among Steubenville residents. Or, more broadly, if pollution caused the deaths, then 5.51 deaths among Steubenville residents for every 1,000 person-years of observation would be eliminated if the pollution level were reduced to that of Portage. To obtain the actual number of excess cases, simply multiply the excess risk or rate by the number of exposed people. Given that a population usually consists of both exposed and unexposed people, it is therefore useful to know the impact of the exposure not only on the exposed, but also on the unexposed group, hence the total population. **Population risk difference** is the term used to describe this comparison, and is calculated as follows:
 
 $$PRD = R_t - R_u$$
 
@@ -100,7 +100,7 @@ $$PRD = RD\ ×\ P_e$$
 
 where $$P_e$$ is the proportion of the population that is exposed. The $$PRD$$ describes the excess number of cases in the total population that is associated with the exposure. Like $$IRD$$, $$PRD$$ dentifies the number of cases of disease that would be eliminated in the total population if the exposure were eliminated (or reduced to the level in the unexposed group).
 
-One can see from the formulas that, unless everyone in the population is exposed, the impact of the exposure is always smaller in the total population than in the exposed group and therefore the $$PRD$$ is always smaller than the $$RD$$. he units and range of the absolute measures of comparison ($$RD$$ and $$PRD$$) depend on the measure of disease frequency that is used for the calculation. For example, if incidence rates are used, then the measure will have person-time units and can range from negative infinity to positive infinity. On the other hand, if one uses cumulative incidence or prevalence, the measure is dimensionless and can range from −1 to +1.
+One can see from the formulas that, unless everyone in the population is exposed, the impact of the exposure is always smaller in the total population than in the exposed group and therefore the $$PRD$$ is always smaller than the $$RD$$. The units and range of the absolute measures of comparison ($$RD$$ and $$PRD$$) depend on the measure of disease frequency that is used for the calculation. For example, if incidence rates are used, then the measure will have person-time units and can range from negative infinity to positive infinity. On the other hand, if one uses cumulative incidence or prevalence, the measure is dimensionless and can range from −1 to +1.
 
 Two parallel measures of comparison that express the public health impact of an exposure as proportions are the attributable proportion among the exposed (also called the **etiologic fraction**) and the
 attributable proportion among the total population. The **attributable proportion among the exposed ($$AP_e$$)** describes the proportion of disease among the exposed that would be eliminated if the exposure were eliminated. It assumes a causal relationship between the exposure and disease. Mathematically, it is expressed as follows:
@@ -156,7 +156,7 @@ $$(RR - 1) × 100$$
 ---
 > ## Problem
 > > 1. Using the previous example in which $$RR = 1.51$$, calculate the excess relative rate. What does the value mean?
-> > 2. Assuming that the ralative risk of renal complication in SCD individuals with the 3.7 kb alpha-thalassemia deletion as compared to SCD individuals without the mutation is 0.20, calculate the excess relative risk. Explain the meaning of the value.
+> > 2. Assuming that the relative risk of renal complication in SCD individuals with the 3.7 kb alpha-thalassemia deletion as compared to SCD individuals without the mutation is 0.20, calculate the excess relative risk. Explain the meaning of the value.
 > {: .challenge}
 > > ## Solution
 > > 1. Excess $$RR = (1.51 - 1) × 100 = 51\%.$$ This means that compared with the residents of Portage, the residents of Steubenville have a 51% increased rate of death.
