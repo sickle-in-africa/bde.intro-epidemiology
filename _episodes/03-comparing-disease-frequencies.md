@@ -51,7 +51,7 @@ A general term for this comparison is the **risk difference** or **rate differen
 $$RD=R_e - R_u$$
 
 
-where $$RD$$ is the rate or risk difference, $$R_e$$ is the rate or risk in the exposed group (for instance the mortality rate in individuals with SCD), and $$R_u$$ is the rate or risk in the unexposed group (for instance the mortality rate in normal individuals). Refer to <a href="{{ relative_root_path }}{% link _episodes/02-formulae.md %}">measures of disease frequency</a> for more on rates.
+where $$RD$$ is the rate or risk difference, $$R_e$$ is the rate or risk in the exposed group (for instance the mortality rate in individuals with SCD), and $$R_u$$ is the rate or risk in the unexposed group (for instance the mortality rate in normal individuals). Refer to [measures of disease frequency]({{ page.root }}{% link _episodes/02-formulae.md %}) for more on rates.
  
 The $$RD$$ describes the **disease burden associated with exposure among exposed people**. Or simply put, it is the **excess risk or rate of disease or outcome associated with the exposure**.
 
