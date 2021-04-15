@@ -5,9 +5,10 @@ exercises: 20
 questions:
 - "How many epidemiological study designs are you familiar with?"
 - "What is a difference between experimental and observational studies?"
+- "What are the weaknesses and strengths for each study design?"
 objectives: 
-- "Distinguish between experimental and observational studies."
-- "Describe the key characteristics of experimental, cohort, case–control, cross-sectional, and ecological studies."
+- "Recall the most common study designs used by epidemiologists today"
+- "Discuss appropriate study designs given a research question"
 keypoints:
 - "In experimental studies, an ***investigator actively manipulates a therapeutic agent***."
 - "***Informed consent*** is critical for experimental studies."
@@ -19,27 +20,21 @@ keypoints:
 ---
 
 ## Introduction
-The term **study** in epidemiology includes both­ **surveillance**, whose purpose is to monitor aspects of disease occurrence and spread that are pertinent to effective control, and **epidemiological research**. The goal of epidemiological research is to harvest valid and precise information about the causes, preventions, and treatments for disease. There are several types of study designs in emidemiological research, including experimental studies and observational studies such as cohort and case-control studies. Each study design represents a different way of harvesting information. The selection of one design over another depends on the particular research question, concerns about validity and efficiency, and practical and ethical considerations. For example, experimental studies, also known as trials, investigate the role of some factor or agent in the prevention or treatment of a disease. In this type of study, the investigator assigns individuals to two or more groups that either receive or do not receive the preventive or therapeutic agent. Because experimental studies closely resemble controlled laboratory investigations, they are thought to produce the most scientifically rigorous data
-of all the designs.
-
-However, experimental studies are often infeasible because of difficulties enrolling participants, high costs, and ethical issues. Most epidemiological research is conducted using an observational study, which is considered a “natural” experiment because the investigator lets nature take its course. Observational studies take advantage of the fact that people are exposed to noxious and/or healthy substances through their personal habits, occupation, place of residence, and so on. The studies provide information on exposures that occur in natural settings, and they are not limited to preventions and treatments. Furthermore, they do not suffer from the ethical and feasibility issues of experimental studies. For example, although it is unethical to conduct an experimental study of the effect of drinking alcohol on the developing fetus by assigning newly pregnant women to either a drinking or nondrinking group, it is perfectly ethical to conduct an observational study by comparing women who choose to drink during pregnancy with those who decide not.
-
-The two principal types of observational studies are cohort and case–control studies. Additional observational study designs include cross-sectional studies and ecological studies. In this module, we shall look at experimental studies, as well as the observational cohort, case-control, and cross-sectional studies.
-
-### Study types
-
----
-Figure 1: Summary of epidemiological study types
+ There are several types of study designs in epidemiological research. Each study design represents a different way of harvesting information. The selection of one design over another depends on the particular research question, concerns about validity and efficiency, and practical and ethical considerations. Figure 1. represents the most common study designs used by epidemiologists today
+ 
+ ---
+Table 1: Summary of epidemiological study types
 
 <div style="width:70%; margin: auto;"><img alt="Epidemiology study types" src="../fig/bde.study.types.png"></div> *Adapted from* [^1]
 
 ---
 
-#### A) Experimental studies (trials)
-An experimental study, also known as a **trial**, investigates the role of some agent in the prevention or treatment of a disease. In this type of study, the **investigator assigns individuals to two or more groups** that either receive or do not receive the preventive or therapeutic agent. The group that is allocated the agent under study is generally called the **treatment group**, and the group that is not allocated the agent under study is called the
-**comparison group**. Depending on the purpose of the trial, the comparison group may receive no treatment at all, an inactive treatment such as a placebo, or another active treatment.
+Experimental studies, also known as trials, investigate the role of some factor or agent in the prevention or treatment of a disease. In this type of study, the investigator assigns individuals to two or more groups that either receive or do not receive the preventive or therapeutic agent. Because experimental studies closely resemble controlled laboratory investigations, they are considered the “gold standard” for producing reliable evidence because little is left to chance. But there’s a growing realization that such research is not perfect, and that many questions simply can’t be studied using this approach. 
+Experimental studies are often infeasible because of difficulties enrolling participants, high costs, and ethical issues.
 
-The active manipulation of the agent by the investigator is the hallmark that distinguishes experimental from observational studies. 
+The two principal types of observational studies are cohort and case–control studies. Additional observational study designs include cross-sectional studies and ecological studies. 
+
+Most epidemiological research is conducted using an observational study, which is considered a “natural” experiment because the investigator lets nature take its course. Observational studies take advantage of the fact that people are exposed to noxious and/or healthy substances through their personal habits, occupation, place of residence, and so on. The studies provide information on exposures that occur in natural settings, and they are not limited to preventions and treatments. Furthermore, they do not suffer from the ethical and feasibility issues of experimental studies. For example, although it is unethical to conduct an experimental study of the effect of drinking alcohol on the developing fetus by assigning newly pregnant women to either a drinking or nondrinking group, it is perfectly ethical to conduct an observational study by comparing women who choose to drink during pregnancy with those who decide not.
 
 ---
 > ## Note
@@ -47,6 +42,25 @@ The active manipulation of the agent by the investigator is the hallmark that di
 > - In observational studies, the investigator acts as a passive observer, merely **letting nature take its course**.
 {: .callout}
 ---
+
+### Study types
+
+In this module, we shall focus on experimental studies, as well as the observational cohort, case-control, and cross-sectional studies.
+
+---
+Figure 1: Overview of common epidemiological study types
+
+<div style="width:100%; margin: auto;"><img alt="Epidemiology study types" src="../fig/studyTypes.png"></div>
+
+---
+
+#### 1. Experimental studies (trials)
+An experimental study, also known as a **trial**, investigates the role of some agent in the prevention or treatment of a disease. In this type of study, the **investigator assigns individuals to two or more groups** that either receive or do not receive the preventive or therapeutic agent. The group that is allocated the agent under study is generally called the **treatment group**, and the group that is not allocated the agent under study is called the
+**comparison group**. Depending on the purpose of the trial, the comparison group may receive no treatment at all, an inactive treatment such as a placebo, or another active treatment.
+
+The active manipulation of the agent by the investigator is the hallmark that distinguishes experimental from observational studies. 
+
+
 
 Experimental studies are commonly classified by their objective, that is, by whether they investigate a measure that prevents disease occurrence (preventive or prophylactic trial) or a measure that treats an existing condition (therapeutic or clinical trial).
 
@@ -66,13 +80,23 @@ Experimental studies are commonly classified by their objective, that is, by whe
 
 ##### Selection of Study Population
 
-During the recruitment phase of an experimental study, the study population, which is also called the experimental population, is enrolled on the basis of eligibility criteria that reflect the purpose of the trial as well as scientific, safety, and practical considerations. For example, healthy or high-risk individuals are enrolled in
-prevention trials, whereas individ uals with specific diseases are enrolled in therapeutic trials. Additional inclusion and exclusion criteria may be used to restrict the study population by factors such as gender and age (See Standadization of rates under the episode [Comparing disease frequencies]({{ page.root }}{% link _episodes/04-formulae-and-comparing-disease-frequencies.md %})). The study population must include an adequate number of individuals to determine whether there is a true difference between the treatment and
-comparison groups. An investigator determines how many subjects to include by using formulas that take into account the anticipated difference between the groups, the background rate of the outcome, and the probability of making certain statistical errors (See episode on [measures of disease frequency]({{ page.root }}{% link _episodes/04-formulae-and-comparing-disease-frequencies.md %})). 
-In general, smaller anticipated differences between the treatment and comparison groups require larger sample sizes.
+During the recruitment phase of an experimental study, the study population, which is also called the experimental
+population, is enrolled on the basis of eligibility criteria that reflect the purpose of the trial as well as
+scientific, safety, and practical considerations. For example, healthy or high-risk individuals are enrolled in
+prevention trials, whereas individ uals with specific diseases are enrolled in therapeutic trials. Additional inclusion
+and exclusion criteria may be used to restrict the study population by factors such as gender and age (See
+Standadization of rates under the episode <a href="{{ relative_root_path }}{% link
+_episodes/03-comparing-disease-frequencies.md %}">"Comparing disease frequencies"</a>). The study population must
+include an adequate number of individuals to determine whether there is a true difference between the treatment and
+comparison groups. An investigator determines how many subjects to include by using formulas that take into account the
+anticipated difference between the groups, the background rate of the outcome, and the probability of making certain
+statistical errors (See episode on <a href="{{ relative_root_path }}{% link _episodes/02-formulae.md %}">Measures of
+disease frequency</a>). In general, smaller anticipated differences between the treatment and comparison groups require
+larger sample sizes.
 
 ##### Consent process and treatment assignment
-All eligible and willing individuals must give consent to participate in an experimental study. The process of gaining their agreement is known as informed consent. The investigator must describe the nature and objectives of the study, the tasks required of the participants, and the benefits and risks of participating. Individuals are then assigned to receive one of the two or more treatments being compared. Randomization, “an act of assigning or ordering that is the result of a random process
+
+All eligible and willing individuals must give consent to participate in an experimental study. The process of gaining their agreement is known as informed consent. The investigator must describe the nature and objectives of the study, the tasks required of the participants, and the benefits and risks of participating. Individuals are then assigned to receive one of the two or more treatments being compared. Invesigator can decided whether randomization is appropriate or not. **Randomization**, “an act of assigning or ordering that is the result of a random process
 
 ---
 > ## Question: Select the correct option.
@@ -105,17 +129,26 @@ It can range from a few months to a few decades.
 ##### Analysis
 The classic analytic approach for an experimental study is known as an **intent-to-treat** or **treatment assignment analysis**. In this analysis, all individuals who were randomly allocated to a treatment are analyzed regardless of whether they completed the regimen or received the treatment. An intent-to-treat analysis gives information on the effectiveness of a treatment under everyday practice conditions. The alternative to an intent-to-treat analysis is known as an efficacy analysis, which determines the treatment effects under ideal conditions, such as when participants take the full treatment exactly as directed.
 
+#### Strengths
+-Provides most reliable evidence from clinical research
+-Randomization offers ability to control confounders
+-Can conclude causal relationship
+#### Limitations
+-Costly and time-consuming
+-May be limited in generalizability
+
 ---
 > ## Question
 > What is **masking** in clinical trials, and how is it useful?
-> > ## Qnswer
+> > ## Answer
 > > Masking is the act of concealing the true identity of an active agent from the participants and investigators in a clinical trial. It helps prevent biases in the ascertainment of outcomes.
 > {: .solution}
 {: .challenge}
 
 ---
+#### 2. Observational studies
 
-#### B. Cohort Studies
+#### 2.1. Cohort Studies
 A **cohort** is defined as a group of people with a common characteristic or experience. In a cohort study, healthy subjects are defined according to their exposure status and followed over time to determine the incidence of symptoms, disease, or death. The common characteristic for grouping subjects is their exposure level. Usually, two groups are compared: an **exposed** and an **unexposed** group. The unexposed group is called the reference, referent, or comparison group. Cohort study is the term that is typically used to describe an epidemiological investigation that follows groups with common characteristics. Other expressions that are used include follow-up, incidence, or longitudinal study. The **term fixed** cohort is used when the cohort is formed on the basis of an irrevocable event, such as undergoing a medical procedure. Thus, an individual’s exposure in a fixed cohort does not change over time. A **closed cohort**
 is used to describe a fixed cohort with no losses to follow-up. In contrast, a cohort study conducted in an **open population**, also known as a **dynamic population**, is defined by exposures that can change over time, such as cigarette smoking.
 
@@ -155,7 +188,18 @@ When participants are truly lost to follow-up, investigators employ a number of 
 ##### Analysis
 The primary objective of analyzing cohort study data is to compare the occurrence of symptoms, disease, and death in the exposed and unexposed groups. If it is not possible to find a completely unexposed group to serve as the comparison, then the least exposed group is used
 
-#### C. Case-Control Studies
+#### Strengths
+-Establishes time sequence of events
+-Several outcomes can be assessed
+-Allows assessment of incidence and natural history of disease
+-Yield incidence, relative risk, attributable risk
+#### Limitations
+-Large samples often required
+-May not be feasible in terms of time and money
+-Not feasible with rare outcomes-
+-Potential bias caused by loss to follow-up
+
+#### 2.2. Case-Control Studies
 The case–control study has traditionally been viewed as an inferior alternative to the cohort study. In the traditional view, subjects are selected on the basis of whether they have or do not have the disease. An individual who has the disease is termed a **case**, and someone who does not have the disease is termed a **control**. The exposure histories of cases and controls are then obtained and compared. Thus, the central feature of the traditional view is the comparison of the exposure histories of the cases and controls. This differs from the logic of experimental and cohort study designs in which the key comparison is disease incidence between the exposed and unexposed (or least exposed) groups. More specifically, a case–­control study is a method of sampling a population in which researchers identify and enroll cases of disease and a sample of the source population that gave rise to the cases.
 
 ##### Selection of Cases and controls
@@ -172,7 +216,17 @@ case–control study, epidemiologists typically calculate the odds of being
 a case among the exposed ($$\frac{a}{b}$$) compared to the odds of being a case among the nonexposed ($$\frac{c}{d}$$). The ratio of these two odds is expressed as follows: $$\frac{\frac{a}{b}}{\frac{c}{d}}$$ OR $$\frac{ad}{bc}$$
 
 
-This ratio, known as the disease **odds ratio**, provides an estimate of the relative risk just as the incidence rate ratio and cumulative incidence ratio do. Refer to [measures of disease frequency]({{ page.root }}{% link _episodes/04-formulae-and-comparing-disease-frequencies.md %}) for more on this.
+This ratio, known as the disease **odds ratio**, provides an estimate of the relative risk just as the incidence rate ratio and cumulative incidence ratio do. Refer to <a href="{{ relative_root_path }}/{% link _episodes/02-formulae.md %}">measures of disease frequency</a> for more on this.
+
+#### Strengths 
+-Effective for rare outcomes
+-Compared with cohort study, it requires less time and money
+-Yields the odds ratio 
+#### Limitations
+-Limited to one outcome condition
+-Does not provide incidence, relative risk, or natural history
+-Less effective than a cohort study at establishing time sequence of events
+-Potential recall and interviewer bias
 
 ---
 > ## Question: 
@@ -188,8 +242,23 @@ This ratio, known as the disease **odds ratio**, provides an estimate of the rel
 {: .challenge}
 ---
 
-#### Cross-sectional studies
+#### 2.3 Cross-sectional studies
 A cross-sectional study “examines the relationship between diseases (or other health-related characteristics) and other variables of interest as they exist in a defined population at one particular time. Unlike populations studied in cohort and case–control studies, cross-sectional study populations are commonly selected without regard to exposure or disease status. Cross-sectional studies typically take a snapshot of a population at a single point in time and therefore usually measure the disease prevalence in relation to the exposure prevalence. In other words, current disease status is usually examined in relation to current exposure level.
+
+#### Strengths 
+
+-Control over study population
+-Control over measurements
+-Several association between variables can be studied at the same time
+-Short time period required
+-Complete data collection
+-Produces prevalence
+
+#### Limitations
+-No data on the time relationship between exposure and outcome development
+-Not feasible with rate exposures or outcomes
+-Does not yield incidence or relative risk/
+-No causal relationship can be made
 
 
 When is it desirable to use a particular study design?
