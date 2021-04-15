@@ -85,12 +85,11 @@ population, is enrolled on the basis of eligibility criteria that reflect the pu
 scientific, safety, and practical considerations. For example, healthy or high-risk individuals are enrolled in
 prevention trials, whereas individ uals with specific diseases are enrolled in therapeutic trials. Additional inclusion
 and exclusion criteria may be used to restrict the study population by factors such as gender and age (See
-Standadization of rates under the episode <a href="{{ relative_root_path }}{% link _episodes/04-formulae-and-comparing-disease-frequencies.md %}">"Comparing disease frequencies"</a>). The study population must
+Standadization of rates under the episode <a href="{{ relative_root_path }}{% link _episodes/04-formulae-and-comparing-disease-frequencies.md %}">"Measuring and comparing disease frequencies"</a>). The study population must
 include an adequate number of individuals to determine whether there is a true difference between the treatment and
 comparison groups. An investigator determines how many subjects to include by using formulas that take into account the
 anticipated difference between the groups, the background rate of the outcome, and the probability of making certain
-statistical errors (See episode on <a href="{{ relative_root_path }}{% link _episodes/04-formulae-and-comparing-disease-frequencies.md %}">Measures of
-disease frequency</a>). In general, smaller anticipated differences between the treatment and comparison groups require
+statistical errors (See episode on <a href="{{ relative_root_path }}{% link _episodes/04-formulae-and-comparing-disease-frequencies.md %}">Measuring and comparing disease frequencies</a>). In general, smaller anticipated differences between the treatment and comparison groups require
 larger sample sizes.
 
 ##### Consent process and treatment assignment
@@ -215,7 +214,7 @@ case–control study, epidemiologists typically calculate the odds of being
 a case among the exposed ($$\frac{a}{b}$$) compared to the odds of being a case among the nonexposed ($$\frac{c}{d}$$). The ratio of these two odds is expressed as follows: $$\frac{\frac{a}{b}}{\frac{c}{d}}$$ OR $$\frac{ad}{bc}$$
 
 
-This ratio, known as the disease **odds ratio**, provides an estimate of the relative risk just as the incidence rate ratio and cumulative incidence ratio do. Refer to <a href="{{ relative_root_path }}/{% link _episodes/04-formulae-and-comparing-disease-frequencies.md %}">measures of disease frequency</a> for more on this.
+This ratio, known as the disease **odds ratio**, provides an estimate of the relative risk just as the incidence rate ratio and cumulative incidence ratio do. Refer to <a href="{{ relative_root_path }}/{% link _episodes/04-formulae-and-comparing-disease-frequencies.md %}">Measuring and comparing disease frequencies</a> for more on this.
 
 #### Strengths 
 -Effective for rare outcomes
@@ -262,7 +261,7 @@ A cross-sectional study “examines the relationship between diseases (or other 
 
 When is it desirable to use a particular study design?
 ---
-The goal of every epidemiological study is to gather correct and sharply defined data on the relationship between an exposure and a health-­related state or an event in a population. The three main study designs represent different ways of gathering this information.
+The goal of every epidemiological study is to gather correct and sharply defined data on the relationship between an exposure and a health-related state or an event in a population. The three main study designs represent different ways of gathering this information.
 
 - **Experimetal studies**: Investigators conduct an experimental study when they wish to learn
 about a prevention or treatment for a disease. In addition, they conduct this type of study when they need data with a high degree of validity that is simply not possible in an observational study. When the difference between groups is small, even a small degree of bias or confounding can create or mask an effect
