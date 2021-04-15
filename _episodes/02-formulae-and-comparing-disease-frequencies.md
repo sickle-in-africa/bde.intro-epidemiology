@@ -1,14 +1,16 @@
 ---
-title: "Measures of disease frequency"
-teaching: 25
+title: "Measuring and Comparing Disease Frequencies"
+teaching: 30
 exercises: 10
 questions:
-- "How do epidemiologists measure and estimate disease frequency?"
+- "How do epidemiologists measure, estimate, and compare disease frequencies?"
 objectives:
 - "Describe how a disease occurrence is determined."
 - "Calculate the cumulative incidence, incidence rate, or prevalence of a disease from a data set."
 - "Explain the difference between prevalence and incidence."
 - "List some examples of commonly used measures of disease frequency."
+- "Organize disease frequency data into a two-by-two table."
+- "Describe and calculate risk difference and risk ratio."
 keypoints:
 - "To estimate the frequency of a disease in a population, epidemiologists must: (1) develop a concrete definition of the disease, (2) count the number of people affected by the disease, (3) determine the size of the population from which the disease cases arose, (4) and account for the passage of time."
 - "Location of residence, such as a country, state, city, or neighbourhood, is one of the most common ways to define a population."
@@ -18,6 +20,13 @@ keypoints:
 - "Prevalence measures the frequency of existing disease."
 - "Prevalence is defined either at a single point in time (point prevalence) or over a period of time (period prevalence)."
 - "Examples of common disease frequency measures are crude mortality (or death) rate, cause-specific mortality rate, morbidity rate, and survival rate."
+- "If there is no relationship between the exposure and disease, the numeric value for the relative measure is 1.0 ($$RR = 1.0$$)."
+- "If there is a positive relationship between the exposure and disease (i.e., the exposure increases the rate of disease), the numeric value is greater than 1.0 ($$RR > 1.0$$)."
+- "If there is a negative relationship between the exposure and disease (i.e., the exposure decreases the rate of disease), the numeric value is less than 1.0 ($$RR < 1.0$$)."
+- "A relative risk of 0.5 means that the exposed group has one-half the risk of the unexposed
+group, or a 50% decreased risk of disease."
+- "A relative risk of 0.33 means that the exposed group has one-third the risk, or a 67% reduction in risk, and so on."
+- "The relative measure of comparison can range from zero to infinity."
 ---
 
 In episode 1 we defined the disease frequency of a population as some measure of how often a disease occurs in that population. There are many ways one can define this measure, and for any given case our choice will depend on the data at hand, the hypothesis of the study, or prevailing conventions in the  epidemiology literature. In this section we will look at some of the ways in which such a measure could be defined, and how to calculate it from a data set. Estimating the disease frequency, using some chosen measure of this frequency, for a given population is one of the first steps in analysing the pattern of disease in the population, working out determinants, and in planning effective control strategies. 
@@ -31,23 +40,13 @@ To estimate the frequency of a disease in a population, epidemiologists must:
 We will now look at these steps in more detail.
 
 # How do we determine who has a disease?
-As the list of steps above suggests, we first need a definition of the disease in question, and a definition of the population. These definitions need to be concrete so that we can successfully count both the members of the population, and count those members whom are affected by the disease. 
-
-Recall that, in episode 1, we defined a population as a group of people with one or more shared characteristics. By choosing a characteristic, for example age, we can define a specific population that we will then study. Note that we are taking about two definitions here, the definition of a *general* population, which is a statement about what properties *any* population must have, and the definition of a *specific* population, which gives concrete example of a general population. For example, a specific population follows from the definition: the set of all citizens of Kenya. 
-
-Location of residence, such as a country, state, city, or neighbourhood, is one of the most common ways to define a population. For example, the
-people who reside in: the Woodstock suburb of Cape Town, South Africa; the city of Kumasi, Ghana; the state of Lagos, Nigeria; and the country of Tanzania are members of distinct populations defined by geopolitical entities ranging in size from a neighbourhood to an entire country. Residence near natural geographic features, such as rivers, mountains, lakes, or islands, can also be used to define a population. For example, people who live along the 2,574km length of the Zambezi River, around Kilimanjaro in Tanzania, and on the island of Madagascar are members of populations defined by geographic formations. 
-
-Because epidemiology focuses on disease occurrence, populations are commonly defined in relation to a medical facility, such as a medical
-professional’s office, clinic, or hospital. The service population of a medical facility (also called **catchment population**) consists of the people who use the facility’s services. This population is often difficult to define because an individual’s decision to use a facility may depend on how far it is from home, the person’s particular medical condition, and so forth.
+As the list of steps above suggests, we first need a definition of the disease in question, and a definition of the population. These definitions need to be concrete so that we can successfully count both the members of the population, and count those members whom are affected by the disease.
 
 The population is the set of all people of interest *who could potentially contract the disease*. For example, in a study of cervical cancer it would not be sensible to include men in the study population because we already know precisely the factor that protects men from cervical cancer, namely they do not have a cervix. It is helpful to focus on what is *not known before the study begins*, in this case, why some women in a population may contract the disease and others do not. The definition of a study population in each study is therefore closely related to the investigators' initial scientific question. In the above example, this question would be: why do some women contract cervical cancer and others do not? We may also restrict our attention to a specific population for means of study convenience; it may only be practical to consider the population of women living on the banks of the Zambezi river because the study was initiated in response to a particular health crisis there. The study question would in this case be: why do some women living next to the Zambezi river contract cervical cancer and others do not?
 
 The definition of a disease is usually based on a combination of physical and pathological examinations, diagnostic test results, and signs
 and symptoms. Which and how many criteria are used to define a “case” (a person who meets the disease definition) has important implications
-for accurately determining who has the disease. Consider the various criteria that can be used to define a heart attack case. One could use the symptoms of chest pain; the results of diagnostic tests, such as electrocardiograms; or blood enzyme tests for cardiac damage. What are the implications of using only chest pain to define heart attack  cases? Using only this nonspecific symptom will capture most but not all people who have heart attacks because it will miss people who have “silent” heart attacks, which occur without chest pain. In addition, it will erroneously include many people who have other conditions that produce chest pain, such as indigestion.
-
-A definition that includes more specific criteria, such as the results of diagnostic tests, will be more accurate. For example, if positive blood enzyme tests are included, silent heart attacks are likely to be picked up and the other conditions that cause chest pain omitted. In practice, epidemiologists use all available information from physical and pathological examinations and laboratory and other tests to define a case of a disease as accurately as possible.
+for accurately determining who has the disease.
 
 > ## Challenge
 > Why is it good practice to include the definition of the disease in the study report?
@@ -136,26 +135,142 @@ many researchers prefer to use incidence because the timing of exposures in rela
 
 On the other hand, prevalence is useful for estimating the needs of medical facilities and allocating resources for treating people who already have a disease. In addition, researchers who study diseases such as birth defects (wherein it is difficult to gather information on defects present in miscarried and aborted fetuses) and chronic conditions such as arthritis (whose beginnings are difficult to pinpoint) have no choice but to use prevalence. Unfortunately, results of such studies are difficult to interpret because it is unclear how much the association is influenced by using a group of survivors.
 
-# Common measures of disease frequency
-There are many measures of disease frequency that are commonly used in the public health disciplines. Some are incidence measures, some are prevalence measures, some are ratios. Descriptions and examples of the major measures follow. Note that the word rate is often used incorrectly
-to describe a proportion or ratio. 
+---
 
-- **Crude mortality (or death) rate**: Total number of deaths from all causes per 100,000 population per year. The term crude means that the
-rate is based on raw data. In 2015 the crude mortality rate in the United States was 844.0/100,000 population/year.
-- **Cause-specific mortality rate**: Number of deaths from a specific cause per 100,000 population per year. In 2015, the cause-specific mortality rate from heart disease in the United States was 197.2/100,000/year.
-- **Age-specific mortality rate**: Total number of deaths from all causes among individuals in a specific age category per 100,000 population
-per year in the age category. In 2015, the age-specific death rate was 589.6/100,000/year among U.S. children under the age of 1 year.
-- **Years of potential life lost**: The number of years that an individual was expected to live beyond his or her death. In 2015, a total of 957 years were lost from heart disease, 1,283 years were lost from cancer, and 1,172 were lost from unintentional injuries before age 75 per 100,000 population younger than 75 years of age in the United States. 18 The number of years of potential life lost reflects both the number of individuals who died of a particular cause and the age at which the death occurred. For example, a cause of death that is more common among children and young adults (such as unintentional injuries) will result in more years of life lost per individual than a cause of death that is common among the elderly (such as heart disease).
-- **Livebirth rate**: Total number of livebirths per 1,000 population per year. A livebirth is a pregnancy that results in a child who, after separation, breathes or shows any other evidence of life. Sometimes, the denominator includes only women of childbearing age. In 2015, the crude livebirth rate among women who were residents of the United States was 12.4/1,000/year.
-- **Infant mortality rate**: Number of deaths of infants less than 1 year of age per 1,000 livebirths per year. This statistic is often divided into neonatal deaths (those occurring during the first 27 days following birth) and post neonatal deaths (those occurring from 28 days through 12 months). In 2014, the infant mortality rate in the United States was 5.8/1,000 livebirths/year, the neonatal mortality rate was 3.9/1,000 livebirths/year, and the post neonatal death rate was 1.9/1,000 livebirths/year.
-- **Birth defect rate (also called congenital anomaly or malformation rate)**: Number of children born with defects, usually per 10,000 births. The numerator and denominator often include both livebirths and stillbirths. In 2016–2017, the prevalence of brain malformations, including microcephaly, was 5% among women with evidence of recent possible Zika virus infection.
-- **Morbidity rate**: Number of existing or new cases of a particular disease or condition per 100 population. The time period that is covered
-and the population size in the denominator vary. Morbidity is a general word that can apply to a disease, condition, or event. For example, from
-2011 to 2014, the prevalence of physician-diagnosed diabetes among U.S. adults aged 65 years and over was 20.6%.
-- **Attack rate**: Number of new cases of disease that develop (usually during a defined and short time period) per the number in a healthy population at risk at the start of the period. This cumulative incidence measure is usually reserved for infectious disease outbreaks. For example, the 24-hour attack rate for food poisoning was 50% among people who ate chicken salad at the banquet.
-- **Case fatality rate**: Number of deaths per number of cases of disease. Note that this measure is a type of cumulative incidence and therefore it is necessary to specify the length of time to which it applies. For example, in 2014 in the Democratic Republic of Congo, the 5-month case fatality rate among individuals with Ebola virus disease was 74.2%. 
-- **Survival rate**: Number of living cases per number of cases of disease. This rate is the complement of the case fatality rate and is also a cumulative incidence measure. Five-year relative survival rates for cancer compare people with a particular cancer to similar people in the general population. For example, from 2007 to 2013, 5-year relative survival rates for prostate cancer were 100% among men diagnosed while the tumour was still confined to the prostate or had spread only to the regional lymph nodes and 29.8% among men whose tumour had metastasized to distant sites.
+# How do we compare disease frequencies 
+
+As we have just seen, measures of disease frequency are the building blocks epidemiologists use to assess the effects of a disease on a population. 
+We will now see that comparisons of measures of disease frequency allow for meaningful groupings that allow one to describe the relationship between a characteristic and a disease. This allows us to assess the public health effect of the exposure. Disease frequencies can be compared between different populations or between subgroups within a population. For example, one might be interested in comparing disease frequencies between residents in Tanzania and Ghana or between subgroups of sickle cell patients within Nigeria according to haematological characteristics, such as teal hemoglobin (HbF) level.
+
+Usually, people who have a particular characteristic such as high foetal haemoglobin (HbF) level are compared with those who do not share the charateristic. This characteristic is often called the **exposure** and those who have the characteristic form the exposed or the index group while those without the characteristic form the unexposed or referent group. In instances in which no group is clearly unexposed, for instance a group of SCD patients who have higher than normal HbF level, the group with the lowest exposure e.g. lowest HbF level is typically used as the unexposed group.
+
+> ## Example
+> To test the hypothesis that HbF is associated with increased survival of SCD patients, one could compare the level of HbF among adult SCD patients (exposed group) to that of adults without SCD (unexposed group).
+{: .callout}
+
+# Data Organizations
+---
+To compare disease frequencies, epidemiologists first organize the data in a “two-by-two” or “fourfold” table, so called because data are cross tabulated by two categories of exposure (yes or no) and two categories of disease (yes or no) (**Table 1**).
+
+**Table 1**: General Organization of Cumulative Incidence or Prevalence Data in a Two-by-Two Table
+
+<div style="width:80%; margin: auto;"><img alt="two-by-two table" src="../fig/two-by-two_table.png"></div> *Adapted from* [^1]
+
+The outermost row and column numbers are called the margins of the table (e.g., a + b), and the numbers in the inner area are called the cells (a, b, c, d). Some epidemiologists may prefere to arrange the table with exposure across the top and disease status to the side. In such a case, one must be careful to also make appopriate changes to the formulas.
+
+## Measures of Comparison
+Measures of disease frequency can be compared in two ways. They can be subtracted from one another (**absolute comparisons**) or divided by one another (**relative comparisons**). Absolute comparisons generally give information about the public health impact of an exposure, and relative comparisons generally give information about the strength of the relationship between an exposure and a disease.
+
+### A) Absolute Measures of Comparison
+
+A general term for this comparison is the **risk difference** or rate difference. Absolute comparisons can be calculated for either exposed individuals or the total population. When exposed individuals are the focus, the absolute difference measure is calculated as follows:
+
+$$RD=R_e - R_u$$
+
+
+where $$RD$$ is the rate or risk difference, $$R_e$$ is the rate or risk in the exposed group (for instance the mortality rate in individuals with SCD), and $$R_u$$ is the rate or risk in the unexposed group (for instance the mortality rate in normal individuals).
+ 
+The $$RD$$ describes the disease burden associated with exposure among exposed people. Or simply put, it is the excess risk or rate of disease or outcome associated with the exposure.
+
+---
+> ## Challenge
+> Considering our example of mortality rate in SCD versus normal individuals, what would $$RD$$ be?
+> > ## Solution
+> > Excess mortality
+> {: .solution}
+{: .challenge}
+---
+
+Assuming that the exposure is a direct cause of the disease, then $$RD$$ can be used to calculate the number of disease cases that would be eliminated if the exposure were eliminated (or reduced to the level of the unexposed group). For instance, consider the data presented in Table 3.4 of [^1].
+
+<div style="width:70%; margin: auto;"><img alt="table 3.4" src="../fig/table3.4.png"></div> *Adapted from* [^1]
+
+To calculate the mortality:
+
+$$Incidence\ rate\ of\ mortality_{in\ Steubenville} = \frac{291}{17,914}$$
+
+$$==> \frac{16.24}{1,000}(person-years)$$
+
+$$Incidence\ rate\ of\ mortality_{in\ Portage} = \frac{232}{21,618}$$
+
+$$==> \frac{10.73}{1,000}(person-years)$$
+
+--------------
+
+$$Incident\ rate\ difference = IR_{most\ polluted\ city} - IR_{least\ polluted\ city}$$
+
+$$IRD = \frac{16.24}{1,000}(person-years) - \frac{10.73}{1,000}(person-years)$$
+
+$$IRD = \frac{5.51}{1,000}(person-years)$$
+
+
+Interpreted narrowly, there are 5.51 excess deaths per 1,000 person-years among Steubenville residents. Or, more broadly, if pollution caused the deaths, then 5.51 deaths among Steubenville residents for every 1,000 person-years of observation would be eliminated if the pollution level were reduced to that of Portage. To obtain the actual number of excess cases, simply multiply the excess risk or rate by the number of exposed people. Given that a population usually consists of both exposed and unexposed people, it is therefore useful to know the impact of the exposure not only on the exposed, but also on the unexposed group, hence the total population. **Population risk difference** is the term used to describe this comparison, and is calculated as follows:
+
+$$PRD = R_t - R_u$$
+
+where $$PRD$$ is the population rate/risk difference, $$R_t$$ is the rate or risk in the total population, and $$R_u$$ is the rate or risk in the unexposed group.
+
+
+It is also possible to obtain the population rate difference by multiplying the risk or rate difference ($$RD$$) by the proportion of the population that is exposed ($$P_e$$ ):
+
+$$PRD = RD\ ×\ P_e$$
+
+where $$P_e$$ is the proportion of the population that is exposed. The $$PRD$$ describes the excess number of cases in the total population that is associated with the exposure. Like $$IRD$$, $$PRD$$ dentifies the number of cases of disease that would be eliminated in the total population if the exposure were eliminated (or reduced to the level in the unexposed group).
+
+We see from the formulas that, unless everyone in the population is exposed, the impact of the exposure is always smaller in the total population than in the exposed group and therefore the $$PRD$$ is always smaller than the $$RD$$. The units and range of the absolute measures of comparison ($$RD$$ and $$PRD$$) depend on the measure of disease frequency that is used for the calculation. For example, if incidence rates are used, then the measure will have **person-time** units and can range from negative infinity to positive infinity. On the other hand, if one uses cumulative incidence or prevalence, the measure is dimensionless and can range from −1 to +1.
+
+### B) Relative Measures of Comparison
+A relative measure of comparison is based on the ratio of two measures of disease frequency. This measure is generally called the **risk ratio**, rate ratio, relative rate, or **relative risk**. Mathematically, the relative measure is expressed as follows:
+
+$$RR = \frac{R_e}{R_u}$$
+
+where $$RR$$ is the rate or risk ratio or relative risk; $$R_e$$ is the incidence rate, cumulative incidence, or prevalence in the exposed group; and $$R_u$$ is the incidence rate, cumulative incidence, or prevalence in the unexposed group. This measure gives information about the strength of the relationship between the exposure and disease and is most useful in etiological studies.
+
+Consider the example in Table 3.4 above:
+
+$$RR = \frac{\frac{16.24}{1,000}(person-years)}{\frac{10.73}{1,000}(person-years)} = 1.51$$
+
+This means that, compared with the residents of Portage, there is a 1.51-fold increased rate of death among residents of Steubenville. Another interpretation is that the death rate in Steubenville is 1.51 times that of Portage.
+
+Another way to express this information is in terms of the **excess relative rate**, which is
+mathematically equal to:
+
+$$(RR - 1) × 100$$
+
+---
+> ## Challenge
+> > 1. Using the previous example in which $$RR = 1.51$$, calculate the excess relative rate. What does the value mean?
+> > 2. Assuming that the relative risk of renal complication in SCD individuals with the 3.7 kb alpha-thalassemia deletion as compared to SCD individuals without the mutation is 0.20, calculate the excess relative risk. Explain the meaning of the value.
+> {: .challenge}
+> > ## Solution
+> > 1. Excess $$RR = (1.51 - 1) × 100 = 51\%.$$ This means that compared with the residents of Portage, the residents of Steubenville have a 51% increased rate of death.
+> > 2. Excess $$RR = (1 - 0.20) × 100 = 80\%.$$ This means that compared with SCD individuals who lack the 3.7 kb alpha-thalassemia deletion, SCD individuals with the mutation have an 80% reduced risk of renal complications.
+> {: .solution}
+{: .challenge}
+----
+
+Most epidemiologists prefer to use the relative method of comparison for etiologic research because it indicates how many times higher or lower the disease risk is among the exposed as compared with the baseline risk among the unexposed.
+
+### Data Standardization
+It is difficult to interpret absolute and relative measures of comparison that are based on crude rates when the compared groups differ on a characteristic that affects the rate of disease (such as age, gender, or race). This difference between the groups may result in an unfair comparison and distort the results.
+
+Calculation of characteristic-specific comparisons such as comparisons among exposed and unexposed individuals of a particular age (age-specific comparison) should give a more accurate picture of rates. However, because there are usually many age groups to examine, this method results in a cumbersome number of comparisons. Furthermore, comparing age-specific rates can give a confusing picture if some of the rates are higher in one state and some are higher in the other. 
+Epidemiologists commonly use an alternative method in which the rates in each state are summarized in a single number that adjusts for the age differences between the populations. These summary rates, which are known as age-standardized or age-adjusted rates, answer the question, “What would the death rate be in each state if the populations had identical age distributions?”
+
+---
+> ## Quiz
+> > 1. State one example of an absolute measure of comparison in the context of SCD
+> > 2. What does a relative risk ($$RR$$) value of 1.0 mean?
+> > 3. Why is it important to standadize data before calculating measures of comparison?
+> {: .challenge}
+> > ## Solutions
+> > 1. Excess mortality
+> > 2. A relative risk of 1.0 means there is no relationship between the exposure and disease.
+> > 3. Measures of comparison calculated on crude rates when the compared groups differ on a characteristic that affects the rate could be inaccurate.
+> {: .solution}
+{: .challenge}
+---
 
 ## References
 
-[^1]: Ann Aschengrau and George R. Seage III, Essentials of epidemiology in public health, Fourth edition (2020, Jones & Bartlett Learning)
+[^1]: Ann Aschengrau and George R. Seage III, Essentials of epidemiology in public health, Fourth edition (2020, Jones & Bartlett Learning)---

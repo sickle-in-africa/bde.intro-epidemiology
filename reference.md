@@ -52,6 +52,17 @@ period prevalence
 :   the proportion of the population that is diseased during a specified duration of time.
     See also:  [prevalence](#prevalence), [point prevalence](#point-prevalence).
 
+exposure
+:	a characteristic for which people are compared in an epidemiological study.
+
+absolute comparisons
+:	the subtracted measures of disease comparisons. Also called risk difference rate difference, incidence rate difference, cumulative incidence difference, and prevalence difference.
+
+relative comparisons
+:	the divided measures of disease comparisons.
+
+
+
 ## Equations
 
 
