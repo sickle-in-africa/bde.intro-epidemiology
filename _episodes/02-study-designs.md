@@ -90,7 +90,7 @@ _episodes/03-comparing-disease-frequencies.md %}">"Comparing disease frequencies
 include an adequate number of individuals to determine whether there is a true difference between the treatment and
 comparison groups. An investigator determines how many subjects to include by using formulas that take into account the
 anticipated difference between the groups, the background rate of the outcome, and the probability of making certain
-statistical errors (See episode on <a href="{{ relative_root_path }}{% link _episodes/02-formulae.md %}">Measures of
+statistical errors (See episode on <a href="{{ relative_root_path }}{% link _episodes/02.formulae-and-comparing-disease-frequencies.md %}">Measures of
 disease frequency</a>). In general, smaller anticipated differences between the treatment and comparison groups require
 larger sample sizes.
 
@@ -216,7 +216,7 @@ case–control study, epidemiologists typically calculate the odds of being
 a case among the exposed ($$\frac{a}{b}$$) compared to the odds of being a case among the nonexposed ($$\frac{c}{d}$$). The ratio of these two odds is expressed as follows: $$\frac{\frac{a}{b}}{\frac{c}{d}}$$ OR $$\frac{ad}{bc}$$
 
 
-This ratio, known as the disease **odds ratio**, provides an estimate of the relative risk just as the incidence rate ratio and cumulative incidence ratio do. Refer to <a href="{{ relative_root_path }}/{% link _episodes/02-formulae.md %}">measures of disease frequency</a> for more on this.
+This ratio, known as the disease **odds ratio**, provides an estimate of the relative risk just as the incidence rate ratio and cumulative incidence ratio do. Refer to <a href="{{ relative_root_path }}/{% link _episodes/02.formulae-and-comparing-disease-frequencies.md %}">measures of disease frequency</a> for more on this.
 
 #### Strengths 
 -Effective for rare outcomes
