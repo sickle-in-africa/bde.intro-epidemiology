@@ -85,12 +85,11 @@ population, is enrolled on the basis of eligibility criteria that reflect the pu
 scientific, safety, and practical considerations. For example, healthy or high-risk individuals are enrolled in
 prevention trials, whereas individ uals with specific diseases are enrolled in therapeutic trials. Additional inclusion
 and exclusion criteria may be used to restrict the study population by factors such as gender and age (See
-Standadization of rates under the episode <a href="{{ relative_root_path }}{% link
-_episodes/03-comparing-disease-frequencies.md %}">"Comparing disease frequencies"</a>). The study population must
+Standadization of rates under the episode <a href="{{ relative_root_path }}{% link _episodes/02-formulae-and-comparing-disease-frequencies.md %}">"Comparing disease frequencies"</a>). The study population must
 include an adequate number of individuals to determine whether there is a true difference between the treatment and
 comparison groups. An investigator determines how many subjects to include by using formulas that take into account the
 anticipated difference between the groups, the background rate of the outcome, and the probability of making certain
-statistical errors (See episode on <a href="{{ relative_root_path }}{% link _episodes/02.formulae-and-comparing-disease-frequencies.md %}">Measures of
+statistical errors (See episode on <a href="{{ relative_root_path }}{% link _episodes/02-formulae-and-comparing-disease-frequencies.md %}">Measures of
 disease frequency</a>). In general, smaller anticipated differences between the treatment and comparison groups require
 larger sample sizes.
 
@@ -200,7 +199,7 @@ The primary objective of analyzing cohort study data is to compare the occurrenc
 -Potential bias caused by loss to follow-up
 
 #### 2.2. Case-Control Studies
-The case–control study has traditionally been viewed as an inferior alternative to the cohort study. In the traditional view, subjects are selected on the basis of whether they have or do not have the disease. An individual who has the disease is termed a **case**, and someone who does not have the disease is termed a **control**. The exposure histories of cases and controls are then obtained and compared. Thus, the central feature of the traditional view is the comparison of the exposure histories of the cases and controls. This differs from the logic of experimental and cohort study designs in which the key comparison is disease incidence between the exposed and unexposed (or least exposed) groups. More specifically, a case–­control study is a method of sampling a population in which researchers identify and enroll cases of disease and a sample of the source population that gave rise to the cases.
+The case–control study has traditionally been viewed as an inferior alternative to the cohort study. In the traditional view, subjects are selected on the basis of whether they have or do not have the disease. An individual who has the disease is termed a **case**, and someone who does not have the disease is termed a **control**. The exposure histories of cases and controls are then obtained and compared. Thus, the central feature of the traditional view is the comparison of the exposure histories of the cases and controls. This differs from the logic of experimental and cohort study designs in which the key comparison is disease incidence between the exposed and unexposed (or least exposed) groups. More specifically, a case–control study is a method of sampling a population in which researchers identify and enroll cases of disease and a sample of the source population that gave rise to the cases.
 
 ##### Selection of Cases and controls
 The first step in the selection of cases for a case–control study is the formulation of a disease or case definition. A case definition is usually based on a combination of signs and symptoms, physical and pathological examinations, and results of diagnostic tests. Once investigators have created a case definition, they can begin case identification and enrollment. Typical sources for identifying cases are hospital or clinic patient rosters; death certificates; special surveys; and reporting systems, such as cancer or birth defects registries.
@@ -216,7 +215,7 @@ case–control study, epidemiologists typically calculate the odds of being
 a case among the exposed ($$\frac{a}{b}$$) compared to the odds of being a case among the nonexposed ($$\frac{c}{d}$$). The ratio of these two odds is expressed as follows: $$\frac{\frac{a}{b}}{\frac{c}{d}}$$ OR $$\frac{ad}{bc}$$
 
 
-This ratio, known as the disease **odds ratio**, provides an estimate of the relative risk just as the incidence rate ratio and cumulative incidence ratio do. Refer to <a href="{{ relative_root_path }}/{% link _episodes/02.formulae-and-comparing-disease-frequencies.md %}">measures of disease frequency</a> for more on this.
+This ratio, known as the disease **odds ratio**, provides an estimate of the relative risk just as the incidence rate ratio and cumulative incidence ratio do. Refer to <a href="{{ relative_root_path }}/{% link _episodes/02-formulae-and-comparing-disease-frequencies.md %}">measures of disease frequency</a> for more on this.
 
 #### Strengths 
 -Effective for rare outcomes
