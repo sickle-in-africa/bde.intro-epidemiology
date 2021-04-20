@@ -38,7 +38,7 @@ catchment population
 :   of a health facility is a [population](#population) that consists of the people who use the facility’s services.
 
 incidence
-:   the proportion of a candidate [population](#population) that becomes diseased over a specified period of time.
+:   the proportion of a candidate [population](#population) that becomes diseased over a specified period of time (occurrence of new cases).
 
 prevalence
 :   the proportion of the total population that is diseased.
@@ -59,11 +59,29 @@ absolute comparisons
 :	the subtracted measures of disease comparisons. Also called risk difference rate difference, incidence rate difference, cumulative incidence difference, and prevalence difference.
 
 relative comparisons
-:	the divided measures of disease comparisons.
+:	the divided measures of disease comparisons. Also called risk ratio or relative risk.
 
+randomization
+: an act of of assigning or ordering that is the result of a random process.
+
+placebo
+: an inactive drug that is given to the group of participants in a trial that are compared with the group that receives the active drug.
+
+noncompliance
+: the failure to observe the requirements of an experimental protocol.
+
+cohort
+: a group of people with a common characteristic or experience.
+
+fixed cohort
+: a [cohort](#cohort) formed on the basis of an irrevocable event such as undergoing a medical procedure.
+
+closed cohort
+: a [fixed cohort](#fixed-cohort) in which there is no loss to follow-up.
 
 
 ## Equations
+Odds ratio (OR)
 
 
 
