@@ -47,7 +47,7 @@ determinant
 :  (of a [health-related state](#health-reated-state)) a factor that brings about a change in a person’s [health-related state](#healt-reated-state).
 
 incidence
-:   (of a [health-related state](#health-related-state)) the proportion of a candidate [population](#population) that changes their given [health-related state](#health-related-state) over a specified period of time.
+:   (of a [health-related state](#health-related-state)) the proportion of a candidate [population](#population) that changes their given [health-related state](#health-related-state) over a specified period of time (or simply the occurrence of new cases).
 
 prevalence
 :   (of a [health-related state](#health-related-state)) the proportion of the total [population](#population) that has a given [health-related state](#health-related-state)).
@@ -68,8 +68,25 @@ absolute comparisons
 :	the subtracted measures of disease comparisons. Also called risk difference rate difference, incidence rate difference, cumulative incidence difference, and prevalence difference.
 
 relative comparisons
-:	the divided measures of disease comparisons.
+:	the divided measures of disease comparisons. Also called risk ratio or relative risk.
 
+randomization
+: an act of of assigning or ordering that is the result of a random process.
+
+placebo
+: an inactive drug that is given to the group of participants in a trial that are compared with the group that receives the active drug.
+
+noncompliance
+: the failure to observe the requirements of an experimental protocol.
+
+cohort
+: a group of people with a common characteristic or experience.
+
+fixed cohort
+: a [cohort](#cohort) formed on the basis of an irrevocable event such as undergoing a medical procedure.
+
+closed cohort
+: a [fixed cohort](#fixed-cohort) in which there is no loss to follow-up.
 
 ## Common measures of disease frequency
 There are many measures of disease frequency that are commonly used in the public health disciplines. Some are incidence measures, some are prevalence measures, some are ratios. Descriptions and examples of the major measures follow. Note that the word rate is often used incorrectly
@@ -90,7 +107,6 @@ and the population size in the denominator vary. Morbidity is a general word tha
 - **Attack rate**: Number of new cases of disease that develop (usually during a defined and short time period) per the number in a healthy population at risk at the start of the period. This cumulative incidence measure is usually reserved for infectious disease outbreaks. For example, the 24-hour attack rate for food poisoning was 50% among people who ate chicken salad at the banquet.
 - **Case fatality rate**: Number of deaths per number of cases of disease. Note that this measure is a type of cumulative incidence and therefore it is necessary to specify the length of time to which it applies. For example, in 2014 in the Democratic Republic of Congo, the 5-month case fatality rate among individuals with Ebola virus disease was 74.2%. 
 - **Survival rate**: Number of living cases per number of cases of disease. This rate is the complement of the case fatality rate and is also a cumulative incidence measure. Five-year relative survival rates for cancer compare people with a particular cancer to similar people in the general population. For example, from 2007 to 2013, 5-year relative survival rates for prostate cancer were 100% among men diagnosed while the tumour was still confined to the prostate or had spread only to the regional lymph nodes and 29.8% among men whose tumour had metastasized to distant sites.
-
 
 ## Further reading
 This module has used the following textbook as the primary source [Essentials of Epidemiology](https://www.amazon.com/Essentials-Epidemiology-Public-Health-Aschengrau/dp/1284028917) and we reccomed it for in-depth reading on the subject. Other good textbooks on epidemiology include:
