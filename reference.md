@@ -81,8 +81,7 @@ closed cohort
 
 
 ## Equations
-Odds ratio (OR)
-
+Odds ratio (OR): $$\frac{ad}{bc}$$
 
 
 ## Further reading
