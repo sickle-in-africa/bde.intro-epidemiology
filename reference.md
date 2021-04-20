@@ -79,11 +79,6 @@ fixed cohort
 closed cohort
 : a [fixed cohort](#fixed-cohort) in which there is no loss to follow-up.
 
-
-## Equations
-Odds ratio (OR): $$\frac{ad}{bc}$$
-
-
 ## Further reading
 This module has used the following textbook as the primary source [Essentials of Epidemiology](https://www.amazon.com/Essentials-Epidemiology-Public-Health-Aschengrau/dp/1284028917) and we reccomed it for in-depth reading on the subject. Other good textbooks on epidemiology include:
 * [Gordis Epidemiology](https://www.amazon.com/Gordis-Epidemiology-David-Celentano-ScD/dp/0323552293): the definitive textbook on Epidemiology, now in its 6th edition.
