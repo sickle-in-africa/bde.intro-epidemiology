@@ -1,5 +1,5 @@
 ---
-title: "Study designs"
+title: "important practices for data collection, management, and storage"
 teaching: 30
 exercises: 20
 questions:
@@ -67,8 +67,8 @@ Experimental studies are commonly classified by their objective, that is, by whe
 ##### Selection of Study Population
 
 During the recruitment phase of an experimental study, the study population, which is also called the experimental population, is enrolled on the basis of eligibility criteria that reflect the purpose of the trial as well as scientific, safety, and practical considerations. For example, healthy or high-risk individuals are enrolled in
-prevention trials, whereas individ uals with specific diseases are enrolled in therapeutic trials. Additional inclusion and exclusion criteria may be used to restrict the study population by factors such as gender and age (See Standadization of rates under the episode [Comparing disease frequencies]({{ page.root }}{% link _episodes/03-comparing-disease-frequencies.md %})). The study population must include an adequate number of individuals to determine whether there is a true difference between the treatment and
-comparison groups. An investigator determines how many subjects to include by using formulas that take into account the anticipated difference between the groups, the background rate of the outcome, and the probability of making certain statistical errors (See episode on [measures of disease frequency]({{ page.root }}{% link _episodes/02-formulae.md %})). 
+prevention trials, whereas individ uals with specific diseases are enrolled in therapeutic trials. Additional inclusion and exclusion criteria may be used to restrict the study population by factors such as gender and age (See Standadization of rates under the episode [Comparing disease frequencies]({{ page.root }}{% link _episodes/04-formulae-and-comparing-disease-frequencies.md %})). The study population must include an adequate number of individuals to determine whether there is a true difference between the treatment and
+comparison groups. An investigator determines how many subjects to include by using formulas that take into account the anticipated difference between the groups, the background rate of the outcome, and the probability of making certain statistical errors (See episode on [measures of disease frequency]({{ page.root }}{% link _episodes/04-formulae-and-comparing-disease-frequencies.md %})). 
 In general, smaller anticipated differences between the treatment and comparison groups require larger sample sizes.
 
 ##### Consent process and treatment assignment
@@ -172,7 +172,7 @@ case–control study, epidemiologists typically calculate the odds of being
 a case among the exposed ($$\frac{a}{b}$$) compared to the odds of being a case among the nonexposed ($$\frac{c}{d}$$). The ratio of these two odds is expressed as follows: $$\frac{\frac{a}{b}}{\frac{c}{d}}$$ OR $$\frac{ad}{bc}$$
 
 
-This ratio, known as the disease **odds ratio**, provides an estimate of the relative risk just as the incidence rate ratio and cumulative incidence ratio do. Refer to [measures of disease frequency]({{ page.root }}{% link _episodes/02-formulae.md %}) for more on this.
+This ratio, known as the disease **odds ratio**, provides an estimate of the relative risk just as the incidence rate ratio and cumulative incidence ratio do. Refer to [measures of disease frequency]({{ page.root }}{% link _episodes/04-formulae-and-comparing-disease-frequencies.md %}) for more on this.
 
 ---
 > ## Question: 
