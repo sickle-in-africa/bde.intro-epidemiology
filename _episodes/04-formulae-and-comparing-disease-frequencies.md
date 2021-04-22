@@ -2,8 +2,6 @@
 title: "Measuring and Comparing Disease Frequencies"
 teaching: 30
 exercises: 10
-youtubeId: rIVxR-4BbK8
-driveId: 1FP9bOQh54cpaA0dXWj2Q7Lg3enKRQMUA/preview
 questions:
 - "How do epidemiologists measure, estimate, and compare disease frequencies?"
 objectives:
@@ -33,7 +31,7 @@ group, or a 50% decreased risk of disease."
 
 ------
 
-{% include googleDrivePlayer.html id=page.driveId %}
+{% include googleDrivePlayer.html id=page.1FP9bOQh54cpaA0dXWj2Q7Lg3enKRQMUA/preview %}
 
 ------
 
