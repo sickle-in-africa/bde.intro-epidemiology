@@ -2,6 +2,7 @@
 title: "Study designs"
 teaching: 30
 exercises: 20
+youtubeId: BSj94yp0h48
 questions:
 - "How many epidemiological study designs are you familiar with?"
 - "What is a difference between experimental and observational studies?"
@@ -18,6 +19,10 @@ keypoints:
 - "***Cross-sectional studies*** take a snapshot of disease prevalence in relation to exposure prevalence at a particular time."
 - "In ***ecological studies***, the units of analysis are populations rather than individuals."
 ---
+
+-------
+{% include youtubePlayer.html id=page.youtubeId %}
+-------
 
 ## Introduction
  There are several types of study designs in epidemiological research. Each study design represents a different way of harvesting information. The selection of one design over another depends on the particular research question, concerns about validity and efficiency, and practical and ethical considerations. Figure 1. represents the most common study designs used by epidemiologists today
