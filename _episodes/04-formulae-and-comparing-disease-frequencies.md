@@ -33,7 +33,7 @@ group, or a 50% decreased risk of disease."
 
 ------
 
-\\ {% include youtubePlayer.html id=page.youtubeId %}
+\ {% include youtubePlayer.html id=page.youtubeId %}
 
 {% include googleDrivePlayer.html id=page.driveId %}
 
