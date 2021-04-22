@@ -31,7 +31,7 @@ group, or a 50% decreased risk of disease."
 
 ------
 
-{% include googleDrivePlayer.html id=page.1FP9bOQh54cpaA0dXWj2Q7Lg3enKRQMUA/preview %}
+{% include googleDrivePlayer.html id=1FP9bOQh54cpaA0dXWj2Q7Lg3enKRQMUA/preview %}
 
 ------
 
