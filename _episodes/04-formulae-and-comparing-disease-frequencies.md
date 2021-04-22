@@ -2,6 +2,7 @@
 title: "Measuring and Comparing Disease Frequencies"
 teaching: 30
 exercises: 10
+youtubeId: rIVxR-4BbK8
 questions:
 - "How do epidemiologists measure, estimate, and compare disease frequencies?"
 objectives:
@@ -28,6 +29,8 @@ group, or a 50% decreased risk of disease."
 - "A relative risk of 0.33 means that the exposed group has one-third the risk, or a 67% reduction in risk, and so on."
 - "The relative measure of comparison can range from zero to infinity."
 ---
+
+{% include youtubePlayer.html id=page.youtubeId %}
 
 In episode 1 we defined the disease frequency of a population as some measure of how often a disease occurs in that population. There are many ways one can define this measure, and for any given case our choice will depend on the data at hand, the hypothesis of the study, or prevailing conventions in the  epidemiology literature. In this section we will look at some of the ways in which such a measure could be defined, and how to calculate it from a data set. Estimating the disease frequency, using some chosen measure of this frequency, for a given population is one of the first steps in analysing the pattern of disease in the population, working out determinants, and in planning effective control strategies. 
 
