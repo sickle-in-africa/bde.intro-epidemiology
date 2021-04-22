@@ -21,7 +21,9 @@ keypoints:
 ---
 
 -------
+
 {% include youtubePlayer.html id=page.youtubeId %}
+
 -------
 
 ## Introduction
