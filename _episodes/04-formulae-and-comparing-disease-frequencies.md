@@ -2,7 +2,7 @@
 title: "Measuring and Comparing Disease Frequencies"
 teaching: 30
 exercises: 10
-youtubeId: rIVxR-4BbK8
+youtubeId: Vil7z8MBe88
 driveId:
 questions:
 - "How do epidemiologists measure, estimate, and compare disease frequencies?"
