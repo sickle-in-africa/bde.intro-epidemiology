@@ -1,8 +1,8 @@
 ---
 title: "Basic concepts"
-youtubeId: 6H27ve9If1I
 teaching: 5
 exercises: 0
+youtubeId: 6H27ve9If1I
 questions:
 - "What is epidemiology and how does it contribute to global health?"
 objectives:
