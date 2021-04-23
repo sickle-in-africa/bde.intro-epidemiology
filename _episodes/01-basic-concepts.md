@@ -1,5 +1,6 @@
 ---
 title: "Basic concepts"
+youtubeId: BSj94yp0h48
 teaching: 5
 exercises: 0
 questions:
@@ -17,6 +18,12 @@ keypoints:
 - "Disease control can be achieved through surveillance programs."
 - "Newborn screening programs and national disease registries are important epidemiological contributions to sickle cell disease management."
 ---
+
+-------
+
+{% include youtubePlayer.html id=page.youtubeId %}
+
+-------
 
 ### What is Epidemiology?
 In the following box we present a widely accepted definition that we will use in this course. 
