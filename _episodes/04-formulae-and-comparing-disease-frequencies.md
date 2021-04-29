@@ -77,7 +77,10 @@ for accurately determining who has the disease.
 By convention, if a member of $$P$$ contracts the disease more than once over the specified time period, then only the first case is counted, and therefore $$c$$ may only take values between 0 and 1. For this reason it is often quoted as a percentage, namely taking values between 0% and 100%. It is clear from the definition that $$c$$ is always a dimensionless value. 
 
 > ## Example
-> As an example, consider the population of a small imaginary town with 10000 residents. Imagine that, for an influenza study, investigators monitor the residents of this town for a year, from June 1st 2021 till June 1st 2022. Over this time period, say that a flu outbreak occurs just after June 1st 2021, and continues to spread. Let us say that, by June 1st, 2123 residents of the town have contracted the flu once, and no resident was affected twice in the time period. Then, using the above definition, we may deduce for our example that $$P$$ is the set of residents of the town and so $$n=10000$$, $$t$$ is June 1st 2021 till June 1st 2022, and the number of cases $$m=2123$$. Therefore the cumulative incidence $$c$$ of flu on the residents of the town for the time period of the study is: $$c = 2123 / 10000 = 0.2123$$.
+> *Question -* Consider the population of a small imaginary town with 10000 residents. Imagine that, for an influenza study, investigators monitor the residents of this town for a year, from June 1st 2021 till June 1st 2022. Over this time period, say that a flu outbreak occurs just after June 1st 2021, and continues to spread. Let us say that, by June 1st, 2123 residents of the town have contracted the flu once, and no resident was affected twice in the time period.
+> What is the cumulative incidence $$c$$ of flu on the residents of the town for the time period of the study?
+>
+> *Solution -* Using the above definition, we may deduce for our example that $$P$$ is the set of residents of the town and so $$n=10000$$, $$t$$ is June 1st 2021 till June 1st 2022, and the number of cases $$m=2123$$. Therefore the cumulative incidence $$c$$ of flu on the residents of the town for the time period of the study is: $$c = 2123 / 10000 = 0.2123$$.
 {: .example}
 
 Note that this definition of $$c$$ depends on the time period as well as the population and the disease definition used. For example, we may define a case as a person showing flu-like symptoms, or we may be more accurate and test each person for the presence of a specific antibody. Changes in any of these factors will result in changes to the final value of $$c$$.
@@ -96,7 +99,11 @@ Person-time is *additive*, in the sense that the person-time of two individuals 
 
 In either of these cases, the time period $$t$$ ends for that person and the person-time is computed as the duration between the beginning of the study and this endpoint. 
 
-Consider this example. A small study follows a group of 4 people, A, B, C and D, for a period of 5 years. The disease under investigation is Malaria. The study begins on 3rd December 2020 and ends 3rd December 2025. During this time, person A contracts malaria on the 2nd January 2022; person B survives the time period without contracting malaria; person C dies from an unrelated cause on 24th March 2024 and person D moves away from the study catchment area, and is no longer contactable, on 14th of February 2023. The person-time of A, $$p_A$$, is $$395 days$$; the person-time of B, $$p_B$$, is $$1826 days$$; the person-time of C, $$p_C$$, is $$1207 days$$; and the person time of D, $$p_D$$, is $$803 days$$. Since person-time is additive, the total person-time of the study is $$p_A + p_B + p_C + p_D = (395 + 1826 + 1207 + 803) days = 4231 days$$.
+> ## Example
+> *Question -* A small study follows a group of 4 people, A, B, C and D, for a period of 5 years. The disease under investigation is Malaria. The study begins on 3rd December 2020 and ends 3rd December 2025. During this time, person A contracts malaria on the 2nd January 2022; person B survives the time period without contracting malaria; person C dies from an unrelated cause on 24th March 2024 and person D moves away from the study catchment area, and is no longer contactable, on 14th of February 2023. Find the person time of each participant, A, B, C, D, and the person-time of the entire study.
+>
+> *Solution -* The person-time of A, $$p_A$$, is $$395 days$$; the person-time of B, $$p_B$$, is $$1826 days$$; the person-time of C, $$p_C$$, is $$1207 days$$; and the person time of D, $$p_D$$, is $$803 days$$. Since person-time is additive, the total person-time of the study is $$p_A + p_B + p_C + p_D = (395 + 1826 + 1207 + 803) days = 4231 days$$.
+{: .example}
 
 Note that the units of person-time is time. In the above example we chose days but this could be weeks, months, years e.t.c.
 
@@ -110,7 +117,11 @@ We may now define the incidence rate. Mathematically, the incidence rate is expr
 >$$i := \frac{m}{p}$${: font-size: 120%; text-align: center;"}
 {: .callout}
 
-To continue the above malaria example, we see that only person A actually contracted malaria. Therefore, we have that $$m=1$$ and as we previously calculated, $$p = p_A + p_B + p_C + p_D = 4231 days$$, which means the incidence rate $$i$$ is $$\frac{1}{4231 days}$$.
+> ## Example
+> *Question -* Recall the above example of person-time in a malaria study. What is the incidence rate of malaria for this study?
+>
+> *Solution -* We see that only person A actually contracted malaria. Therefore, we have that $$m=1$$ and as we previously calculated, $$p = p_A + p_B + p_C + p_D = 4231 days$$, which means the incidence rate $$i$$ = $$\frac{1}{4231 days}$$.
+{: .example}
 
 From this example we see that the units of incidence rate is 1/time. 
 
@@ -137,7 +148,14 @@ Mathematically, these two measures of prevalence are defined as follows.
 > $$\frac{m}{n}$${: font-size: 120%; text-align: center;"}
 {: .callout}
 
-Let’s use these formulas to calculate the point and period prevalence of pneumonia in a nursing home population. The point and period of interest are July 1, 2017, and January 1 through December 31, 2017, respectively. On July 1, 2017, there were $$m=5$$ cases of pneumonia among the $$n=500$$ nursing home residents. Thus, the point prevalence of pneumonia was 5/500, or 1%, on that date. During the period January 1 through December 31, 2017, there were 45 cases of pneumonia among the 500 nursing home residents; therefore, the period prevalence was 45/500, or 9%, during the year. Note that, in this example, the size of the nursing home population remained stable over the year, but if it had gained or lost members, the average size of the nursing home population during 2017 would have been the appropriate denominator for the period prevalence measure.
+In the following example, we use these formulas to calculate the point and period prevalence of pneumonia in a nursing home population. 
+
+> ## Example
+> *Question -* A study is conducted on malaria in a nursing home population. A point and period of interest for the study are July 1, 2017, and January 1 through December 31, 2017, respectively. On July 1, 2017, there were $$m=5$$ cases of pneumonia among the $$n=500$$ nursing home residents. During the period January 1 through December 31, 2017, there were 45 cases of pneumonia among the 500 nursing home residents. 
+>
+> *Solution -* The point prevalence of pneumonia was 5/500, or 1%, on July 1, 2017. The period prevalence was 45/500, or 9%, during 2017. 
+{: .example}
+Note that, in the above example, the size of the nursing home population remained stable over the year, but if it had gained or lost members, the average size of the nursing home population during 2017 would have been the appropriate denominator for the period prevalence measure.
 
 Epidemiologists and other public health professionals use each measure of disease frequency for specific purposes. Incidence is
 most useful for evaluating the effectiveness of programs that try to prevent disease from occurring in the first place. In addition, researchers
@@ -155,7 +173,7 @@ Usually, people who have a particular characteristic such as high foetal haemogl
 
 > ## Example
 > To test the hypothesis that HbF is associated with increased survival of SCD patients, one could compare the level of HbF among adult SCD patients (exposed group) to that of adults without SCD (unexposed group).
-{: .callout}
+{: .example}
 
 # Data Organizations
 ---
@@ -190,30 +208,33 @@ The $$RD$$ describes the disease burden associated with exposure among exposed p
 {: .challenge}
 ---
 
-Assuming that the exposure is a direct cause of the disease, then $$RD$$ can be used to calculate the number of disease cases that would be eliminated if the exposure were eliminated (or reduced to the level of the unexposed group). For instance, consider the data presented in Table 3.4 of [^1].
+Assuming that the exposure is a direct cause of the disease, then $$RD$$ can be used to calculate the number of disease cases that would be eliminated if the exposure were eliminated (or reduced to the level of the unexposed group).
 
 <div style="width:70%; margin: auto;"><img alt="table 3.4" src="../fig/table3.4.png"></div> *Adapted from* [^1]
 
-To calculate the mortality:
+> ## Example
+>*Question -* Consider the data presented in Table 3.4 of [^1]. What is the Incidence Rate Difference (IRD) of mortality for this data set? Breifly interpret your result in words.
+>
+>*Solution -* To calculate the IRD, first we calculate the Incidence Rate (IR) for Steubenville:
+>
+>$$IR_{Steubenville} = \frac{291}{17,914} = \frac{16.24}{1,000}(person-years)$$
+>
+> Then we calculate the IR for Portage:
+>
+>$$IR_{Portage} = \frac{232}{21,618} = \frac{10.73}{1,000}(person-years)$$
+>
+> Finally we calculate the IRD by taking the positive difference:
+>
+>$$IRD = IR_{most\ polluted\ city} - IR_{least\ polluted\ city}$$
+>
+>$$= \frac{16.24}{1,000}(person-years) - \frac{10.73}{1,000}(person-years)$$
+>
+>$$= \frac{5.51}{1,000}(person-years)$$
+>
+>Interpreted narrowly, there are 5.51 excess deaths per 1,000 person-years among Steubenville residents. Or, more broadly, if pollution caused the deaths, then 5.51 deaths among Steubenville residents for every 1,000 person-years of observation would be eliminated if the pollution level were reduced to that of Portage. 
+{: .example}
 
-$$Incidence\ rate\ of\ mortality_{in\ Steubenville} = \frac{291}{17,914}$$
-
-$$==> \frac{16.24}{1,000}(person-years)$$
-
-$$Incidence\ rate\ of\ mortality_{in\ Portage} = \frac{232}{21,618}$$
-
-$$==> \frac{10.73}{1,000}(person-years)$$
-
---------------
-
-$$Incident\ rate\ difference = IR_{most\ polluted\ city} - IR_{least\ polluted\ city}$$
-
-$$IRD = \frac{16.24}{1,000}(person-years) - \frac{10.73}{1,000}(person-years)$$
-
-$$IRD = \frac{5.51}{1,000}(person-years)$$
-
-
-Interpreted narrowly, there are 5.51 excess deaths per 1,000 person-years among Steubenville residents. Or, more broadly, if pollution caused the deaths, then 5.51 deaths among Steubenville residents for every 1,000 person-years of observation would be eliminated if the pollution level were reduced to that of Portage. To obtain the actual number of excess cases, simply multiply the excess risk or rate by the number of exposed people. Given that a population usually consists of both exposed and unexposed people, it is therefore useful to know the impact of the exposure not only on the exposed, but also on the unexposed group, hence the total population. **Population risk difference** is the term used to describe this comparison, and is calculated as follows:
+To obtain the actual number of excess cases, simply multiply the excess risk or rate by the number of exposed people. Given that a population usually consists of both exposed and unexposed people, it is therefore useful to know the impact of the exposure not only on the exposed, but also on the unexposed group, hence the total population. **Population risk difference** is the term used to describe this comparison, and is calculated as follows:
 
 $$PRD = R_t - R_u$$
 
@@ -235,16 +256,20 @@ $$RR = \frac{R_e}{R_u}$$
 
 where $$RR$$ is the rate or risk ratio or relative risk; $$R_e$$ is the incidence rate, cumulative incidence, or prevalence in the exposed group; and $$R_u$$ is the incidence rate, cumulative incidence, or prevalence in the unexposed group. This measure gives information about the strength of the relationship between the exposure and disease and is most useful in etiological studies.
 
-Consider the example in Table 3.4 above:
+> ## Example
+> *Question -* Consider the data in Table 3.4 above. What is the relative risk of mortality given this data?
+>
+> *Solution -* Using the answers of the previous example, the relative risk (RR) is:
+>
+> $$RR = \frac{\frac{16.24}{1,000}(person-years)}{\frac{10.73}{1,000}(person-years)} = 1.51$$
+>
+> This means that, compared with the residents of Portage, there is a 1.51-fold increased rate of death among residents of Steubenville. Another interpretation is that the death rate in Steubenville is 1.51 times that of Portage.
+{: .example}
 
-$$RR = \frac{\frac{16.24}{1,000}(person-years)}{\frac{10.73}{1,000}(person-years)} = 1.51$$
-
-This means that, compared with the residents of Portage, there is a 1.51-fold increased rate of death among residents of Steubenville. Another interpretation is that the death rate in Steubenville is 1.51 times that of Portage.
-
-Another way to express this information is in terms of the **excess relative rate**, which is
-mathematically equal to:
+Another way to express this information is in terms of the **excess relative rate**, which is mathematically equal to:
 
 $$(RR - 1) × 100$$
+
 
 ---
 > ## Challenge
