@@ -8,8 +8,8 @@ questions:
 - "What is a difference between experimental and observational studies?"
 - "What are the weaknesses and strengths for each study design?"
 objectives: 
-- "Recall the most common study designs used by epidemiologists today"
-- "Discuss appropriate study designs given a research question"
+- "By the end of this episode, you will be able to recall the most common study designs used by epidemiologists today,"
+- "and to discuss appropriate study designs given a research question."
 keypoints:
 - "In experimental studies, an ***investigator actively manipulates a therapeutic agent***."
 - "***Informed consent*** is critical for experimental studies."

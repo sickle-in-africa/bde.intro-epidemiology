@@ -3,19 +3,18 @@ title: "Data collection and Management"
 teaching: 30
 exercises: 20
 questions:
-- "How many epidemiological study designs are you familiar with?"
-- "What is a difference between experimental and observational studies?"
+- "How do we effectively manage study data?"
 objectives: 
-- "Distinguish between experimental and observational studies."
-- "Describe the key characteristics of experimental, cohort, case–control, cross-sectional, and ecological studies."
+- "By the end of this episode you will be able to discuss important practices for data collection, management, and storage, in epidemiology studies"
 keypoints:
-- "In experimental studies, an ***investigator actively manipulates a therapeutic agent***."
-- "***Informed consent*** is critical for experimental studies."
-- "In cohort studies, the starting point is ***exposure*** and the endpoint is ***outcome***."
-- "In case-control studies, the starting point is ***outcome*** and endpoint is ***exposure***."
-- "***Case definition*** is an important aspect of case-control studies."
-- "***Cross-sectional studies*** take a snapshot of disease prevalence in relation to exposure prevalence at a particular time."
-- "In ***ecological studies***, the units of analysis are populations rather than individuals."
+- "The scope and objectives of the study are essential in determining the data to be collected."
+- "There are two main categories of epidemiological data sources: primary and secondary data."
+- " Primary data is collected by an investigator for their specific study."
+- "Secondary data is that which has already been collected by others for different purposes."
+- "Data management involves all activities pertaining to the transfer and maintenance of data in a central database."
+- "The dimensions of data quality are Accuracy, Completeness, Reliability, Validity, and Timeliness."
+- "A study should have in place guidelines that ensure adherence to the general governing principles for data protection."
+- "It is very important to ensure that re-identification of study subjects is prevented."
 ---
 
 In epidemiological studies data is used to address the; what, who, where, when and how, questions of an investigation. What is the problem, who has been affected, where did the event occur, when did it happen and how are the observed events and exposure related? Epidemiologic data is relevant for determining the cause of an event and establishing appropriate intervention measures. Data from epidemiological studies reveals the state and course of events related to a disease in individuals that have been exposed to one agent or several substances. It is important to identify the right type of data required for a given study and the possible sources of the data. The scope and objectives of the study are essential in determining the data to be collected.
