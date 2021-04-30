@@ -3,7 +3,46 @@ layout: page
 title: "Licenses"
 root: .
 ---
-## Instructional Material
+
+We provide seperate liscenses for the module content, created by SickleInAfrica, and the website template, adapted from the Software Carpentry Project reseources.
+
+## SickleInAfrica instructional Material
+
+All SickleInAfrica instructional material is
+made available under the [Creative Commons Attribution
+license][cc-by-human]. The following is a human-readable summary of
+(and not a substitute for) the [full legal text of the CC BY 4.0
+license][cc-by-legal].
+
+You are free:
+
+* to **Share**---copy and redistribute the material in any medium or format
+* to **Adapt**---remix, transform, and build upon the material
+
+for any purpose, even commercially.
+
+The licensor cannot revoke these freedoms as long as you follow the
+license terms.
+
+Under the following terms:
+
+* **Attribution**---You must give appropriate credit to the SickleInAfrica collaberation wherever this content is used or re-used. 
+
+**No additional restrictions**---You may not apply legal terms or
+technological measures that legally restrict others from doing
+anything the license permits.  With the understanding that:
+
+Notices:
+
+* You do not have to comply with the license for elements of the
+  material in the public domain or where your use is permitted by an
+  applicable exception or limitation.
+* No warranties are given. The license may not give you all of the
+  permissions necessary for your intended use. For example, other
+  rights such as publicity, privacy, or moral rights may limit how you
+  use the material.
+
+## Software Carpentry instructional Material
 
 All Software Carpentry, Data Carpentry, and Library Carpentry instructional material is
 made available under the [Creative Commons Attribution
@@ -45,7 +84,7 @@ Notices:
   rights such as publicity, privacy, or moral rights may limit how you
   use the material.
 
-## Software
+## Software Carpentry software
 
 Except where otherwise noted, the example programs and other software
 provided by Software Carpentry and Data Carpentry are made available under the
@@ -70,11 +109,6 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-## Trademark
-
-"Software Carpentry" and "Data Carpentry" and their respective logos
-are registered trademarks of [Community Initiatives][CI].
 
 [cc-by-human]: https://creativecommons.org/licenses/by/4.0/
 [cc-by-legal]: https://creativecommons.org/licenses/by/4.0/legalcode
